@@ -1,0 +1,13 @@
+{
+  "name": "slidev-addon-d2",
+  "version": "1.0.0",
+  "description": "Slidev addon for rendering D2 diagrams",
+  "keywords": ["slidev-addon", "slidev", "d2", "diagrams"],
+  "main": "index.ts",
+  "dependencies": {
+    "@terrastruct/d2": "^0.1.23"
+  },
+  "peerDependencies": {
+    "@slidev/cli": ">=0.48.0"
+  }
+}

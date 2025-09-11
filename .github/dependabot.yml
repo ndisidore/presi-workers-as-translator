@@ -1,0 +1,49 @@
+version: 2
+updates:
+  # Update npm dependencies for the main project
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "ndisidore"
+    assignees:
+      - "ndisidore"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+
+  # Update npm dependencies for the D2 addon
+  - package-ecosystem: "npm"
+    directory: "/addon-d2"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "ndisidore"
+    assignees:
+      - "ndisidore"
+    commit-message:
+      prefix: "deps(addon-d2)"
+      include: "scope"
+
+  # Update GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "ndisidore"
+    assignees:
+      - "ndisidore"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
