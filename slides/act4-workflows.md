@@ -13,32 +13,32 @@ _Cloudflare Workflows - The Durable Execution Engine_
 
 # The "Time Heals All Wounds" Philosophy
 
-<div class="text-lg mb-8">**Story: The integration that needed to retry for 6 hours to finally succeed**</div>
+<div class="mb-8 flex justify-center">
 
-<div class="mb-8">
-
-```mermaid {theme: 'dark', scale: 0.9}
+```mermaid {theme: 'dark', scale: 0.35}
+timeline
+    title Integration Retry Journey
 
     section Morning
-        09:00 : Initial request
-              : Success ✅
-        09:15 : Enrichment API
+        9am : Initial request
+            : Success ✅
+        915am : Enrichment API
               : Rate limited ⚠️
-        09:30 : Retry 1
+        930am : Retry 1
               : Success ✅
 
     section Afternoon
-        12:45 : External API
-              : Service down 🔴
-        13:00 : Retry 2
-              : Timeout 💥
-        14:30 : Retry 3
+        1245pm : External API
+               : Service down 🔴
+        1pm : Retry 2
+            : Timeout 💥
+        230pm : Retry 3
               : Still down 🔴
-        15:00 : Coffee break ☕
-              : System sleeping
+        3pm : Coffee break ☕
+            : System sleeping
 
     section Evening
-        17:30 : Retry 4
+        530pm : Retry 4
               : Success! 🎉
 ```
 
@@ -130,6 +130,8 @@ export class EnrichAndSendWorkflow extends WorkflowEntrypoint<Env, Params> {
 ```
 
 ---
+layout: two-cols
+---
 
 # The Revelation
 
@@ -137,8 +139,26 @@ export class EnrichAndSendWorkflow extends WorkflowEntrypoint<Env, Params> {
 Your integration can literally sleep for days and wake up exactly where it left off
 </div>
 
+<v-click>
+
+<div class="mt-8 p-6 bg-blue-100 dark:bg-blue-900 rounded-lg">
+<div class="font-bold text-lg mb-2">🧠 The Magic</div>
+State is persisted automatically. Each step remembers exactly where it was, even after failures, deployments, or cosmic events.
+</div>
+
+</v-click>
+
+::right::
+
 <script setup>
-const workflowDiagram = `start: {
+const workflowDiagram = `
+vars: {
+  d2-config: {
+    layout-engine: elk
+  }
+}
+
+start: {
   shape: oval
   style: { fill: '#10B981' }
 }
@@ -200,23 +220,25 @@ step2 -> success: ✅`
   :scale="0.4"
 />
 
-<v-click>
-
-<div class="mt-8 p-6 bg-blue-100 dark:bg-blue-900 rounded-lg">
-<div class="font-bold text-lg mb-2">🧠 The Magic</div>
-State is persisted automatically. Each step remembers exactly where it was, even after failures, deployments, or cosmic events.
-</div>
-
-</v-click>
-
+---
+layout: two-cols
 ---
 
 # The Choreography
 
 <div class="mb-6">**Complex workflow: Order → Payment → Inventory → Shipping → Notification**</div>
 
+::right::
+
 <script setup>
-const choreographyDiagram = `order: {
+const choreographyDiagram = `
+vars: {
+  d2-config: {
+    layout-engine: elk
+  }
+}
+
+order: {
   label: Order Received
   shape: oval
   style: { fill: '#3B82F6' }

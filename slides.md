@@ -1,5 +1,7 @@
 ---
-theme: default
+theme: seriph
+themeConfig:
+  primary: '#abff02'
 background: https://images.unsplash.com/photo-1620837953336-8274c0623a3c?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 class: text-center
 highlighter: shiki
