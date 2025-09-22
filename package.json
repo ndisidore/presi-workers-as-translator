@@ -10,7 +10,7 @@
 		"wrangler:deploy": "wrangler deploy"
 	},
 	"dependencies": {
-		"@slidev/cli": "^52.1.0",
+		"@slidev/cli": "^52.2.4",
 		"@slidev/theme-default": "latest",
 		"@slidev/theme-seriph": "latest",
 		"@terrastruct/d2": "^0.1.33",
