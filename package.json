@@ -1,24 +1,26 @@
 {
-	"name": "presi-workers-as-glue",
-	"private": true,
-	"scripts": {
-		"build": "slidev build",
-		"dev": "slidev --open",
-		"export": "slidev export",
-		"wrangler:types": "wrangler types",
-		"wrangler:dev": "wrangler dev",
-		"wrangler:deploy": "wrangler deploy"
-	},
-	"dependencies": {
-		"@slidev/cli": "^52.1.0",
-		"@slidev/theme-default": "latest",
-		"@slidev/theme-seriph": "latest",
-		"@terrastruct/d2": "^0.1.33",
-		"vue": "^3.5.21"
-	},
-	"devDependencies": {
-		"playwright-chromium": "^1.55.0",
-		"typescript": "^5.9.2",
-		"wrangler": "^4.37.0"
-	}
+  "name": "presi-workers-as-glue",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "slidev --open",
+    "export:pdf": "slidev export",
+    "export:pptx": "slidev export --format pptx",
+    "wrangler:types": "wrangler types",
+    "wrangler:dev": "wrangler dev",
+    "wrangler:deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.2.4",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "@terrastruct/d2": "^0.1.33",
+    "vue": "^3.5.22"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.55.1",
+    "typescript": "^5.9.2",
+    "wrangler": "^4.40.2"
+  }
 }

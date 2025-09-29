@@ -2,12 +2,23 @@
   "name": "presi-workers-as-glue",
   "main": "src/index.ts",
   "compatibility_date": "2025-08-01",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "vars": {
+    "BASE_PATH": "/cc25-workers-as-glue"
+  },
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS"
   },
   "build": {
     "command": "npm run build"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "presentations.diz.rocks/cc25-workers-as-glue*",
+      "zone_name": "diz.rocks"
+    }
+  ]
 }
