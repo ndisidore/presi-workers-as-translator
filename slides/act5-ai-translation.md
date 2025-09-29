@@ -1,6 +1,6 @@
 ---
 layout: center
-class: text-center
+class: text-center bg-gradient-to-br from-amber-600 to-fuchsia-400
 ---
 
 # Act V
@@ -47,51 +47,44 @@ Enter: <span class="font-bold text-2xl">Text Generation Models - The Schema Whis
 
 ---
 
-# The AI Magic Setup
+# A Little Prompt Engineering
 
-````md magic-move {lines: true}
-```typescript {*|1-8|10-16|all}
-// Feed it your schema + third-party OpenAPI spec
-const prompt = `
-Given this internal schema:
+````md magic-move {lines: true}{maxHeight:'400px'}
+```text {*}
+You are an expert in API integrations and Cloudflare Workers.
+
+Task:
+- Generate a Cloudflare Worker in JavaScript
+- Input: JSON payload in our "internal notification schema" (defined below)
+- Output: A properly formatted API request for the target service (see docs link below)
+- The Worker should:
+  1. Accept POSTed JSON in the internal schema
+  2. Validate required fields (e.g. user.name, content.text)
+  3. Transform the payload into the target API’s expected format
+  4. If an env.TARGET_API_KEY or env.TARGET_WEBHOOK_URL is provided, call the target API
+  5. Otherwise, just return the transformed payload (for preview/testing)
+  6. Handle optional fields gracefully
+
+Internal schema:
 {
-  "user": { "id": "string", "email": "string", "name": "string" },
-  "event": { "type": "string", "timestamp": "date", "data": "object" }
-}
-
-And this Stripe webhook OpenAPI spec:
-{
-  "type": "payment_intent.succeeded",
-  "data": { "object": { "customer": "cus_123", "amount": 5000, "currency": "usd" } }
-}
-
-Generate a TypeScript adapter function.
-`;
-```
-
-```typescript {*|1-12|14-20|all}
-// AI generates working adapter in JSON mode
-const response = await fetch(`${env.AI_GATEWAY_URL}/text-generation`, {
-  method: "POST",
-  headers: {
-    Authorization: `Bearer ${env.CF_AI_TOKEN}`,
-    "Content-Type": "application/json",
+  "event_id": "evt_12345",
+  "event_type": "USER_MENTION",
+  "user": { "id": "user_789", "name": "Alice" },
+  "content": {
+    "text": "Alice mentioned you in a comment",
+    "link": "https://example.com/comments/456"
   },
-  body: JSON.stringify({
-    prompt,
-    response_format: { type: "json_object" },
-    max_tokens: 2048,
-  }),
-});
+  "timestamp": "2025-09-09T12:34:56Z"
+}
 
-const generatedAdapter = await response.json();
-// Returns structured output that maps fields automatically
-console.log(generatedAdapter.code);
-// Generated TypeScript code appears!
+Target API docs: [INSERT DOCS URL HERE]
+
+Goal:
+Produce a working Cloudflare Worker that can reliably transform and deliver notifications from our schema into the target service’s API.
 ```
 
 ```typescript {all}
-// AI-Generated Output (30 seconds later!)
+// AI-Generated Output
 export function stripeToInternal(stripeWebhook: any) {
   return {
     user: {
@@ -133,13 +126,13 @@ export function stripeToInternal(stripeWebhook: any) {
 ### **Manual Mapping** 😤
 
 <div class="space-y-3 mt-4 text-sm">
-<div>📖 Read 50-page API documentation</div>
+<div>📖 Read 10-page API documentation</div>
 <div>🔍 Understand nested object structures</div>
 <div>✍️ Write transformation code</div>
 <div>🐛 Debug edge cases</div>
 <div>🧪 Test with sample data</div>
 <div>🔄 Handle API version changes</div>
-<div>⏱️ **Total time: 3 days**</div>
+<div>⏱️ <span class="font-bold">Total time:</span> 3 day</div>
 </div>
 
 </div>
@@ -149,13 +142,13 @@ export function stripeToInternal(stripeWebhook: any) {
 ### **AI Generation** ✨
 
 <div class="space-y-3 mt-4 text-sm">
-<div>🤖 Paste OpenAPI spec</div>
-<div>📋 Paste your schema</div>
+<div>🤖 Paste/Link OpenAPI spec</div>
+<div>📋 Paste/Link your schema</div>
 <div>⚡ AI reads and understands</div>
 <div>🎯 Generates working code</div>
 <div>🛡️ Includes error handling</div>
 <div>🔮 Handles common edge cases</div>
-<div>⏱️ **Total time: 30 seconds**</div>
+<div>⏱️ <span class="font-bold">Total time:</span> 30 seconds</div>
 </div>
 
 </div>
@@ -172,51 +165,6 @@ export function stripeToInternal(stripeWebhook: any) {
 
 ---
 
-# But Wait, There's More!
-
-<div class="mb-8 text-center text-xl">**AI can handle the complex stuff too**</div>
-
-<div class="grid grid-cols-3 gap-6 mb-8">
-
-<div v-click="1" class="p-6 bg-blue-100 dark:bg-blue-900 rounded-lg">
-<div class="text-2xl mb-2">🔄</div>
-<div class="font-bold">API Versioning</div>
-<div class="text-sm mt-2">"When Stripe moves from v1 to v2, generate migration code"</div>
-</div>
-
-<div v-click="2" class="p-6 bg-purple-100 dark:bg-purple-900 rounded-lg">
-<div class="text-2xl mb-2">⚠️</div>
-<div class="font-bold">Deprecation Warnings</div>
-<div class="text-sm mt-2">"This field is deprecated, use 'new_field' instead"</div>
-</div>
-
-<div v-click="3" class="p-6 bg-green-100 dark:bg-green-900 rounded-lg">
-<div class="text-2xl mb-2">🎯</div>
-<div class="font-bold">Edge Cases</div>
-<div class="text-sm mt-2">"Handle null values, empty arrays, and timezone conversions"</div>
-</div>
-
-</div>
-
-<v-click at="4">
-
-**Live Example: API Evolution Handling**
-
-```typescript
-// AI notices API changes and adapts automatically
-if (version >= "2024-01-01") {
-  // Use new field structure
-  userId = webhook.data.customer.id;
-} else {
-  // Fall back to legacy structure
-  userId = webhook.customer_id;
-}
-```
-
-</v-click>
-
----
-
 # The Grand Unification
 
 <div class="text-center mb-8">
@@ -226,36 +174,39 @@ if (version >= "2024-01-01") {
 </div>
 
 <script setup>
-const pipelineDiagram = `api_docs: {
+const pipelineDiagram = `
+vars: {
+  d2-config: {
+    layout-engine: elk
+  }
+}
+direction: right
+
+api_docs: {
   label: API Docs + OpenAPI Spec
   shape: document
   style: { fill: '#3B82F6' }
 }
-
 ai: {
   label: AI Model Schema Whisperer
   shape: hexagon
   style: { fill: '#8B5CF6' }
 }
-
 adapter: {
   label: Generated Adapter Code
   shape: rectangle
   style: { fill: '#10B981' }
 }
-
 worker: {
   label: Worker Translator
   shape: rectangle
   style: { fill: '#F59E0B' }
 }
-
 workflow: {
   label: Workflow Orchestrator
   shape: rectangle
   style: { fill: '#EF4444' }
 }
-
 customer: {
   label: Customer App Happy and Unified
   shape: oval
@@ -280,7 +231,7 @@ notification -> customer`
 
 <D2Diagram
   :code="pipelineDiagram"
-  max-height="400px"
+  :scale="0.5"
   class="mx-auto"
 />
 

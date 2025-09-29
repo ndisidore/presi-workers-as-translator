@@ -1,6 +1,6 @@
 ---
 layout: center
-class: text-center
+class: text-center bg-gradient-to-br from-amber-600 to-fuchsia-400
 ---
 
 # Act II
@@ -13,32 +13,39 @@ _Single Worker Solutions_
 
 # The "Rosetta Stone" Approach
 
-<div class="text-lg mb-8">**Story: The day Slack, Stripe, and SendGrid walked into a bar (your application)**</div>
+<style scoped>
+.rosetta-code code {
+  font-size: 0.58rem !important;
+}
+</style>
 
-<div class="grid grid-cols-3 gap-4 mb-8">
+<div class="text-lg mb-8 font-bold">The day Slack, Teams, and SendGrid walked into <s>a bar</s> your application</div>
+
+<div class="grid grid-cols-3 gap-4 mb-8 rosetta-code">
 
 <div v-click="1" class="p-4 bg-purple-100 dark:bg-purple-900 rounded-lg">
 <div class="font-bold">Slack Webhook</div>
-<div class="text-sm mt-2 font-mono">
+<div class="mt-2 font-mono">
 ```json
 {
   "channel": "alerts",
-  "text": "Payment failed",
-  "user": "john@example.com"
+  "text": "Billing threshold exceeded",
+  "user": "admin@example.com"
 }
 ```
 </div>
 </div>
 
 <div v-click="2" class="p-4 bg-blue-100 dark:bg-blue-900 rounded-lg">
-<div class="font-bold">Stripe Webhook</div>
-<div class="text-sm mt-2 font-mono">
+<div class="font-bold">Teams Webhook</div>
+<div class="mt-2 font-mono">
 ```json
 {
-  "type": "payment.failed",
-  "data": {
-    "customer": "cus_123",
-    "amount": 5000
+  "type": "message",
+  "text": "Billing threshold exceeded",
+  "recipient": {
+    "id": "admin_456",
+    "email": "admin@example.com"
   }
 }
 ```
@@ -47,12 +54,12 @@ _Single Worker Solutions_
 
 <div v-click="3" class="p-4 bg-green-100 dark:bg-green-900 rounded-lg">
 <div class="font-bold">SendGrid Webhook</div>
-<div class="text-sm mt-2 font-mono">
+<div class="mt-2 font-mono">
 ```json
 {
-  "event": "bounce",
-  "email": "user@domain.com",
-  "reason": "Invalid"
+  "event": "sent",
+  "email": "admin@example.com",
+  "subject": "Billing threshold exceeded"
 }
 ```
 </div>
@@ -70,7 +77,7 @@ _Single Worker Solutions_
 
 # The Magic Moment: Universal Webhook Translator
 
-```typescript {1-5|7-17|18-26|all}{maxHeight:'420px'}
+```typescript {1-5|7-17|18-26|all}{maxHeight:'400px'}
 // One Worker to translate them all
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
@@ -88,15 +95,16 @@ export default {
           channel: body.channel,
         };
         break;
-      case "stripe":
+      case "teams":
         normalized = {
-          type: "payment_event",
-          event: body.type,
-          customer: body.data.customer,
-          amount: body.data.amount,
+          type: "notification",
+          recipient: body.recipient.email,
+          message: body.text,
+          channel: "teams",
+          userId: body.recipient.id,
         };
         break;
-      // ... handle SendGrid, GitHub, etc.
+      // ... handle SendGrid, etc.
     }
 
     // Send to your application in consistent format
@@ -163,8 +171,8 @@ webhook1: {
   style: { fill: '#4A154B' }
 }
 webhook2: {
-  label: Stripe Webhook
-  style: { fill: '#635BFF' }
+  label: Teams Webhook
+  style: { fill: '#5B5FC7' }
 }
 webhook3: {
   label: SendGrid Webhook
@@ -179,10 +187,10 @@ app: {
   style: { fill: '#10B981' }
 }
 
-webhook1 -> translator: Different Schemas
-webhook2 -> translator
-webhook3 -> translator
-translator -> app: One Unified Schema`
+app -> translator: One Unified Schema
+translator -> webhook1: Different Schemas
+translator -> webhook2: Different Schemas
+translator -> webhook3: Different Schemas`
 </script>
 
 <D2Diagram
@@ -209,17 +217,17 @@ This works great... until your startup becomes a scale-up
 <v-click>
 
 <div class="grid grid-cols-3 gap-4 text-center">
-<div class="p-6 bg-red-100 dark:bg-red-900 rounded-lg">
+<div class="p-6 bg-sky-100 dark:bg-sky-800 rounded-lg">
 <div class="text-4xl mb-2">3</div>
 <div class="text-sm">APIs at startup</div>
 </div>
 
-<div class="p-6 bg-yellow-100 dark:bg-yellow-900 rounded-lg">
+<div class="p-6 bg-yellow-100 dark:bg-yellow-700 rounded-lg">
 <div class="text-4xl mb-2">30</div>
 <div class="text-sm">APIs at growth</div>
 </div>
 
-<div class="p-6 bg-orange-100 dark:bg-orange-900 rounded-lg">
+<div class="p-6 bg-orange-100 dark:bg-orange-700 rounded-lg">
 <div class="text-4xl mb-2">300</div>
 <div class="text-sm">APIs at scale</div>
 </div>

@@ -1,6 +1,6 @@
 ---
 layout: center
-class: text-center
+class: text-center bg-gradient-to-br from-amber-600 to-fuchsia-400
 ---
 
 # Act I
@@ -15,7 +15,7 @@ _The story of in-application adapter patterns_
 
 <div class="text-lg mb-8">**Story: Cloudflare's Alert Notification Service**</div>
 
-```go {1-3|5-8|all}
+```go {all|1-3|5-8|all}
 type NotificationDeliverer interface {
     Send(ctx context.Context, recipient string, body string, metadata map[string]string) error
 }
@@ -81,14 +81,17 @@ pagerduty_queue: {
   shape: queue
 }
 slack_consumer: {
+  style.multiple: true
   label: 'Slack Consumer'
   shape: rectangle
 }
 sendgrid_consumer: {
+  style.multiple: true
   label: 'SendGrid Consumer'
   shape: rectangle
 }
 pagerduty_consumer: {
+  style.multiple: true
   label: 'PagerDuty Consumer'
   shape: rectangle
 }
@@ -104,7 +107,6 @@ pagerduty_queue -> pagerduty_consumer`
 
 <D2Diagram
   :code="queueDiagram"
-  max-height="400px"
   class="mx-auto"
   :scale="0.6"
 />
@@ -115,7 +117,7 @@ pagerduty_queue -> pagerduty_consumer`
 
 <div class="grid grid-cols-2 gap-8 mt-8">
 
-<div>
+<div class="p-6 bg-slate-100 dark:bg-slate-800 rounded-lg">
 
 ## ✅ **Benefits**
 
@@ -125,7 +127,7 @@ pagerduty_queue -> pagerduty_consumer`
 
 </div>
 
-<div>
+<div class="p-6 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
 
 ## ⛔ **Limitations**
 
@@ -139,7 +141,7 @@ pagerduty_queue -> pagerduty_consumer`
 
 <v-click>
 
-<div class="mt-12 p-6 bg-orange-100 dark:bg-orange-900 rounded-lg">
+<div class="text-center mt-8">
 <div class="text-lg font-semibold mb-2">💡 The Realization</div>
 "We built a Ferrari to deliver pizza. There has to be a better way."
 </div>

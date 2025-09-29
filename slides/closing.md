@@ -85,7 +85,7 @@ It's not about the three lines. It's about the infrastructure that makes those t
 
 ## **Developer Productivity** 🚀
 
-<div class="space-y-4 mt-6">
+<div class="space-y-4 mt-6 mb-6">
 
 <div v-click="1" class="flex items-center space-x-3">
 <div class="text-green-600 font-bold">Weeks → Minutes</div>
@@ -134,6 +134,7 @@ It's not about the three lines. It's about the infrastructure that makes those t
 <div>🚀 Ship features customers love</div>
 <div>🧠 Solve real business problems</div>
 <div>💡 Focus on innovation, not plumbing</div>
+<div>🤝 Investment in ecosystem, not tech</div>
 </div>
 
 </div>
@@ -185,7 +186,7 @@ The Babel fix: Unifying APIs with Cloudflare Workers and AI
 
 ### **References**
 
-- [Postman: State of APIs 2024](https://www.postman.com/state-of-api/2024/api-production)
+- [Postman: State of APIs 2024](https://www.postman.com/state-of-api/2024/)
 - [Learning from Integration Failures](https://www.1985.co.in/blog/learning-from-integration-failures/)
 
 </div>

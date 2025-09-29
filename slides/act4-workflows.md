@@ -1,6 +1,6 @@
 ---
 layout: center
-class: text-center
+class: text-center bg-gradient-to-br from-amber-600 to-fuchsia-400
 ---
 
 # Act IV
@@ -13,9 +13,9 @@ _Cloudflare Workflows - The Durable Execution Engine_
 
 # The "Time Heals All Wounds" Philosophy
 
-<div class="mb-8 flex justify-center">
+<div class="mb-4 flex justify-center">
 
-```mermaid {theme: 'dark', scale: 0.35}
+```mermaid {theme: 'dark', scale: 0.4}
 timeline
     title Integration Retry Journey
 
@@ -50,7 +50,7 @@ timeline
 
 </v-click>
 
-<div class="grid grid-cols-3 gap-6 mt-6">
+<div class="grid grid-cols-3 gap-6 mt-4">
 
 <div v-click="2" class="p-4 bg-red-100 dark:bg-red-900 rounded-lg">
 <div class="text-xl mb-2">💾</div>
@@ -215,98 +215,8 @@ step2 -> success: ✅`
 
 <D2Diagram
   :code="workflowDiagram"
-  max-height="400px"
   class="mx-auto"
-  :scale="0.4"
-/>
-
----
-layout: two-cols
----
-
-# The Choreography
-
-<div class="mb-6">**Complex workflow: Order → Payment → Inventory → Shipping → Notification**</div>
-
-::right::
-
-<script setup>
-const choreographyDiagram = `
-vars: {
-  d2-config: {
-    layout-engine: elk
-  }
-}
-
-order: {
-  label: Order Received
-  shape: oval
-  style: { fill: '#3B82F6' }
-}
-
-payment: {
-  label: Process Payment
-  shape: rectangle
-}
-
-inventory: {
-  label: Check Inventory
-  shape: rectangle
-}
-
-shipping: {
-  label: Create Shipping
-  shape: rectangle
-}
-
-notification: {
-  label: Send Notification
-  shape: rectangle
-}
-
-complete: {
-  label: Order Complete
-  shape: oval
-  style: { fill: '#10B981' }
-}
-
-payment_fail: {
-  label: Payment Failed
-  shape: diamond
-  style: { fill: '#EF4444' }
-}
-
-inventory_fail: {
-  label: Out of Stock
-  shape: diamond
-  style: { fill: '#EF4444' }
-}
-
-shipping_fail: {
-  label: Shipping Error
-  shape: diamond
-  style: { fill: '#EF4444' }
-}
-
-order -> payment
-payment -> payment_fail: ⛔
-payment -> inventory: ✅
-inventory -> inventory_fail: ⛔
-inventory -> shipping: ✅
-shipping -> shipping_fail: ⛔
-shipping -> notification: ✅
-notification -> complete
-
-payment_fail -> payment: Retry in 30s
-inventory_fail -> inventory: Retry in 5m
-shipping_fail -> shipping: Retry in 1h`
-</script>
-
-<D2Diagram
-  :code="choreographyDiagram"
-  max-height="450px"
-  class="mx-auto"
-  :scale="0.35"
+  :scale="0.45"
 />
 
 ---
@@ -322,8 +232,6 @@ Each step can fail and recover independently, with different retry strategies
 
 ---
 
-# Setting Up the AI Reveal
-
 <div class="text-center mb-12">
 
 <div v-click="1" class="text-xl mb-6">
@@ -338,19 +246,19 @@ How do we write all these adapters in the first place? 🤔
 
 <div class="grid grid-cols-3 gap-6 mb-8">
 
-<div v-click="3" class="p-6 bg-red-100 dark:bg-red-900 rounded-lg text-center">
+<div v-click="3" class="p-6 bg-red-100 dark:bg-violet-400 rounded-lg text-center">
 <div class="text-2xl mb-2">📖</div>
 <div class="font-bold">Read the docs</div>
 <div class="text-sm">For 300 different APIs</div>
 </div>
 
-<div v-click="4" class="p-6 bg-yellow-100 dark:bg-yellow-900 rounded-lg text-center">
+<div v-click="4" class="p-6 bg-yellow-100 dark:bg-emerald-400 rounded-lg text-center">
 <div class="text-2xl mb-2">🔍</div>
 <div class="font-bold">Understand schemas</div>
 <div class="text-sm">Map fields manually</div>
 </div>
 
-<div v-click="5" class="p-6 bg-orange-100 dark:bg-orange-900 rounded-lg text-center">
+<div v-click="5" class="p-6 bg-orange-100 dark:bg-rose-400 rounded-lg text-center">
 <div class="text-2xl mb-2">🐛</div>
 <div class="font-bold">Debug edge cases</div>
 <div class="text-sm">Handle undocumented quirks</div>

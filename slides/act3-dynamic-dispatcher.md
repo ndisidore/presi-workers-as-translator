@@ -1,6 +1,6 @@
 ---
 layout: center
-class: text-center
+class: text-center bg-gradient-to-br from-amber-600 to-fuchsia-400
 ---
 
 # Act III
@@ -86,7 +86,7 @@ switch (customerId) {
 }
 ```
 
-<div class="mt-4 text-red-600 font-bold">This doesn't scale!</div>
+<div class="text-center mt-6 text-red-600 font-bold">This doesn't scale!</div>
 
 </div>
 
@@ -99,9 +99,8 @@ switch (customerId) {
 <div class="mb-6">**Dynamic Worker dispatch based on customer configuration**</div>
 
 ````md magic-move {lines: true}
-```typescript {*|1-14|16-25|all}
-// Customer uploads their own adapter code
-const customerAdapter = `
+```javascript
+// Customer writes their adapter code
 export default {
   async fetch(request, env) {
     const webhook = await request.json();
@@ -113,27 +112,29 @@ export default {
       created_by: webhook.slack_user
     };
   }
-}`;
-
-// Platform dynamically deploys it via API
-await fetch(`https://api.cloudflare.com/client/v4/accounts/${env.ACCOUNT_ID}/workers/dispatch/namespaces/${env.DISPATCH_NAMESPACE}/scripts/${customerId}`, {
-  method: "PUT",
-  headers: {
-    "Authorization": `Bearer ${env.CF_API_TOKEN}`,
-    "Content-Type": "application/javascript"
-  },
-  body: customerAdapter
-});
+}
 ```
 
-```typescript {*|3-4|5-11|all}
+```bash
+# Platform deploys it to customer's namespace via Cloudflare API
+curl -X PUT \
+  "https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/\
+    workers/dispatch/namespaces/${DISPATCH_NAMESPACE}/scripts/${customerId}-${scriptId}" \
+  -H "Authorization: Bearer ${CF_API_TOKEN}" \
+  -H "Content-Type: application/javascript" \
+  --data-binary @customer-adapter.js
+```
+
+```typescript {*|4-6|7-13|all}
 // Main dispatcher routes to customer Workers
 export default {
   async fetch(request, env) {
     const customerId = request.headers.get("x-customer-id");
+    const scriptId = request.headers.get("x-script-id");
+    // or use KV + routing key from reference architecture
 
     // Dispatch to customer's personal Worker
-    const customerWorker = env.DISPATCHER.get(customerId);
+    const customerWorker = env.DISPATCHER.get(`${customerId}-${scriptId}`);
     return customerWorker.fetch(request, {
       ...env,
       ...customerBindings[customerId],
@@ -142,7 +143,7 @@ export default {
 };
 ```
 
-```typescript {*|1-9|10-18|all}
+```typescript {*|3-9|10-16|all}
 // Each customer gets their own isolated environment
 const customerWorkers = new Map([
   [
@@ -160,11 +161,6 @@ const customerWorkers = new Map([
     },
   ],
 ]);
-
-// Platform scales automatically
-// Each customer's code runs in isolation
-// Global deployment, zero cold starts
-// Customer writes adapter once, it scales globally
 ```
 ````
 
@@ -176,7 +172,7 @@ const customerWorkers = new Map([
 
 <div v-click="1" class="text-3xl mb-8">Customer writes adapter once, it scales globally 🌍</div>
 
-<div v-click="2" class="grid grid-cols-3 gap-6 mb-8">
+<div v-click="2" class="grid grid-cols-2 gap-6 mb-8">
 
 <div class="p-6 bg-green-100 dark:bg-green-900 rounded-lg">
 <div class="text-2xl mb-2">📝</div>
@@ -194,6 +190,12 @@ const customerWorkers = new Map([
 <div class="text-2xl mb-2">⚡</div>
 <div class="font-bold">Scale Infinitely</div>
 <div class="text-sm">Zero configuration needed</div>
+</div>
+
+<div class="p-6 bg-amber-100 dark:bg-amber-700 rounded-lg">
+<div class="text-2xl mb-2">🔒</div>
+<div class="font-bold">Run Isolated</div>
+<div class="text-sm">Each adapter in its own sandbox</div>
 </div>
 
 </div>
@@ -246,27 +248,32 @@ We just gave customers superpowers! 🦸‍♀️🦸‍♂️
 
 <div v-click="4">
 
-## **Customer Platform Interface**
+## **The Developer Experience**
 
 <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg mt-4">
 
 ```typescript
-// Customer's simple config UI
-{
-  "name": "Slack to Notion",
-  "trigger": "slack_webhook",
-  "target": "notion_api",
-  "mapping": {
-    "slack.message": "notion.title",
-    "slack.user": "notion.created_by",
-    "slack.channel": "notion.workspace"
-  },
-  "retry_policy": {
-    "max": 3,
-    "backoff":
-    "exponential"
+// Customer writes real code, not config
+export default {
+  async fetch(request, env) {
+    const webhook = await request.json();
+
+    // Custom business logic
+    if (webhook.slack_channel === 'critical-alerts') {
+      await notifyPagerDuty(webhook, env.PAGER_DUTY_KEY);
+    }
+
+    // Transform with company-specific rules
+    return {
+      notion_title: `[${webhook.slack_channel}] ${webhook.text}`,
+      created_by: webhook.user,
+      priority: calculatePriority(webhook),
+      tags: await enrichWithCRM(webhook.user, env.CRM_API)
+    };
   }
 }
+
+// Deploy: wrangler deploy → Platform scales globally
 ```
 
 </div>
@@ -289,17 +296,17 @@ But what about when things go wrong?
 
 <div class="grid grid-cols-3 gap-4 text-center">
 
-<div v-click="2" class="p-6 bg-red-100 dark:bg-red-900 rounded-lg">
+<div v-click="2" class="p-6 bg-purple-100 dark:bg-purple-400 rounded-lg">
 <div class="text-3xl mb-2">🔴</div>
 <div class="font-bold">Salesforce is down</div>
 </div>
 
-<div v-click="3" class="p-6 bg-yellow-100 dark:bg-yellow-600 rounded-lg">
+<div v-click="3" class="p-6 bg-yellow-100 dark:bg-amber-400 rounded-lg">
 <div class="text-3xl mb-2">⚠️</div>
 <div class="font-bold">Slack is rate-limiting</div>
 </div>
 
-<div v-click="4" class="p-6 bg-rose-100 dark:bg-rose-700 rounded-lg">
+<div v-click="4" class="p-6 bg-rose-100 dark:bg-rose-500 rounded-lg">
 <div class="text-3xl mb-2">💥</div>
 <div class="font-bold">The internet has a bad day</div>
 </div>
@@ -309,7 +316,7 @@ But what about when things go wrong?
 <v-click at="5">
 
 <div class="mt-8 text-center text-xl">
-Transition: <span class="font-bold">"What do you do when your integration needs to retry for 6 hours to finally succeed?"</span>
+<span class="font-bold">"What do you do when your integration needs to retry for 6 hours to finally succeed?"</span>
 </div>
 
 </v-click>

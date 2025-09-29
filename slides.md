@@ -13,6 +13,8 @@ info: |
 drawings:
   persist: false
 transition: slide-left
+fonts:
+  mono: Fira Code
 title: The Babel Fix - Unifying APIs with Cloudflare Workers and AI
 mdc: true
 # Enable D2 addon
@@ -53,6 +55,10 @@ src: ./slides/act4-workflows.md
 
 ---
 src: ./slides/act5-ai-translation.md
+---
+
+---
+src: ./slides/act6-icing-on-cake.md
 ---
 
 ---
