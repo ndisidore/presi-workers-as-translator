@@ -78,10 +78,14 @@ export default compose(
 ```typescript
 // Popular marketplace templates
 const trending = [
-  '@marketplace/webhook-to-database',    // Write to Database
-  '@marketplace/chat-to-ticketing',      // Slack/Teams → Jira
-  '@marketplace/payment-notifications',  // Stripe → everywhere
-  '@marketplace/ci-cd-alerts'           // GitHub → Slack/Teams
+  // Write to Database
+  '@marketplace/webhook-to-database',
+  // Slack/Teams → Jira
+  '@marketplace/chat-to-ticketing',
+  // Stripe → everywhere
+  '@marketplace/payment-notifications',
+  // GitHub → Slack/Teams
+  '@marketplace/ci-cd-alerts'
 ];
 
 // One-click deploy + customize
@@ -106,7 +110,7 @@ Community code + custom business logic = ❤️
 
 ---
 
-# Persistent State with D1
+# Persistent State with D1 - TODO: Level Up - Sharing state (workflows and/or D1)
 
 <div class="mb-6">**Store response data, re-use in subsequent runs**</div>
 

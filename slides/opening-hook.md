@@ -51,7 +51,12 @@ layoutClass: gap-16
 
   <div v-click="3" class="flex items-center space-x-4">
     <div class="text-4xl">3 AM</div>
-    <div class="text-sm opacity-75">When your integrations fail</div>
+    <div class="text-sm opacity-75">The wakeup call no one wants</div>
+  </div>
+
+  <div v-click="4" class="flex items-center space-x-4">
+    <div class="text-4xl">Week(s)</div>
+    <div class="text-sm opacity-75">Effort to support new payloads</div>
   </div>
 </div>
 

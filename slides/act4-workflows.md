@@ -15,7 +15,7 @@ _Cloudflare Workflows - The Durable Execution Engine_
 
 <div class="mb-4 flex justify-center">
 
-```mermaid {theme: 'dark', scale: 0.4}
+```mermaid {theme: 'dark', scale: 0.5}
 timeline
     title Integration Retry Journey
 
@@ -50,23 +50,20 @@ timeline
 
 </v-click>
 
-<div class="grid grid-cols-3 gap-6 mt-4">
+<div class="grid grid-cols-3 gap-4 mt-2">
 
-<div v-click="2" class="p-4 bg-red-100 dark:bg-red-900 rounded-lg">
-<div class="text-xl mb-2">💾</div>
-<div class="font-bold">Memory Loss</div>
+<div v-click="2" class="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg">
+<div class="font-bold">💾 Memory Loss</div>
 <div class="text-sm">Process restarts lose state</div>
 </div>
 
-<div v-click="3" class="p-4 bg-yellow-100 dark:bg-yellow-900 rounded-lg">
-<div class="text-xl mb-2">💸</div>
-<div class="font-bold">Resource Waste</div>
+<div v-click="3" class="p-4 bg-amber-100 dark:bg-amber-600 rounded-lg">
+<div class="font-bold">💸 Resource Waste</div>
 <div class="text-sm">Idle processes cost money</div>
 </div>
 
-<div v-click="4" class="p-4 bg-orange-100 dark:bg-orange-900 rounded-lg">
-<div class="text-xl mb-2">🔥</div>
-<div class="font-bold">Complexity</div>
+<div v-click="4" class="p-4 bg-indigo-100 dark:bg-indigo-600 rounded-lg">
+<div class="font-bold">🔥 Complexity</div>
 <div class="text-sm">Dead letter queues, monitoring, recovery</div>
 </div>
 

@@ -7,39 +7,47 @@ class: text-center bg-gradient-to-br from-amber-600 to-fuchsia-400
 
 ## The Dynamic Dispatcher
 
-_Workers for Platforms - The Game Changer_
+_BYO Adapters via Workers for Platforms_
 
 ---
 
-# The Netflix Problem
+# The Shopify Moment
 
-<div class="text-lg mb-8">**Story: How Netflix doesn't just have one recommendation engine - they have thousands**</div>
+<div class="text-lg mb-8">What if customers could upload their own integrations?</div>
 
 <div class="grid grid-cols-3 gap-6 mb-8">
 
-<div v-click="1" class="p-4 bg-red-100 dark:bg-red-900 rounded-lg text-center">
-<div class="text-2xl mb-2">🎬</div>
-<div class="font-bold">Movie Buffs</div>
-<div class="text-sm">Algorithm optimized for film critics</div>
+<div v-click="1" class="p-4 bg-green-100 dark:bg-green-900 rounded-lg text-center">
+<div class="text-2xl mb-2">🏪</div>
+<div class="font-bold">Shopify</div>
+<div class="text-sm">Platform provides the infrastructure</div>
 </div>
 
-<div v-click="2" class="p-4 bg-blue-100 dark:bg-blue-900 rounded-lg text-center">
-<div class="text-2xl mb-2">👨‍👩‍👧‍👦</div>
-<div class="font-bold">Families</div>
-<div class="text-sm">Kid-safe content prioritized</div>
+<div v-click="2" class="p-4 bg-blue-100 dark:bg-sky-700 rounded-lg text-center">
+<div class="text-2xl mb-2">🔌</div>
+<div class="font-bold">Developers</div>
+<div class="text-sm">Build apps for specific use cases</div>
 </div>
 
-<div v-click="3" class="p-4 bg-purple-100 dark:bg-purple-900 rounded-lg text-center">
-<div class="text-2xl mb-2">📺</div>
-<div class="font-bold">Binge Watchers</div>
-<div class="text-sm">Series completion focused</div>
+<div v-click="3" class="p-4 bg-purple-100 dark:bg-fuchsia-700 rounded-lg text-center">
+<div class="text-2xl mb-2">🛒</div>
+<div class="font-bold">Merchants</div>
+<div class="text-sm">Install apps that fit their business</div>
 </div>
 
 </div>
 
 <v-click at="4">
 
-**Applied to APIs: Different customers need different integrations**
+<div class="font-bold">Each merchant gets their own isolated instance of every app they install</div>
+
+</v-click>
+
+<v-click at="5">
+
+<div class="mt-6 text-center text-xl font-bold text-green-600 dark:text-green-400">
+What if your API platform worked the same way?
+</div>
 
 </v-click>
 
@@ -47,7 +55,7 @@ _Workers for Platforms - The Game Changer_
 
 # The Multi-Tenant Problem
 
-<div class="mb-8">**Each customer needs their own adapter configuration**</div>
+<div class="mb-8 font-bold">Each customer needs their own adapter configuration</div>
 
 <div class="grid grid-cols-2 gap-8">
 
@@ -96,7 +104,7 @@ switch (customerId) {
 
 # Workers for Platforms - The Game Changer
 
-<div class="mb-6">**Dynamic Worker dispatch based on customer configuration**</div>
+<div class="mb-6 font-bold">Customer empowered ETL with BYO functions</div>
 
 ````md magic-move {lines: true}
 ```javascript

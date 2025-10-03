@@ -174,8 +174,6 @@ class: text-center
 
 # Thank You
 
-<div class="text-xl mb-8">**Questions?**</div>
-
 <div class="text-lg opacity-75 mb-8">
 The Babel fix: Unifying APIs with Cloudflare Workers and AI
 </div>
@@ -204,7 +202,7 @@ The Babel fix: Unifying APIs with Cloudflare Workers and AI
 </div>
 
 <div class="mt-8 text-sm opacity-50">
-*Slides built with Slidev, deployed on Cloudflare Workers (naturally)*
+Slides built with Slidev, deployed on Cloudflare Workers (naturally)
 </div>
 
 <!--

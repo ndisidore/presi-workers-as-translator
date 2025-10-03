@@ -121,7 +121,7 @@ export function stripeToInternal(stripeWebhook: any) {
 
 <div class="grid grid-cols-2 gap-8">
 
-<div class="p-6 bg-red-100 dark:bg-red-900 rounded-lg">
+<div class="p-6 bg-red-100 dark:bg-red-700 rounded-lg">
 
 ### **Manual Mapping** 😤
 
@@ -137,7 +137,7 @@ export function stripeToInternal(stripeWebhook: any) {
 
 </div>
 
-<div class="p-6 bg-green-100 dark:bg-green-900 rounded-lg">
+<div class="p-6 bg-green-100 dark:bg-teal-700 rounded-lg">
 
 ### **AI Generation** ✨
 

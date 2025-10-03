@@ -7,13 +7,13 @@ class: text-center bg-gradient-to-br from-amber-600 to-fuchsia-400
 
 ## Adapt(er) and Overcome
 
-_The story of in-application adapter patterns_
+_Local in-application adapter patterns_
 
 ---
 
 # The Classic Approach: In-Application Adapters
 
-<div class="text-lg mb-8">**Story: Cloudflare's Alert Notification Service**</div>
+<div class="text-lg mb-8 font-bold">Cloudflare's Alert Notification Service</div>
 
 ```go {all|1-3|5-8|all}
 type NotificationDeliverer interface {
@@ -52,11 +52,11 @@ Start with the familiar - this is what most developers do first
 
 # Phase 2: Kafka and Queues, Oh My!
 
-<div class="mb-8">**Fan out and improve durability via discrete consumers**</div>
+<div class="mb-8 font-bold">Fan out and improve durability via discrete consumers</div>
 
 <script setup>
 const queueDiagram = `
-webhook: {
+dispatch: {
   shape: hexagon
   style: {
     fill: '#4A90E2'
@@ -80,6 +80,11 @@ pagerduty_queue: {
   label: 'PagerDuty Queue'
   shape: queue
 }
+deliverer_x_queues: {
+  style.multiple: true
+  label: 'Deliverer X Queue'
+  shape: queue
+}
 slack_consumer: {
   style.multiple: true
   label: 'Slack Consumer'
@@ -95,14 +100,22 @@ pagerduty_consumer: {
   label: 'PagerDuty Consumer'
   shape: rectangle
 }
+deliverer_x_consumers: {
+  style.multiple: true
+  label: 'Deliverer X Consumer'
+  shape: rectangle
+}
 
-webhook -> router
+dispatch -> router
 router -> slack_queue
 router -> sendgrid_queue
 router -> pagerduty_queue
+router -> deliverer_x_queues
 slack_queue -> slack_consumer
 sendgrid_queue -> sendgrid_consumer
-pagerduty_queue -> pagerduty_consumer`
+pagerduty_queue -> pagerduty_consumer
+deliverer_x_queues -> deliverer_x_consumers
+`
 </script>
 
 <D2Diagram
@@ -133,7 +146,7 @@ pagerduty_queue -> pagerduty_consumer`
 
 - **Heavy**: Kafka clusters, consumer groups, monitoring
 - **Complex**: Network partitions, rebalancing, offset management
-- **Deploy Story**: Full infrastructure deployment for config changes
+- **Deployment**: Any changes = re-rollout
 
 </div>
 
@@ -143,7 +156,7 @@ pagerduty_queue -> pagerduty_consumer`
 
 <div class="text-center mt-8">
 <div class="text-lg font-semibold mb-2">💡 The Realization</div>
-"We built a Ferrari to deliver pizza. There has to be a better way."
+"We built a Ferrari to deliver pizza."
 </div>
 
 </v-click>
