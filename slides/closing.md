@@ -45,7 +45,7 @@ class: text-center
 <div class="text-sm">Rejected malformed payloads at the edge before they touched core systems</div>
 </div>
 
-<div v-click="6" class="p-4 bg-purple-100 dark:bg-purple-900 rounded-lg">
+<div v-click="6" class="p-4 bg-purple-100 dark:bg-violet-500 rounded-lg">
 <div class="text-lg font-bold mb-2">🔄 Workflow Recovery</div>
 <div class="text-sm">Retried and reconciled state safely — no all-hands at 3AM</div>
 </div>
@@ -95,7 +95,7 @@ class: text-center
 <div class="text-sm">Smooth backoff and durable queues for heavy spikes</div>
 </div>
 
-<div v-click="6" class="p-4 bg-purple-100 dark:bg-purple-900 rounded-lg">
+<div v-click="6" class="p-4 bg-purple-100 dark:bg-violet-500 rounded-lg">
 <div class="text-lg font-bold mb-2">🤖 AI Awareness</div>
 <div class="text-sm">Auto-generated fallback paths and user messaging to keep customers informed</div>
 </div>
@@ -152,9 +152,9 @@ When APIs stop being obstacles and start being allies, everything changes:
 <div class="text-xl font-bold mb-4">💰 Business Impact</div>
 
 <div class="space-y-3 text-sm">
-  <div><span class="font-bold text-blue-600">99.9% → 99.99%</span> uptime across integrations</div>
-  <div><span class="font-bold text-blue-600">Fewer escalations, faster recovery</span></div>
-  <div><span class="font-bold text-blue-600">Technical debt → Technical leverage</span></div>
+  <div><span class="font-bold text-blue-300">99.9% → 99.99%</span> uptime across integrations</div>
+  <div><span class="font-bold text-blue-300">Fewer escalations, faster recovery</span></div>
+  <div><span class="font-bold text-blue-300">Technical debt → Technical leverage</span></div>
 </div>
 </div>
 

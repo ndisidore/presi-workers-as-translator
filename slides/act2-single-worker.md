@@ -15,7 +15,7 @@ _Single Worker Solutions_
 
 <style scoped>
 .rosetta-code code {
-  font-size: 0.58rem !important;
+  font-size: 0.55rem !important;
 }
 </style>
 
@@ -23,7 +23,7 @@ _Single Worker Solutions_
 
 <div class="grid grid-cols-3 gap-4 mb-8 rosetta-code">
 
-<div v-click="1" class="p-4 bg-purple-100 dark:bg-purple-900 rounded-lg">
+<div v-click="1" class="p-4 bg-purple-100 dark:bg-violet-500 rounded-lg">
 <div class="font-bold">Slack Webhook</div>
 <div class="mt-2 font-mono">
 ```json

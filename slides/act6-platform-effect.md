@@ -5,9 +5,81 @@ class: text-center bg-gradient-to-br from-amber-600 to-fuchsia-400
 
 # Act VI
 
-## Icing on the Cake
+## The Platform Effect
 
-_Future Possibilities_
+_Building the Ecosystem_
+
+---
+
+# The Grand Unification
+
+<div class="text-center mb-8">
+
+<div class="text-2xl mb-6">**Putting it all together: The complete integration pipeline**</div>
+
+</div>
+
+<script setup>
+const pipelineDiagram = `
+vars: {
+  d2-config: {
+    layout-engine: elk
+  }
+}
+direction: right
+
+api_docs: {
+  label: API Docs + OpenAPI Spec
+  shape: document
+  style: { fill: '#3B82F6' }
+}
+ai: {
+  label: AI Model Schema Whisperer
+  shape: hexagon
+  style: { fill: '#8B5CF6' }
+}
+adapter: {
+  label: Generated Adapter Code
+  shape: rectangle
+  style: { fill: '#10B981' }
+}
+worker: {
+  label: Worker Translator
+  shape: rectangle
+  style: { fill: '#F59E0B' }
+}
+workflow: {
+  label: Workflow Orchestrator
+  shape: rectangle
+  style: { fill: '#EF4444' }
+}
+customer: {
+  label: Customer App Happy and Unified
+  shape: oval
+  style: { fill: '#06B6D4' }
+}
+
+api_docs -> ai: Feed specs
+ai -> adapter: Generate code in 30s
+adapter -> worker: Deploy globally
+worker -> workflow: Multi-step process
+workflow -> customer: Unified schema
+
+notification: {
+  label: Real-time Updates
+  shape: cloud
+  style: { fill: '#84CC16' }
+}
+
+workflow -> notification: Status updates
+notification -> customer`
+</script>
+
+<D2Diagram
+  :code="pipelineDiagram"
+  :scale="0.5"
+  class="mx-auto"
+/>
 
 ---
 
@@ -109,20 +181,17 @@ Community code + custom business logic = ❤️
 
 
 ---
+layout: two-cols-header
+layoutClass: gap-6
+---
 
-# Persistent State with D1 - TODO: Level Up - Sharing state (workflows and/or D1)
+# Level Up: Shared State Across Workflows
 
-<div class="mb-6">**Store response data, re-use in subsequent runs**</div>
-
-<div class="grid grid-cols-2 gap-8">
-
-<div>
-
-## **State Storage** 💾
+::left::
 
 ```sql
--- Store API responses for reuse
-CREATE TABLE api_responses (
+-- Store Integration responses for reuse
+CREATE TABLE integration_responses (
   id TEXT PRIMARY KEY,
   customer_id TEXT,
   source_api TEXT,
@@ -132,43 +201,34 @@ CREATE TABLE api_responses (
   expires_at TIMESTAMP
 );
 
--- Fetch cached user data in next run
+-- Fetch cached user data in next run/chain
 SELECT response_data
-FROM api_responses
+FROM integration_responses
 WHERE customer_id = ?
   AND source_api = 'slack'
   AND resource_id = 'user_12345'
   AND expires_at > datetime('now');
 ```
+<div class="text-center text-xs">
+  Code 1.1: Sample SQL to cache integration responses.
+</div>
+
+::right::
+
+### **Cross-Workflow Intelligence** 🚀
+
+<div class="mt-4 p-4 bg-gray-100 dark:bg-gray-800 rounded text-sm">
+
+- 👤 User Context (built by all workflows)
+- 📋 Business Rules (learned patterns)
+- 🔖 Integration Checkpoints (resume anywhere)
+- 🔗 Cross-Workflow Events (trigger chains)
 
 </div>
 
-<div v-click>
-
-## **Subsequent Run Benefits** 🔄
-
-<div class="space-y-4 mt-4">
-
-<div class="p-3 bg-blue-100 dark:bg-blue-900 rounded">
-**User Profiles**: Slack user → stored in D1 → skip fetch next time
-</div>
-
-<div class="p-3 bg-green-100 dark:bg-green-900 rounded">
-**Project Metadata**: GitHub repo info → cached → enriches future webhooks
-</div>
-
-<div class="p-3 bg-purple-100 dark:bg-purple-900 rounded">
-**Customer Data**: Stripe customer → persisted → available immediately
-</div>
-
-<div class="p-3 bg-amber-100 dark:bg-amber-700 rounded">
-**Smart Caching**: "Already fetched this user 2 minutes ago, skip API call"
-</div>
-
-</div>
-
-</div>
-
+<div v-click="5" class="mt-6 p-4 bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900 dark:to-blue-900 rounded-lg">
+<div class="font-bold">The Magic:</div>
+<div class="text-sm">Each workflow enriches the platform for all others. Your integration layer has institutional memory.</div>
 </div>
 
 ---
@@ -216,7 +276,7 @@ WHERE customer_id = ?
 <span class="font-bold">Level 2</span>: Add simple transforms (prefix, format, filter)
 </div>
 
-<div class="p-3 bg-purple-100 dark:bg-purple-900 rounded">
+<div class="p-3 bg-purple-100 dark:bg-violet-500 rounded">
 <span class="font-bold">Level 3</span>: Insert custom JavaScript snippets
 </div>
 

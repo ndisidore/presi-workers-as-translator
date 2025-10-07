@@ -58,7 +58,7 @@ src: ./slides/act5-ai-translation.md
 ---
 
 ---
-src: ./slides/act6-icing-on-cake.md
+src: ./slides/act6-platform-effect.md
 ---
 
 ---

@@ -223,7 +223,7 @@ class: text-center
 
 # This is like having a backup plan for your backup plan's backup plan
 
-<div v-click class="mt-8 text-xl opacity-75">
+<div class="mt-8 text-xl opacity-75">
 Each step can fail and recover independently, with different retry strategies
 </div>
 
@@ -231,11 +231,11 @@ Each step can fail and recover independently, with different retry strategies
 
 <div class="text-center mb-12">
 
-<div v-click="1" class="text-xl mb-6">
+<div class="text-xl mb-6">
 But there's still one problem...
 </div>
 
-<div v-click="2" class="text-2xl mb-8">
+<div class="text-2xl mb-8">
 How do we write all these adapters in the first place? 🤔
 </div>
 
@@ -243,19 +243,19 @@ How do we write all these adapters in the first place? 🤔
 
 <div class="grid grid-cols-3 gap-6 mb-8">
 
-<div v-click="3" class="p-6 bg-red-100 dark:bg-violet-400 rounded-lg text-center">
+<div v-click="1" class="p-6 bg-red-100 dark:bg-violet-500 rounded-lg text-center">
 <div class="text-2xl mb-2">📖</div>
 <div class="font-bold">Read the docs</div>
 <div class="text-sm">For 300 different APIs</div>
 </div>
 
-<div v-click="4" class="p-6 bg-yellow-100 dark:bg-emerald-400 rounded-lg text-center">
+<div v-click="2" class="p-6 bg-yellow-100 dark:bg-emerald-400 rounded-lg text-center">
 <div class="text-2xl mb-2">🔍</div>
 <div class="font-bold">Understand schemas</div>
 <div class="text-sm">Map fields manually</div>
 </div>
 
-<div v-click="5" class="p-6 bg-orange-100 dark:bg-rose-400 rounded-lg text-center">
+<div v-click="3" class="p-6 bg-orange-100 dark:bg-rose-400 rounded-lg text-center">
 <div class="text-2xl mb-2">🐛</div>
 <div class="font-bold">Debug edge cases</div>
 <div class="text-sm">Handle undocumented quirks</div>
@@ -263,7 +263,7 @@ How do we write all these adapters in the first place? 🤔
 
 </div>
 
-<v-click at="6">
+<v-click at="4">
 
 <div class="text-center text-2xl">
 What if the computer could read the documentation and write the code for us? 🤖

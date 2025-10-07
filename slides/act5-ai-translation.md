@@ -13,23 +13,23 @@ _AI-Powered Schema Translation_
 
 # The Universal Translator Dream
 
-<div class="mb-8">**Callback: Remember the confused tourist? What if they had a universal translator?**</div>
+<div class="mb-8 font-bold">Remember carrying 47 different power adapters in your backpack? What if one adapter could automatically reshape itself to fit any outlet?</div>
 
 <div class="grid grid-cols-3 gap-6 mb-8">
 
-<div v-click="1" class="p-4 bg-red-100 dark:bg-red-900 rounded-lg text-center">
+<div v-click="1" class="p-4 bg-red-100 dark:bg-rose-500 rounded-lg text-center">
 <div class="text-2xl mb-2">📚</div>
 <div class="font-bold">Challenge 1</div>
 <div class="text-sm">Every API has its own OpenAPI spec</div>
 </div>
 
-<div v-click="2" class="p-4 bg-yellow-100 dark:bg-yellow-900 rounded-lg text-center">
+<div v-click="2" class="p-4 bg-indigo-100 dark:bg-indigo-500 rounded-lg text-center">
 <div class="text-2xl mb-2">🎭</div>
 <div class="font-bold">Challenge 2</div>
 <div class="text-sm">APIs have quirks and behaviors</div>
 </div>
 
-<div v-click="3" class="p-4 bg-orange-100 dark:bg-orange-900 rounded-lg text-center">
+<div v-click="3" class="p-4 bg-violet-100 dark:bg-violet-500 rounded-lg text-center">
 <div class="text-2xl mb-2">👻</div>
 <div class="font-bold">Challenge 3</div>
 <div class="text-sm">Undocumented edge cases</div>
@@ -49,6 +49,8 @@ Enter: <span class="font-bold text-2xl">Text Generation Models - The Schema Whis
 
 # A Little Prompt Engineering
 
+<div class="ai-codegen">
+
 ````md magic-move {lines: true}{maxHeight:'400px'}
 ```text {*}
 You are an expert in API integrations and Cloudflare Workers.
@@ -60,7 +62,7 @@ Task:
 - The Worker should:
   1. Accept POSTed JSON in the internal schema
   2. Validate required fields (e.g. user.name, content.text)
-  3. Transform the payload into the target API’s expected format
+  3. Transform the payload into the target API's expected format
   4. If an env.TARGET_API_KEY or env.TARGET_WEBHOOK_URL is provided, call the target API
   5. Otherwise, just return the transformed payload (for preview/testing)
   6. Handle optional fields gracefully
@@ -80,34 +82,38 @@ Internal schema:
 Target API docs: [INSERT DOCS URL HERE]
 
 Goal:
-Produce a working Cloudflare Worker that can reliably transform and deliver notifications from our schema into the target service’s API.
+Produce a working Cloudflare Worker that can reliably transform and deliver notifications from our schema into the target service's API.
 ```
 
 ```typescript {all}
 // AI-Generated Output
-export function stripeToInternal(stripeWebhook: any) {
+export function internalToSlack(internalEvent: any) {
   return {
-    user: {
-      id: stripeWebhook.data.object.customer,
-      email: stripeWebhook.data.object.receipt_email || "",
-      name: stripeWebhook.data.object.billing_details?.name || "Unknown",
-    },
-    event: {
-      type: stripeWebhook.type.replace("payment_intent.", "payment_"),
-      timestamp: new Date(stripeWebhook.created * 1000).toISOString(),
-      data: {
-        amount: stripeWebhook.data.object.amount / 100, // Convert cents
-        currency: stripeWebhook.data.object.currency.toUpperCase(),
-        status: stripeWebhook.data.object.status,
-        metadata: stripeWebhook.data.object.metadata,
-      },
-    },
+    channel: "#notifications",
+    username: "Integration Bot",
+    icon_emoji: ":bell:",
+    text: `*${internalEvent.event_type}*: ${internalEvent.content.text}`,
+    attachments: [
+      {
+        color: "#36a64f",
+        fields: [
+          { title: "User",  value: internalEvent.user.name, short: true  },
+          { title: "Time", value: new Date(internalEvent.timestamp).toLocaleString(), short: true }
+        ],
+        footer: `Event ID: ${internalEvent.event_id}`,
+        actions: [
+          { type: "button", text: "View Details", url: internalEvent.content.link }
+        ]
+      }
+    ]
   };
 }
 
-// Bonus: Error handling and edge cases included!
+// Bonus: Transforms internal schema to Slack's webhook format with attachments!
 ```
 ````
+
+</div>
 
 ---
 
@@ -162,78 +168,6 @@ export function stripeToInternal(stripeWebhook: any) {
 </div>
 
 </v-click>
-
----
-
-# The Grand Unification
-
-<div class="text-center mb-8">
-
-<div class="text-2xl mb-6">**End-to-end integration pipeline**</div>
-
-</div>
-
-<script setup>
-const pipelineDiagram = `
-vars: {
-  d2-config: {
-    layout-engine: elk
-  }
-}
-direction: right
-
-api_docs: {
-  label: API Docs + OpenAPI Spec
-  shape: document
-  style: { fill: '#3B82F6' }
-}
-ai: {
-  label: AI Model Schema Whisperer
-  shape: hexagon
-  style: { fill: '#8B5CF6' }
-}
-adapter: {
-  label: Generated Adapter Code
-  shape: rectangle
-  style: { fill: '#10B981' }
-}
-worker: {
-  label: Worker Translator
-  shape: rectangle
-  style: { fill: '#F59E0B' }
-}
-workflow: {
-  label: Workflow Orchestrator
-  shape: rectangle
-  style: { fill: '#EF4444' }
-}
-customer: {
-  label: Customer App Happy and Unified
-  shape: oval
-  style: { fill: '#06B6D4' }
-}
-
-api_docs -> ai: Feed specs
-ai -> adapter: Generate code in 30s
-adapter -> worker: Deploy globally
-worker -> workflow: Multi-step process
-workflow -> customer: Unified schema
-
-notification: {
-  label: Real-time Updates
-  shape: cloud
-  style: { fill: '#84CC16' }
-}
-
-workflow -> notification: Status updates
-notification -> customer`
-</script>
-
-<D2Diagram
-  :code="pipelineDiagram"
-  :scale="0.5"
-  class="mx-auto"
-/>
 
 ---
 

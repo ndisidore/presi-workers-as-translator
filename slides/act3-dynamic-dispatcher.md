@@ -194,7 +194,7 @@ const customerWorkers = new Map([
 <div class="text-sm">Instant worldwide distribution</div>
 </div>
 
-<div class="p-6 bg-purple-100 dark:bg-purple-900 rounded-lg">
+<div class="p-6 bg-purple-100 dark:bg-violet-500 rounded-lg">
 <div class="text-2xl mb-2">⚡</div>
 <div class="font-bold">Scale Infinitely</div>
 <div class="text-sm">Zero configuration needed</div>
