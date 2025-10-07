@@ -80,24 +80,21 @@ layout: statement
 
 # APIs Are Like Power Outlets
 
-<v-click>
 
 *They all deliver electricity — but every country has its own plug shape, voltage, and socket standard.*
 
-</v-click>
-
-<v-click>
-
-*To connect safely, you need the right adapter — or things blow up.*
-
-</v-click>
+<section class="hero container max-w-screen-lg mx-auto pb-10 flex justify-center">
+<img src="../assets/electric-plug-types.avif" alt="drawing" width="600"/>
+</section>
 
 ---
-layout: two-cols
+layout: two-cols-header
 layoutClass: gap-16
 ---
 
 # Crossing Borders, Crossing APIs
+
+::left::
 
 <div class="space-y-6 text-lg leading-relaxed">
   <div v-click>
@@ -119,19 +116,26 @@ layoutClass: gap-16
 
 ::right::
 
-<div class="mt-8">
+<script setup>
+const apiAdaptersDiagram = `
+Your App -> REST
+Your App -> SOAP
+Your App -> MQTT
+Your App -> XML-RPC
+Your App -> GraphQL
 
-```mermaid {theme: 'dark', scale: 0.9}
-graph LR
-    A[Your App] --> B[REST]
-    A --> C[SOAP]
-    A --> D[MQTT]
-    A --> E[XML-RPC]
-    A --> F[GraphQL]
-    B -.->|🔌| G[Adapter 1]
-    C -.->|🔌| H[Adapter 2]
-    D -.->|🔌| I[Adapter 3]
-```
+REST -> Adapter 1: 🔌 {style.stroke-dash: 3}
+SOAP -> Adapter 2: 🔌 {style.stroke-dash: 3}
+MQTT -> Adapter 3: 🔌 {style.stroke-dash: 3}
+`
+</script>
+
+<div>
+
+<D2Diagram
+  :code="apiAdaptersDiagram"
+  :scale="0.9"
+/>
 
 </div>
 

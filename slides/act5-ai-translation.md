@@ -115,7 +115,7 @@ export function stripeToInternal(stripeWebhook: any) {
 
 <div class="text-center mb-8">
 
-<div class="text-2xl mb-6">**Before/After: Manual vs AI**</div>
+<div class="text-2xl mb-6 font-bold">Before/After: Manual vs AI</div>
 
 </div>
 
@@ -292,15 +292,3 @@ npm install @babel-fix/salesforce-adapter
 </div>
 
 </div>
-
-<v-click at="3">
-
-<div class="text-center mt-8 text-xl">
-Ready for the payoff? 💰
-</div>
-
-</v-click>
-
-<!--
-Set up the final closing section
--->

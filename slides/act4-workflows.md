@@ -64,7 +64,7 @@ timeline
 
 <div v-click="4" class="p-4 bg-indigo-100 dark:bg-indigo-600 rounded-lg">
 <div class="font-bold">🔥 Complexity</div>
-<div class="text-sm">Dead letter queues, monitoring, recovery</div>
+<div class="text-sm">Dead letter queues, monitoring, ...</div>
 </div>
 
 </div>

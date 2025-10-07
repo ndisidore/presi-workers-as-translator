@@ -222,7 +222,7 @@ This works great... until your startup becomes a scale-up
 <div class="text-sm">APIs at startup</div>
 </div>
 
-<div class="p-6 bg-yellow-100 dark:bg-yellow-700 rounded-lg">
+<div class="p-6 bg-yellow-100 dark:bg-yellow-600 rounded-lg">
 <div class="text-4xl mb-2">30</div>
 <div class="text-sm">APIs at growth</div>
 </div>
