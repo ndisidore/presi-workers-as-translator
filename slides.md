@@ -34,7 +34,7 @@ addons:
 </div>
 
 ---
-src: ./slides/opening-hook.md
+src: ./slides/opening.md
 ---
 
 ---
