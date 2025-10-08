@@ -9,6 +9,13 @@ class: text-center bg-gradient-to-br from-amber-600 to-fuchsia-400
 
 _Local in-application adapter patterns_
 
+<!-- speaker:
+"Act One: Adapt(er) and Overcome."
+We're going to look at how most teams start solving integration problems — with code inside their applications.
+Tone: Educational, relatable — this is the familiar path most engineers take.
+Transition: "Let's start with the classic approach..."
+-->
+
 ---
 
 # The Classic Approach: In-Application Adapters
@@ -44,8 +51,14 @@ var _ NotificationDeliverer = (*PagerDuty)(nil)
 
 </v-click>
 
-<!--
-Start with the familiar - this is what most developers do first
+<!-- speaker:
+"This is what every engineering team does first — and for good reason. It's clean, it's type-safe, it works."
+"I actually took this from Cloudflare's real codebase. We have 47 different notification channels in our alert system."
+"When you're at 3 integrations, this feels like the right abstraction. When you hit 10, you start to question it. At 47..."
+Pause and smile: "But then reality hits..."
+"Your binary size balloons. Every new integration requires a full redeploy. And you start carrying around dependencies you don't even use."
+Tone: Empathy — we've all been here. This isn't wrong, it's just insufficient at scale.
+Transition: "So naturally, you add infrastructure to scale it out..."
 -->
 
 ---
@@ -124,6 +137,15 @@ deliverer_x_queues -> deliverer_x_consumers
   :scale="0.6"
 />
 
+<!-- speaker:
+"Phase 2 is the distributed systems phase. You add Kafka because someone read a blog post about how Netflix does it."
+Point to diagram: "Now you've got discrete consumers, independent scaling, proper failure isolation."
+"And it works! You can scale each integration independently. Slack is getting hammered? Spin up more Slack consumers."
+"But here's what the blog post didn't tell you..."
+Tone: Building complexity, hinting at the cost that's coming.
+Transition: "Let me show you the infrastructure tax..."
+-->
+
 ---
 
 # The Infrastructure Tax
@@ -161,6 +183,12 @@ deliverer_x_queues -> deliverer_x_consumers
 
 </v-click>
 
-<!--
-Show the natural evolution and why it becomes over-engineered
+<!-- speaker:
+"On the left, you've got all the benefits. Durability, scalability, isolation. This is what the architecture review approved."
+"On the right... this is what your ops team actually has to manage."
+"You've got 3 engineers just keeping Kafka healthy. Consumer group rebalancing becomes a Friday afternoon incident. And when you need to change ONE adapter? Full redeployment of the consumer fleet."
+Read the realization slowly: "We built a Ferrari... to deliver pizza."
+Wait for the recognition to hit. "The infrastructure cost more than the problem it solved."
+Tone: Rueful humor — we've all over-engineered something.
+Transition: "There has to be a simpler way. What if the adapter logic didn't live in your application at all?"
 -->

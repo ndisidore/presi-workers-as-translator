@@ -21,7 +21,7 @@ class: text-center
 
 <div v-click="1" class="text-xl mb-6 font-bold">The Original Problem:</div>
 
-<div v-click="2" class="p-6 bg-red-100 dark:bg-red-900 rounded-lg mb-6">
+<div v-click="2" class="p-6 bg-rose-100 dark:bg-rose-600 rounded-lg mb-6">
 "One schema mismatch. Millions of customers locked out. Hundreds of millions lost."
 </div>
 
@@ -35,7 +35,7 @@ class: text-center
 
 <div class="grid grid-cols-3 gap-4">
 
-<div v-click="4" class="p-4 bg-green-100 dark:bg-green-900 rounded-lg">
+<div v-click="4" class="p-4 bg-green-100 dark:bg-emerald-600 rounded-lg">
 <div class="text-lg font-bold mb-2">🤖 AI Mapping</div>
 <div class="text-sm">Detected schema drift and suggested mappings automatically</div>
 </div>
@@ -71,7 +71,7 @@ class: text-center
 
 <div v-click="1" class="text-xl mb-6 font-bold">The Original Problem:</div>
 
-<div v-click="2" class="p-6 bg-red-100 dark:bg-red-900 rounded-lg mb-6">
+<div v-click="2" class="p-6 bg-rose-100 dark:bg-rose-600 rounded-lg mb-6">
 "API overload. No throttling or fallback. Critical systems froze mid-surge."
 </div>
 
@@ -85,7 +85,7 @@ class: text-center
 
 <div class="grid grid-cols-3 gap-4">
 
-<div v-click="4" class="p-4 bg-green-100 dark:bg-green-900 rounded-lg">
+<div v-click="4" class="p-4 bg-emerald-100 dark:bg-emerald-600 rounded-lg">
 <div class="text-lg font-bold mb-2">⚡ Workers as Buffers</div>
 <div class="text-sm">Rate-limit and shape traffic at the edge so the core never floods</div>
 </div>
@@ -117,7 +117,7 @@ layoutClass: gap-2
 
 ::left::
 
-<div class="p-6 bg-green-100 dark:bg-green-900 rounded-lg mb-8">
+<div class="p-6 bg-emerald-100 dark:bg-emerald-600 rounded-lg mb-8">
 <div class="text-lg font-bold mb-2">💡 The Insight</div>
 It's not about a single validation or heroic developer fix.<br />
 It's about the <i>infrastructure taking on a more supportive role.</i>

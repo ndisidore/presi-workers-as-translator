@@ -9,6 +9,13 @@ class: text-center bg-gradient-to-br from-amber-600 to-fuchsia-400
 
 _AI-Powered Schema Translation_
 
+<!-- speaker:
+"Act Five: The Mind Reader."
+Now we're going to see how AI can write these adapters for us automatically.
+Tone: Excitement about AI augmentation.
+Transition: "Remember carrying 47 adapters? What if one could reshape itself..."
+-->
+
 ---
 
 # The Universal Translator Dream
@@ -44,6 +51,17 @@ Enter: <span class="font-bold text-2xl">Text Generation Models - The Schema Whis
 </div>
 
 </v-click>
+
+<!-- speaker:
+"Remember traveling internationally with 47 different power adapters? You're standing in a Tokyo hotel room at 2am, desperately trying to find the right adapter so you can charge your laptop for tomorrow's presentation."
+"That's what writing API integrations feels like. Every API is a different country with a different outlet shape."
+Walk through the three challenges: "Challenge 1: Every API has its own OpenAPI spec — sometimes 500 pages long. Challenge 2: APIs have quirks. Slack's 'blocks' API is completely different from their 'attachments' API, which is deprecated but still widely used. Challenge 3: Undocumented edge cases. Like when Salesforce silently truncates field names to 40 characters, but only in production, not in their sandbox."
+"I've spent weeks of my career just reading API documentation. Weeks."
+Pause: "Enter: Text Generation Models — The Schema Whisperers."
+"And I want to be clear — this isn't hype. This is where AI stops being a buzzword and starts being incredibly useful."
+Tone: Setting up AI as the practical solution to a real problem.
+Transition: "Let me show you how simple this actually is..."
+-->
 
 ---
 
@@ -115,6 +133,19 @@ export function internalToSlack(internalEvent: any) {
 
 </div>
 
+<!-- speaker:
+"A little prompt engineering. And I do mean 'little'."
+Read the prompt slowly: "You are an expert in API integrations and Cloudflare Workers. Task: Generate a Worker that transforms from our internal schema to the target API's format."
+"That's it. No complex prompt. No chain-of-thought reasoning. Just: here's my schema, here's their docs, write the code."
+Point to the internal schema: "This is what our app produces. Simple notification format. User, content, timestamp."
+"And we give the AI a link to Slack's documentation. That 500-page documentation we talked about? The AI reads it. All of it. In seconds."
+Show the generated output: "And look what it produces. Perfect Slack webhook format. Attachments with color coding. Fields for user and time. Footer with the event ID. Even includes action buttons."
+"But here's what blows my mind..." Pause for effect: "I didn't ask it to include attachments. I didn't ask for color coding. I didn't specify action buttons."
+"The AI read Slack's docs, understood the best practices, and generated code that follows them. It's not just translating fields — it's understanding intent."
+Tone: This is legitimately impressive, not hype.
+Transition: "Let's talk about what this actually means in practice..."
+-->
+
 ---
 
 # The "Clarke's Third Law" Moment
@@ -127,7 +158,7 @@ export function internalToSlack(internalEvent: any) {
 
 <div class="grid grid-cols-2 gap-8">
 
-<div class="p-6 bg-red-100 dark:bg-red-700 rounded-lg">
+<div class="p-6 bg-rose-100 dark:bg-rose-600 rounded-lg">
 
 ### **Manual Mapping** 😤
 
@@ -143,7 +174,7 @@ export function internalToSlack(internalEvent: any) {
 
 </div>
 
-<div class="p-6 bg-green-100 dark:bg-teal-700 rounded-lg">
+<div class="p-6 bg-green-100 dark:bg-emerald-600 rounded-lg">
 
 ### **AI Generation** ✨
 
@@ -168,3 +199,16 @@ export function internalToSlack(internalEvent: any) {
 </div>
 
 </v-click>
+
+<!-- speaker:
+"Before/After: Manual vs AI. Let's be honest about what the old way actually looked like."
+Manual: "Day 1: Read the 10-page API documentation. Day 2: Realize there's a 40-page 'Advanced Concepts' guide you also need. Day 3: Actually write the code. Day 4: Debug why nested objects aren't serializing correctly. Day 5: Discover that their example in the docs has a typo and has been wrong for 2 years."
+"I'm not exaggerating. I've had this exact experience with a major payment provider. Their docs had a typo in the authentication example. For 2 years. Thousands of developers copy-pasted broken code."
+AI: "30 seconds. Paste the OpenAPI spec. Paste your schema. Hit generate. Working code. With error handling. With edge cases covered."
+"And here's the kicker: the AI doesn't copy-paste the typo. It understands what the code is trying to do and generates the correct version."
+Read Clarke's Third Law slowly: "Any sufficiently advanced technology is indistinguishable from magic."
+"I want to be clear — I'm not saying AI is perfect. But for this specific task? Reading documentation and generating adapter code? It's transformative."
+"The time savings are real. 3 days → 30 seconds is a 600x productivity gain. That's not incremental improvement. That's a fundamental shift."
+Tone: Genuine awe, but grounded in practical experience.
+Transition: "But the real magic isn't speed. It's the network effects that happen when everyone can generate adapters..."
+-->

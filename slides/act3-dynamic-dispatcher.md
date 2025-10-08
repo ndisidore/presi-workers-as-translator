@@ -9,6 +9,13 @@ class: text-center bg-gradient-to-br from-amber-600 to-fuchsia-400
 
 _BYO Adapters via Workers for Platforms_
 
+<!-- speaker:
+"Act Three: The Dynamic Dispatcher."
+Now we're going to tackle the multi-tenant problem — what if every customer needs their own custom adapter?
+Tone: Shifting to platform thinking, enterprise scale.
+Transition: "Let me show you the Shopify moment..."
+-->
+
 ---
 
 # The Shopify Moment
@@ -17,19 +24,19 @@ _BYO Adapters via Workers for Platforms_
 
 <div class="grid grid-cols-3 gap-6 mb-8">
 
-<div v-click="1" class="p-4 bg-green-100 dark:bg-green-900 rounded-lg text-center">
+<div v-click="1" class="p-4 bg-emerald-100 dark:bg-emerald-600 rounded-lg text-center">
 <div class="text-2xl mb-2">🏪</div>
 <div class="font-bold">Shopify</div>
 <div class="text-sm">Platform provides the infrastructure</div>
 </div>
 
-<div v-click="2" class="p-4 bg-blue-100 dark:bg-sky-700 rounded-lg text-center">
+<div v-click="2" class="p-4 bg-sky-100 dark:bg-sky-600 rounded-lg text-center">
 <div class="text-2xl mb-2">🔌</div>
 <div class="font-bold">Developers</div>
 <div class="text-sm">Build apps for specific use cases</div>
 </div>
 
-<div v-click="3" class="p-4 bg-purple-100 dark:bg-fuchsia-700 rounded-lg text-center">
+<div v-click="3" class="p-4 bg-fuchsia-100 dark:bg-fuchsia-600 rounded-lg text-center">
 <div class="text-2xl mb-2">🛒</div>
 <div class="font-bold">Merchants</div>
 <div class="text-sm">Install apps that fit their business</div>
@@ -50,6 +57,16 @@ What if your API platform worked the same way?
 </div>
 
 </v-click>
+
+<!-- speaker:
+"Shopify cracked this code years ago. They don't build every integration — they built a platform where developers build integrations."
+"Each merchant installs the apps they need. The Stripe app? Installed 2 million times. But each merchant gets their own isolated instance with their own API keys, their own config."
+"Shopify doesn't deploy code for each merchant. The platform handles isolation automatically."
+Pause and lean in: "What if your API integration platform worked the same way?"
+"Customer uploads their adapter code once. Platform deploys it globally. Customer A's Slack adapter is completely isolated from Customer B's."
+Tone: This is the insight that changes everything.
+Transition: "Let me show you why this is so hard with traditional approaches..."
+-->
 
 ---
 
@@ -99,6 +116,18 @@ switch (customerId) {
 </div>
 
 </div>
+
+<!-- speaker:
+"Here's the reality of multi-tenant SaaS."
+"Customer A: Slack + Stripe + Notion. EU data residency. Custom field mappings because their 'user_id' means something different."
+"Customer B: Teams + PayPal + Airtable. US only. Different retry policies because PayPal is... PayPal."
+"Customer C... well, Customer C has 'requirements' that require a 6-page Confluence doc."
+Show the code: "The old way? One massive switch statement. Every customer is a case. Every edge case is a nested if."
+"I've seen production code with 500 customer-specific cases. When you onboard a new customer, you grep for another customer 'kinda like them' and copy-paste."
+Pause: "This doesn't scale. But more importantly — this doesn't spark joy."
+Tone: Everyone's maintained code like this. It hurts.
+Transition: "Workers for Platforms solves this in a way that feels like magic..."
+-->
 
 ---
 
@@ -172,6 +201,18 @@ const customerWorkers = new Map([
 ```
 ````
 
+<!-- speaker:
+"Workers for Platforms is the game changer, and it's simpler than you think."
+Walk through the magic-move slowly: "Customer writes their adapter. Not YAML config. Not a JSON schema. Real JavaScript that does real logic."
+"They POST it to your platform via the Cloudflare API. Your platform deploys it to a customer-specific namespace."
+"Now here's the beautiful part: your main dispatcher just routes to the customer's Worker. It's a map lookup. That's it."
+"Each customer gets their own isolated environment. Their own bindings. Their own secrets. Their own everything."
+"And here's what blows my mind: Cloudflare handles all the isolation. You don't write the sandbox. You don't manage the security boundaries."
+"Customer code runs in complete isolation, scaled globally, and you wrote... a map lookup."
+Tone: This is the moment of revelation. Speak slowly, let it sink in.
+Transition: "This is the holy grail of multi-tenant platforms..."
+-->
+
 ---
 
 # The Holy Grail Moment
@@ -182,13 +223,13 @@ const customerWorkers = new Map([
 
 <div v-click="2" class="grid grid-cols-2 gap-6 mb-8">
 
-<div class="p-6 bg-green-100 dark:bg-green-900 rounded-lg">
+<div class="p-6 bg-emerald-100 dark:bg-emerald-600 rounded-lg">
 <div class="text-2xl mb-2">📝</div>
 <div class="font-bold">Write Once</div>
 <div class="text-sm">Customer uploads their logic</div>
 </div>
 
-<div class="p-6 bg-blue-100 dark:bg-blue-900 rounded-lg">
+<div class="p-6 bg-blue-100 dark:bg-blue-800 rounded-lg">
 <div class="text-2xl mb-2">🚀</div>
 <div class="font-bold">Deploy Globally</div>
 <div class="text-sm">Instant worldwide distribution</div>
@@ -200,7 +241,7 @@ const customerWorkers = new Map([
 <div class="text-sm">Zero configuration needed</div>
 </div>
 
-<div class="p-6 bg-amber-100 dark:bg-amber-700 rounded-lg">
+<div class="p-6 bg-amber-100 dark:bg-amber-600 rounded-lg">
 <div class="text-2xl mb-2">🔒</div>
 <div class="font-bold">Run Isolated</div>
 <div class="text-sm">Each adapter in its own sandbox</div>
@@ -213,6 +254,17 @@ We just gave customers superpowers! 🦸‍♀️🦸‍♂️
 </div>
 
 </div>
+
+<!-- speaker:
+"Let me tell you what this means for your customers."
+"They write their adapter once. Not 'once per region'. Not 'once per environment'. Once."
+"You click deploy. It's instantly available in 300+ cities globally. Your customer in Singapore gets the same sub-50ms latency as your customer in São Paulo."
+"Zero configuration. They didn't provision servers. They didn't configure auto-scaling. They didn't set up load balancers."
+"And it runs isolated. Customer A's buggy code can't take down Customer B. Customer A can't even see that Customer B exists."
+Pause: "We just gave customers superpowers. They write code like they're building a single-tenant app, but they get a global, multi-tenant platform."
+Tone: This is empowering. For customers AND for you.
+Transition: "Let me show you what this actually looks like in production..."
+-->
 
 ---
 layout: two-cols-header
@@ -239,7 +291,7 @@ layoutClass: gap-6
 <div class="text-2xl">📞</div>
 <div>
 <div class="font-bold">Support load</div>
-<div class="text-sm opacity-75">-80% integration tickets</div>
+<div class="text-sm opacity-75">Faster cycle/support time</div>
 </div>
 </div>
 
@@ -298,6 +350,18 @@ export default {
 
 </div>
 
+<!-- speaker:
+"Real talk: what happened when we actually shipped this?"
+"Customer onboarding: used to take 2-3 weeks of back-and-forth. Custom adapter for each customer. Now? Customers self-serve in minutes."
+"Support load: down 80%. Why? Because customers can fix their own bugs. They don't wait for you to redeploy."
+"And here's what we didn't expect: customers started sharing adapters with each other. 'Hey, I built a Salesforce adapter, want it?' Community effect kicked in."
+Point to the code: "Look at what customers can write. Real business logic. 'If critical alert, call PagerDuty. Otherwise enrich with CRM data.'"
+"This isn't config. This is code. And it runs at the edge, globally, automatically."
+"Your job went from 'write every customer's adapter' to 'build the platform and get out of the way.'"
+Tone: This is the business impact. Real numbers, real change.
+Transition: "But what about when things go wrong? Because things always go wrong..."
+-->
+
 ---
 
 # The Next Challenge
@@ -337,6 +401,16 @@ But what about when things go wrong?
 
 </v-click>
 
-<!--
-Sets up the durability problem that workflows solve
+<!-- speaker:
+"But what about when the internet has a bad day?"
+"And the internet LOVES to have bad days."
+Show the scenarios: "It's 2pm on a Tuesday. Salesforce is down. Not 'slow' down. DOWN down."
+"Or Slack decides you've hit your rate limit. Not in 5 minutes — you're rate limited for the next 4 hours."
+"Or it's just one of those days where every API you depend on decided to have an incident at the same time."
+Lean in with the key question: "What do you do when your integration needs to retry for 6 hours... to finally succeed?"
+"Traditional retries? Your process dies. Your pod gets restarted. State is lost."
+"Queues? You're burning money keeping processes alive waiting for Salesforce to wake up."
+Let that problem hang in the air.
+Tone: This is real production pain. Everyone's been paged for this.
+Transition: "This is where Workflows come in. And they're going to break your mental model of how retries work..."
 -->

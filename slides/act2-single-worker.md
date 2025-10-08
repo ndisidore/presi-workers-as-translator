@@ -9,6 +9,13 @@ class: text-center bg-gradient-to-br from-amber-600 to-fuchsia-400
 
 _Single Worker Solutions_
 
+<!-- speaker:
+"Act Two: The Translator."
+Now we're going to see how moving integration logic to the edge simplifies everything.
+Tone: Excitement building — this is where things get interesting.
+Transition: "Let me show you what happens when Slack, Teams, and SendGrid walk into your application..."
+-->
+
 ---
 
 # The "Rosetta Stone" Approach
@@ -36,7 +43,7 @@ _Single Worker Solutions_
 </div>
 </div>
 
-<div v-click="2" class="p-4 bg-blue-100 dark:bg-blue-900 rounded-lg">
+<div v-click="2" class="p-4 bg-sky-100 dark:bg-sky-600 rounded-lg">
 <div class="font-bold">Teams Webhook</div>
 <div class="mt-2 font-mono">
 ```json
@@ -52,7 +59,7 @@ _Single Worker Solutions_
 </div>
 </div>
 
-<div v-click="3" class="p-4 bg-green-100 dark:bg-green-900 rounded-lg">
+<div v-click="3" class="p-4 bg-emerald-100 dark:bg-emerald-600 rounded-lg">
 <div class="font-bold">SendGrid Webhook</div>
 <div class="mt-2 font-mono">
 ```json
@@ -72,6 +79,16 @@ _Single Worker Solutions_
 **Three different APIs, three different schemas, one confused application** 😵‍💫
 
 </v-click>
+
+<!-- speaker:
+"Look at these three webhooks. Same event — someone crossed a billing threshold."
+"Slack wants channel and user. Teams nests everything in a recipient object. SendGrid? Completely different world with 'event' and 'subject'."
+"This is the daily reality of API integration. You're not building features — you're building a museum of other people's design decisions."
+"Your application becomes a tour guide: 'Over here we have the Slack format from 2019, and this one is Teams 2.0 schema...'"
+Pause for laughs: "Three different APIs, three different schemas, one very confused application."
+Tone: Shared pain — everyone's written this adapter code.
+Transition: "But watch what happens when we put one Worker in front of all this chaos..."
+-->
 
 ---
 
@@ -117,6 +134,17 @@ export default {
 };
 ```
 
+<!-- speaker:
+"One Worker to translate them all. Lord of the Rings reference intentional."
+"Here's the magic: we read the webhook source from a header, switch on it, and normalize everything to one schema."
+"Slack says 'user'? We call it 'recipient'. Teams has nested objects? Flatten them. SendGrid's weird 'event' field? Convert it."
+"And here's the kicker..." Pause: "20 lines of code. That's it."
+"No Kafka. No consumer groups. No 3-engineer ops team. Just code running at the edge."
+"The Worker sits between chaos and your application, and your application just sees one clean schema."
+Tone: This is the 'aha' moment. Let it land.
+Transition: "I know what you're thinking: 'Wait, that's really it?' Let me show you why this works..."
+-->
+
 ---
 layout: center
 class: text-center
@@ -127,6 +155,14 @@ class: text-center
 ## 20 lines of Worker code normalizes 3 different APIs
 
 <div v-click class="mt-8 text-2xl">🤯</div>
+
+<!-- speaker:
+"Wait, that's it?"
+Let the audience react. "Yes. 20 lines of Worker code normalizes 3 different APIs."
+Pause for effect. Show the mind-blown emoji.
+Tone: Playful, letting the simplicity sink in.
+Transition: "Let me show you why this is so powerful..."
+-->
 
 ---
 
@@ -168,15 +204,15 @@ class: text-center
 const webhookDiagram = `
 webhook1: {
   label: Slack Webhook
-  style: { fill: '#4A154B' }
+  style: { fill: '#cc85aa' }
 }
 webhook2: {
   label: Teams Webhook
-  style: { fill: '#5B5FC7' }
+  style: { fill: '#a691d5' }
 }
 webhook3: {
   label: SendGrid Webhook
-  style: { fill: '#1A82E2' }
+  style: { fill: '#8a9add' }
 }
 translator: {
   label: Worker Translator
@@ -184,7 +220,7 @@ translator: {
 }
 app: {
   label: Your App Happy and Simple
-  style: { fill: '#10B981' }
+  style: { fill: '#5db28e' }
 }
 
 app -> translator: One Unified Schema
@@ -202,6 +238,16 @@ translator -> webhook3: Different Schemas`
 
 </div>
 
+<!-- speaker:
+"Single point of truth. Your application wakes up one day and only knows one schema. It doesn't care if Slack changes their API version."
+"Consistent error handling. Rate limits? Retries? Circuit breakers? All in one place, not scattered across 47 adapters."
+"Low overhead. Remember those 3 engineers keeping Kafka alive? They're building features now."
+Point to diagram: "All these webhooks hit the Worker. The Worker speaks to your app in one language. Your app is blissfully ignorant of the chaos."
+"This is the beauty of edge translation — the complexity lives where it belongs, not in your core application."
+Tone: Building conviction — this is the right pattern.
+Transition: "But here's where the story gets interesting. This works great... until it doesn't."
+-->
+
 ---
 
 # But Plot Twist... 🎭
@@ -217,17 +263,17 @@ This works great... until your startup becomes a scale-up
 <v-click>
 
 <div class="grid grid-cols-3 gap-4 text-center">
-<div class="p-6 bg-sky-100 dark:bg-sky-800 rounded-lg">
+<div class="p-6 bg-sky-100 dark:bg-sky-600 rounded-lg">
 <div class="text-4xl mb-2">3</div>
 <div class="text-sm">APIs at startup</div>
 </div>
 
-<div class="p-6 bg-yellow-100 dark:bg-yellow-600 rounded-lg">
+<div class="p-6 bg-amber-100 dark:bg-amber-500 rounded-lg">
 <div class="text-4xl mb-2">30</div>
 <div class="text-sm">APIs at growth</div>
 </div>
 
-<div class="p-6 bg-orange-100 dark:bg-orange-700 rounded-lg">
+<div class="p-6 bg-rose-100 dark:bg-rose-600 rounded-lg">
 <div class="text-4xl mb-2">300</div>
 <div class="text-sm">APIs at scale</div>
 </div>
@@ -243,6 +289,13 @@ This works great... until your startup becomes a scale-up
 
 </v-click>
 
-<!--
-Set up the next problem - scaling the pattern
+<!-- speaker:
+"Plot twist time."
+"This works beautifully when you're a startup with 3 APIs. Seed round closes, you're at 30. Series B hits, suddenly you're at 300."
+"And here's the real problem: it's not just 300 APIs. It's 300 APIs times N customers, and every customer wants it configured differently."
+"Customer A wants Slack messages to go to #engineering. Customer B wants them in #ops. Customer C wants them filtered by severity first."
+Let that sink in: "What happens when you need to handle not 3, but 300 integrations, times thousands of customers?"
+"That switch statement? It's now 50,000 lines long and nobody wants to touch it."
+Tone: The stakes just got real.
+Transition: "That's where we need to talk about Workers for Platforms and what Shopify figured out..."
 -->
