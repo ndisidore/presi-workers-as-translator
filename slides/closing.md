@@ -17,6 +17,8 @@ class: text-center
 
 # Remember the £330M API Meltdown?
 
+<div class="absolute inset-0 bg-green-500/10 animate-pulse"></div>
+
 <div class="mb-8">
 
 <div v-click="1" class="text-xl mb-6 font-bold">The Original Problem:</div>
@@ -66,6 +68,8 @@ class: text-center
 ---
 
 # Remember the $1.1T Rally Outage?
+
+<div class="absolute inset-0 bg-green-500/10 animate-pulse"></div>
 
 <div class="mb-8">
 

@@ -15,7 +15,7 @@ class: text-center
 
 </v-click>
 
-<div class="absolute inset-0 bg-red-500/10 animate-pulse"></div>
+<div class="absolute inset-0 bg-red-500/25 animate-pulse"></div>
 
 <!-- speaker:
 “This… is the £330 million API meltdown.”
@@ -42,7 +42,7 @@ class: text-center
 
 </v-click>
 
-<div class="absolute inset-0 bg-red-500/10 animate-pulse"></div>
+<div class="absolute inset-0 bg-red-500/25 animate-pulse"></div>
 
 <!-- speaker:
 “This one hurts a little more personally…”
