@@ -175,7 +175,7 @@ Transition: "So naturally, smart people have tried to solve this..."
 
 </div>
 
-<div class="mt-6 p-4 bg-green-100 dark:bg-green-900 rounded-lg text-sm">
+<div class="mt-6 p-4 bg-emerald-100 dark:bg-emerald-600 rounded-lg text-sm">
 ✅ Works great WITHIN your organization
 </div>
 
@@ -189,17 +189,17 @@ Transition: "So naturally, smart people have tried to solve this..."
 
 <div class="space-y-4 text-sm">
 
-<div class="p-3 bg-red-100 dark:bg-red-900 rounded">
+<div class="p-3 bg-rose-100 dark:bg-rose-600 rounded">
 <div class="font-bold">Requires Universal Buy-In</div>
 <div class="text-xs mt-1">Good luck getting Salesforce, Stripe, and Slack to adopt YOUR schema standard</div>
 </div>
 
-<div class="p-3 bg-orange-100 dark:bg-orange-700 rounded">
+<div class="p-3 bg-amber-100 dark:bg-amber-600 rounded">
 <div class="font-bold">Version Migration Nightmares</div>
 <div class="text-xs mt-1">Protobuf 2 → 3 broke the world. Now imagine that across 254 APIs</div>
 </div>
 
-<div class="p-3 bg-yellow-100 dark:bg-yellow-700 rounded">
+<div class="p-3 bg-violet-100 dark:bg-violet-600 rounded">
 <div class="font-bold">Doesn't Solve Last-Mile Problem</div>
 <div class="text-xs mt-1">Still need adapters at every external API boundary</div>
 </div>
@@ -251,7 +251,7 @@ Transition: "Okay, what about query layers?"
 
 </div>
 
-<div class="mt-6 p-4 bg-green-100 dark:bg-green-900 rounded-lg text-sm">
+<div class="mt-6 p-4 bg-emerald-100 dark:bg-emerald-600 rounded-lg text-sm">
 ✅ Excellent for YOUR APIs serving YOUR clients
 </div>
 
@@ -265,22 +265,22 @@ Transition: "Okay, what about query layers?"
 
 <div class="space-y-4 text-sm">
 
-<div class="p-3 bg-red-100 dark:bg-red-900 rounded">
+<div class="p-3 bg-rose-100 dark:bg-rose-600 rounded">
 <div class="font-bold">You Just Moved The Adapter Code</div>
 <div class="text-xs mt-1">Every backend API still needs a resolver. That's... an adapter.</div>
 </div>
 
-<div class="p-3 bg-orange-100 dark:bg-orange-700 rounded">
+<div class="p-3 bg-sky-100 dark:bg-sky-700 rounded">
 <div class="font-bold">Doesn't Handle Webhooks, Retries, Durability</div>
 <div class="text-xs mt-1">GraphQL is request/response. What about async events and long-running workflows?</div>
 </div>
 
-<div class="p-3 bg-yellow-100 dark:bg-yellow-700 rounded">
+<div class="p-3 bg-slate-100 dark:bg-slate-600 rounded">
 <div class="font-bold">Performance Overhead</div>
 <div class="text-xs mt-1">Query parsing, resolution, N+1 problems. Great for flexibility, expensive at scale.</div>
 </div>
 
-<div class="p-3 bg-purple-100 dark:bg-purple-500 rounded">
+<div class="p-3 bg-violet-100 dark:bg-violet-600 rounded">
 <div class="font-bold">Great For YOUR APIs, Useless For THEIR APIs</div>
 <div class="text-xs mt-1">Stripe isn't exposing a GraphQL endpoint just for you</div>
 </div>
@@ -327,7 +327,7 @@ Transition: "Alright, what about no-code?"
 
 </div>
 
-<div class="mt-6 p-4 bg-green-100 dark:bg-green-900 rounded-lg text-sm">
+<div class="mt-6 p-4 bg-emerald-100 dark:bg-emerald-600 rounded-lg text-sm">
 ✅ Perfect for simple automations (100 events/day)
 </div>
 
@@ -341,22 +341,22 @@ Transition: "Alright, what about no-code?"
 
 <div class="space-y-4 text-sm">
 
-<div class="p-3 bg-red-100 dark:bg-red-600 rounded">
+<div class="p-3 bg-rose-100 dark:bg-rose-600 rounded">
 <div class="font-bold">Black Box Execution</div>
 <div class="text-xs mt-1">When it breaks, you have zero visibility. "Contact support."</div>
 </div>
 
-<div class="p-3 bg-orange-100 dark:bg-orange-600 rounded">
+<div class="p-3 bg-sky-100 dark:bg-sky-600 rounded">
 <div class="font-bold">Vendor Lock-In</div>
 <div class="text-xs mt-1">Your integrations live in THEIR infrastructure. Good luck migrating.</div>
 </div>
 
-<div class="p-3 bg-yellow-100 dark:bg-amber-600 rounded">
+<div class="p-3 bg-slate-100 dark:bg-slate-600 rounded">
 <div class="font-bold">Can't Handle Complex Logic</div>
 <div class="text-xs mt-1">If/then/else only goes so far. Need real code for real business logic.</div>
 </div>
 
-<div class="p-3 bg-purple-100 dark:bg-purple-500 rounded">
+<div class="p-3 bg-violet-100 dark:bg-violet-500 rounded">
 <div class="font-bold">Cost Scales Linearly With Volume</div>
 <div class="text-xs mt-1">$19/month for 100 tasks. $599/month for 10K. $5K/month for 100K. Ouch.</div>
 </div>
@@ -417,7 +417,7 @@ layoutClass: gap-8
 
 ::right::
 
-<div class="mt-6 mb-6 p-4 bg-blue-100 dark:bg-blue-900 rounded-lg text-sm">
+<div class="mt-6 mb-6 p-4 bg-sky-100 dark:bg-sky-700 rounded-lg text-sm">
 <div class="font-bold">Clear expectations:</div>
 This is about the GLUE between systems, not the systems themselves.
 </div>
@@ -429,7 +429,7 @@ This is about the GLUE between systems, not the systems themselves.
 <div class="mt-6 space-y-6">
 
 
-<div class="p-4 bg-gradient-to-r from-green-100 to-teal-100 dark:from-green-900 dark:to-teal-900 rounded-lg">
+<div class="p-4 bg-gradient-to-r from-emerald-100 to-teal-100 dark:from-emerald-700 dark:to-teal-900 rounded-lg">
 <div class="text-sm font-bold mb-2">You're Not Behind</div>
 <div class="text-xs">The problem is genuinely hard. Every company reinvents this wheel. And it's about to get way easier.</div>
 </div>

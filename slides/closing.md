@@ -256,3 +256,8 @@ Offer a short next step: "I’ll be hanging out after the talk for questions and
 If you have a follow-up demo or repo, mention where to find it here or during the Q&A.
 End with one final line: "Go teach those APIs to be friends." (light smile)
 -->
+
+---
+layout: image
+image: ../assets/cc25-thank-you.png
+---

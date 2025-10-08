@@ -11,8 +11,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
 import { D2 } from '@terrastruct/d2'
+import { ref, onMounted, computed } from 'vue'
+
 
 interface Props {
   code: string
@@ -25,6 +26,8 @@ interface Props {
   height?: string | number
   maxWidth?: string
   maxHeight?: string
+  animateInterval?: number
+  target?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -34,7 +37,9 @@ const props = withDefaults(defineProps<Props>(), {
   scale: 1,
   pad: 16,
   maxWidth: '100%',
-  maxHeight: '500px'
+  maxHeight: '500px',
+  animateInterval: 0,
+  target: undefined
 })
 
 const loading = ref(true)
@@ -43,7 +48,7 @@ const svgContent = ref<string>('')
 
 const containerStyle = computed(() => {
   const style: Record<string, string> = {}
-  
+
   if (props.width) {
     style.width = typeof props.width === 'number' ? `${props.width}px` : props.width
   }
@@ -56,26 +61,41 @@ const containerStyle = computed(() => {
   if (props.maxHeight) {
     style.maxHeight = props.maxHeight
   }
-  
+
   return style
 })
 
 onMounted(async () => {
   try {
     const d2 = new D2()
-    
-    const compileResult = await d2.compile(props.code)
-    
+
+    // Build compile options
+    const compileOptions: any = {}
+    if (props.target) {
+      compileOptions.target = props.target
+    }
+    if (props.animateInterval > 0) {
+      compileOptions.animateInterval = props.animateInterval
+    }
+
+    // Compile - pass options directly, not nested
+    const compileResult = Object.keys(compileOptions).length > 0
+      ? await d2.compile(props.code, compileOptions)
+      : await d2.compile(props.code)
+
+    // Merge user render options with compile result render options
+    // The compile result may contain animation-specific render options
     const renderOptions = {
+      ...compileResult.renderOptions,
       sketch: props.sketch,
       center: props.center,
       scale: props.scale,
       pad: props.pad
     }
-    
+
     const svg = await d2.render(compileResult.diagram, renderOptions)
     svgContent.value = svg
-    
+
   } catch (e) {
     console.error('D2Diagram: Error occurred', e)
     error.value = e instanceof Error ? e.message : 'Unknown error'

@@ -35,6 +35,11 @@ vars: {
 }
 direction: right
 
+dispatch_event: {
+  label: "Event Dispatch"
+  style: { fill: '#cf84a4' }
+}
+
 # AI Generation Container
 ai_generation: {
   label: "AI Generation"
@@ -98,6 +103,8 @@ customer: {
 }
 
 # Flow
+dispatch_event -> ai_generation.adapter
+dispatch_event -> byo_adapter
 ai_generation.adapter -> worker
 byo_adapter -> worker
 worker -> workflow
@@ -133,7 +140,7 @@ Transition: "But it gets even better when you add community effects..."
 
 ## **Community Catalog** 🏪
 
-<div class="text-sm mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+<div class="text-sm mt-8 p-4 bg-gray-100 dark:bg-gray-700 rounded-lg">
 
 - **Filterable**: by source/target API (Stripe, Slack, GitHub...)
 - **Sortable**: by popularity, reliability, last updated
@@ -143,7 +150,7 @@ Transition: "But it gets even better when you add community effects..."
 
 </div>
 
-<div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg mt-4 text-sm font-bold">
+<div class="p-4 bg-gray-100 dark:bg-gray-700 rounded-lg mt-4 text-sm font-bold">
 💡 Browse → Fork → Customize → Deploy
 </div>
 
@@ -307,7 +314,7 @@ WHERE customer_id = ?
 
 ### **Cross-Workflow Intelligence** 🚀
 
-<div class="mt-4 p-4 bg-gray-100 dark:bg-gray-800 rounded text-sm">
+<div class="mt-4 p-4 bg-neutral-100 dark:bg-neutral-700 rounded text-sm">
 
 - 👤 User Context (built by all workflows)
 - 📋 Business Rules (learned patterns)
@@ -384,7 +391,7 @@ Transition: "But what about non-technical users? Can they benefit too?"
 <span class="font-bold">Level 3</span>: Insert custom JavaScript snippets
 </div>
 
-<div class="p-3 bg-orange-100 dark:bg-orange-700 rounded">
+<div class="p-3 bg-amber-100 dark:bg-amber-600 rounded">
 <span class="font-bold">Level 4</span>: Export to full Worker code for advanced customization
 </div>
 

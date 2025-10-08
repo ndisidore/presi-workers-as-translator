@@ -152,7 +152,7 @@ Transition: "Let me show you the infrastructure tax..."
 
 <div class="grid grid-cols-2 gap-8 mt-8">
 
-<div class="p-6 bg-slate-100 dark:bg-slate-800 rounded-lg">
+<div class="p-6 bg-slate-100 dark:bg-slate-700 rounded-lg">
 
 ## ✅ **Benefits**
 
@@ -162,7 +162,7 @@ Transition: "Let me show you the infrastructure tax..."
 
 </div>
 
-<div class="p-6 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
+<div class="p-6 bg-neutral-100 dark:bg-neutral-700 rounded-lg">
 
 ## ⛔ **Limitations**
 

@@ -240,13 +240,135 @@ step1 -> step2: ✅
 step2 -> fail2: ⛔
 fail2 -> sleep2: Retry
 sleep2 -> step2
-step2 -> success: ✅`
+step2 -> success: ✅
+
+scenarios: {
+  step1_executing: {
+    step1.style: {
+      fill: '#3B82F6'
+      stroke: '#1E40AF'
+      stroke-width: 3
+    }
+    start.style.opacity: 0.3
+  }
+
+  step1_fails: {
+    step1.style.opacity: 0.3
+    fail1.style: {
+      fill: '#DC2626'
+      stroke: '#991B1B'
+      stroke-width: 3
+    }
+    (start -> step1)[0].style.opacity: 0.3
+    (step1 -> fail1)[0].style: {
+      stroke: '#DC2626'
+      stroke-width: 3
+    }
+  }
+
+  sleeping_retry1: {
+    step1.style.opacity: 0.3
+    fail1.style.opacity: 0.3
+    sleep1.style: {
+      fill: '#F59E0B'
+      stroke: '#D97706'
+      stroke-width: 3
+    }
+    (step1 -> fail1)[0].style.opacity: 0.3
+    (fail1 -> sleep1)[0].style: {
+      stroke: '#F59E0B'
+      stroke-width: 3
+    }
+  }
+
+  step1_success: {
+    step1.style: {
+      fill: '#10B981'
+      stroke: '#059669'
+      stroke-width: 3
+    }
+    fail1.style.opacity: 0.2
+    sleep1.style.opacity: 0.2
+    (step1 -> step2)[0].style: {
+      stroke: '#10B981'
+      stroke-width: 3
+    }
+  }
+
+  step2_executing: {
+    step1.style.opacity: 0.3
+    step2.style: {
+      fill: '#3B82F6'
+      stroke: '#1E40AF'
+      stroke-width: 3
+    }
+    fail1.style.opacity: 0.2
+    sleep1.style.opacity: 0.2
+  }
+
+  step2_fails: {
+    step1.style.opacity: 0.3
+    step2.style.opacity: 0.3
+    fail2.style: {
+      fill: '#DC2626'
+      stroke: '#991B1B'
+      stroke-width: 3
+    }
+    (step2 -> fail2)[0].style: {
+      stroke: '#DC2626'
+      stroke-width: 3
+    }
+    fail1.style.opacity: 0.2
+    sleep1.style.opacity: 0.2
+  }
+
+  sleeping_6hours: {
+    step1.style.opacity: 0.2
+    step2.style.opacity: 0.3
+    fail2.style.opacity: 0.3
+    sleep2.style: {
+      fill: '#F59E0B'
+      stroke: '#D97706'
+      stroke-width: 3
+    }
+    (fail2 -> sleep2)[0].style: {
+      stroke: '#F59E0B'
+      stroke-width: 3
+    }
+    fail1.style.opacity: 0.2
+    sleep1.style.opacity: 0.2
+  }
+
+  final_success: {
+    step1.style.opacity: 0.3
+    step2.style: {
+      fill: '#10B981'
+      stroke: '#059669'
+      stroke-width: 2
+    }
+    success.style: {
+      fill: '#10B981'
+      stroke: '#059669'
+      stroke-width: 3
+    }
+    (step2 -> success)[0].style: {
+      stroke: '#10B981'
+      stroke-width: 3
+    }
+    fail1.style.opacity: 0.2
+    sleep1.style.opacity: 0.2
+    fail2.style.opacity: 0.2
+    sleep2.style.opacity: 0.2
+  }
+}`
 </script>
 
 <D2Diagram
   :code="workflowDiagram"
   class="mx-auto"
   :scale="0.45"
+  :target="'*'"
+  :animateInterval="2000"
 />
 
 <!-- speaker:
