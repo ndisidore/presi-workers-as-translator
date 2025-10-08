@@ -2,7 +2,7 @@
 theme: seriph
 themeConfig:
   primary: '#abff02'
-background: ../assets/cc25-bg.png
+background: ./assets/cc25-bg.png
 class: text-center
 highlighter: shiki
 lineNumbers: false

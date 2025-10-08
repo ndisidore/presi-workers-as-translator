@@ -15,6 +15,11 @@ try {
 		stdio: "inherit",
 		env: { ...process.env, BASE_PATH: basePath },
 	});
+
+	// Copy all assets from local assets directory to dist/assets
+	console.log("Copying all assets to dist/assets...");
+	execSync("cp -r assets/* dist/assets/", { stdio: "inherit" });
+
 	console.log("Build completed successfully!");
 } catch (error) {
 	console.error("Build failed:", error.message);
