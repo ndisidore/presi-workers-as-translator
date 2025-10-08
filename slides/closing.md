@@ -110,7 +110,7 @@ Mention: "You lose transactions when users can't complete flows. You lose trust 
 
 ---
 layout: two-cols-header
-layoutClass: gap-12
+layoutClass: gap-2
 ---
 
 # The Payoff

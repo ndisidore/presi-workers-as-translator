@@ -73,8 +73,6 @@ timeline
 
 # Workflows - The Durable Execution Engine
 
-<div class="mb-6">**Building a multi-step integration with automatic retries**</div>
-
 ```typescript {all|14-29|31-46}{maxHeight:'420px'}
 import { WorkflowEntrypoint, WorkflowStep } from "cloudflare:workers";
 

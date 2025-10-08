@@ -215,12 +215,13 @@ We just gave customers superpowers! 🦸‍♀️🦸‍♂️
 </div>
 
 ---
+layout: two-cols-header
+layoutClass: gap-6
+---
 
 # Real-World Magic ✨
 
-<div class="grid grid-cols-2 gap-8 mt-8">
-
-<div>
+::left::
 
 ## **Business Results**
 
@@ -252,13 +253,22 @@ We just gave customers superpowers! 🦸‍♀️🦸‍♂️
 
 </div>
 
-</div>
+::right::
 
 <div v-click="4">
 
 ## **The Developer Experience**
 
-<div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg mt-4">
+<style scoped>
+.rosetta-code pre {
+  --slidev-code-line-height: 0.6rem !important;
+}
+.rosetta-code code {
+  font-size: 0.45rem !important;
+}
+</style>
+
+<div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg mt-4 rosetta-code">
 
 ```typescript
 // Customer writes real code, not config
@@ -283,8 +293,6 @@ export default {
 
 // Deploy: wrangler deploy → Platform scales globally
 ```
-
-</div>
 
 </div>
 

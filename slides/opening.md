@@ -96,22 +96,39 @@ layoutClass: gap-16
 
 ::left::
 
-<div class="space-y-6 text-lg leading-relaxed">
-  <div v-click>
-    🌍 **Every partner speaks a different protocol:** REST, SOAP, MQTT, GraphQL, XML-RPC...
-  </div>
+<div class="space-y-6">
 
-  <div v-click>
-    ⚙️ **Every schema tells a different story:** What’s `orderId` here might be `shipment_ref` there.
-  </div>
+<div v-click="1" class="flex items-start space-x-4">
+<div class="text-2xl">🌍</div>
+<div>
+<div class="font-bold">Every partner speaks a different protocol</div>
+<div class="text-sm opacity-75">REST, SOAP, MQTT, GraphQL, XML-RPC...</div>
+</div>
+</div>
 
-  <div v-click>
-    🔌 **Every integration needs an adapter:** Mapping, transformation, and retries.
-  </div>
+<div v-click="2" class="flex items-start space-x-4">
+<div class="text-2xl">⚙️</div>
+<div>
+<div class="font-bold">Every schema tells a different story</div>
+<div class="text-sm opacity-75">What's `orderId` here might be `shipment_ref` there</div>
+</div>
+</div>
 
-  <div v-click>
-    🧩 **That’s where Cloudflare Workers come in.**
-  </div>
+<div v-click="3" class="flex items-start space-x-4">
+<div class="text-2xl">🔌</div>
+<div>
+<div class="font-bold">Every integration needs an adapter</div>
+<div class="text-sm opacity-75">Mapping, transformation, and retries</div>
+</div>
+</div>
+
+<div v-click="4" class="flex items-start space-x-4">
+<div class="text-2xl">🧩</div>
+<div>
+<div class="font-bold">That's where Cloudflare Workers come in</div>
+</div>
+</div>
+
 </div>
 
 ::right::

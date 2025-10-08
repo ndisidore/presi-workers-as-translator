@@ -15,7 +15,7 @@ _Building the Ecosystem_
 
 <div class="text-center mb-8">
 
-<div class="text-2xl mb-6">**Putting it all together: The complete integration pipeline**</div>
+<div class="text-2xl mb-6 font-bold">Putting it all together: The complete integration pipeline</div>
 
 </div>
 
@@ -28,50 +28,73 @@ vars: {
 }
 direction: right
 
-api_docs: {
-  label: API Docs + OpenAPI Spec
-  shape: document
-  style: { fill: '#3B82F6' }
+# AI Generation Container
+ai_generation: {
+  label: "AI Generation"
+  style: {
+    fill: '#E9D5FF'
+    stroke: '#8B5CF6'
+    stroke-width: 2
+  }
+
+  api_docs: {
+    label: "API Docs +\\nOpenAPI Spec"
+    shape: document
+    style: { fill: '#3B82F6' }
+  }
+  ai: {
+    label: "AI Model"
+    shape: hexagon
+    style: { fill: '#8B5CF6' }
+  }
+  adapter: {
+    label: "Generated\\nAdapter Code"
+    shape: rectangle
+    style: { fill: '#10B981' }
+  }
+
+  api_docs -> ai
+  ai -> adapter
 }
-ai: {
-  label: AI Model Schema Whisperer
-  shape: hexagon
-  style: { fill: '#8B5CF6' }
-}
-adapter: {
-  label: Generated Adapter Code
+
+# BYO Path
+byo_adapter: {
+  label: "BYO\\nAdapter"
   shape: rectangle
-  style: { fill: '#10B981' }
+  style: { fill: '#EC4899' }
 }
+
+# Worker Translator
 worker: {
-  label: Worker Translator
+  label: "Worker\\nTranslator"
   shape: rectangle
   style: { fill: '#F59E0B' }
 }
+
+# Orchestration
 workflow: {
-  label: Workflow Orchestrator
+  label: "Workflow\\nOrchestrator"
   shape: rectangle
   style: { fill: '#EF4444' }
 }
-customer: {
-  label: Customer App Happy and Unified
-  shape: oval
-  style: { fill: '#06B6D4' }
-}
-
-api_docs -> ai: Feed specs
-ai -> adapter: Generate code in 30s
-adapter -> worker: Deploy globally
-worker -> workflow: Multi-step process
-workflow -> customer: Unified schema
-
 notification: {
-  label: Real-time Updates
+  label: "Real-time\\nUpdates"
   shape: cloud
   style: { fill: '#84CC16' }
 }
 
-workflow -> notification: Status updates
+# Customer
+customer: {
+  label: "Customer App\\nHappy & Unified"
+  shape: oval
+  style: { fill: '#06B6D4' }
+}
+
+# Flow
+ai_generation.adapter -> worker
+byo_adapter -> worker
+worker -> workflow
+workflow -> notification
 notification -> customer`
 </script>
 
@@ -116,7 +139,7 @@ notification -> customer`
 ````md magic-move {lines: true}
 ```typescript
 // Extend popular base classes
-import { SlackBaseAdapter } from '@marketplace/slack-base';
+import { SlackBaseAdapter } from '@acme-app/slack-base';
 
 export class MySlackAdapter extends SlackBaseAdapter {
   async transform(webhook) {
@@ -138,7 +161,7 @@ import {
   SlackTransformer,
   NotionPublisher,
   RetryMixin
-} from '@marketplace/common-patterns';
+} from '@acme-app/common-patterns';
 
 export default compose(
   SlackTransformer,
@@ -151,13 +174,13 @@ export default compose(
 // Popular marketplace templates
 const trending = [
   // Write to Database
-  '@marketplace/webhook-to-database',
+  '@acme-app/webhook-to-database',
   // Slack/Teams → Jira
-  '@marketplace/chat-to-ticketing',
+  '@acme-app/chat-to-ticketing',
   // Stripe → everywhere
-  '@marketplace/payment-notifications',
+  '@acme-app/payment-notifications',
   // GitHub → Slack/Teams
-  '@marketplace/ci-cd-alerts'
+  '@acme-app/ci-cd-alerts'
 ];
 
 // One-click deploy + customize
@@ -177,6 +200,27 @@ Community code + custom business logic = ❤️
 </div>
 
 </v-click>
+
+---
+
+# **The Vision** 🚀
+
+<div class="p-6 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 rounded-lg m-8 mt-16">
+
+<div class="text-lg font-bold mb-4">
+"A world where API integration is as easy as adding a dependency"
+</div>
+
+```bash
+# The future of API integration
+npm install @acme-app/stripe-adapter
+npm install @acme-app/slack-adapter
+npm install @acme-app/salesforce-adapter
+
+# Just works™️
+```
+
+</div>
 
 
 
@@ -226,7 +270,7 @@ WHERE customer_id = ?
 
 </div>
 
-<div v-click="5" class="mt-6 p-4 bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900 dark:to-blue-900 rounded-lg">
+<div v-click="1" class="mt-6 p-4 bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900 dark:to-blue-900 rounded-lg">
 <div class="font-bold">The Magic:</div>
 <div class="text-sm">Each workflow enriches the platform for all others. Your integration layer has institutional memory.</div>
 </div>
