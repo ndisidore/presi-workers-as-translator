@@ -259,5 +259,5 @@ End with one final line: "Go teach those APIs to be friends." (light smile)
 
 ---
 layout: image
-image: ../assets/cc25-thank-you.png
+image: ./assets/cc25-thank-you.png
 ---
