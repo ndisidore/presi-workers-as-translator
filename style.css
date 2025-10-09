@@ -2,124 +2,151 @@
 
 /* Smooth transitions on all v-click elements */
 .slidev-vclick-target {
-  transition: all 0.3s ease-in-out !important;
+	transition: all 0.3s ease-in-out !important;
 }
 
 /* Add subtle shadows to cards and boxes */
-.rounded-lg, .rounded {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
-  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out !important;
+.rounded-lg,
+.rounded {
+	box-shadow:
+		0 1px 3px 0 rgb(0 0 0 / 0.1),
+		0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
+	transition:
+		box-shadow 0.2s ease-in-out,
+		transform 0.2s ease-in-out !important;
 }
 
 /* Subtle lift on hover for cards */
-.rounded-lg:hover, .rounded:hover {
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
-  transform: translateY(-2px) !important;
+.rounded-lg:hover,
+.rounded:hover {
+	box-shadow:
+		0 10px 15px -3px rgb(0 0 0 / 0.1),
+		0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+	transform: translateY(-2px) !important;
 }
 
 /* Enhanced gradient backgrounds with subtle border glow */
-.bg-gradient-to-r, .bg-gradient-to-br, .bg-gradient-to-l {
-  position: relative;
+.bg-gradient-to-r,
+.bg-gradient-to-br,
+.bg-gradient-to-l {
+	position: relative;
 }
 
 /* Smooth code block appearance */
-.shiki, pre[class*='language-'] {
-  border-radius: 0.5rem !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+.shiki,
+pre[class*="language-"] {
+	border-radius: 0.5rem !important;
+	border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Enhanced number/stat displays with subtle shadow */
-.text-2xl.font-bold, .text-4xl.mb-2, .text-3xl {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.text-2xl.font-bold,
+.text-4xl.mb-2,
+.text-3xl {
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Removed fadeInUp animation - caused unwanted movement */
 
 /* Colored accent borders for callout boxes */
-.bg-blue-100, .bg-sky-100 {
-  border-left: 4px solid #3b82f6 !important;
+.bg-blue-100,
+.bg-sky-100 {
+	border-left: 4px solid #3b82f6 !important;
 }
 
-.dark .bg-blue-800, .dark .bg-sky-700 {
-  border-left: 4px solid #60a5fa !important;
+.dark .bg-blue-800,
+.dark .bg-sky-700 {
+	border-left: 4px solid #60a5fa !important;
 }
 
-.bg-red-100, .bg-rose-100 {
-  border-left: 4px solid #ef4444 !important;
+.bg-red-100,
+.bg-rose-100 {
+	border-left: 4px solid #ef4444 !important;
 }
 
-.dark .bg-red-900, .dark .bg-rose-600 {
-  border-left: 4px solid #f87171 !important;
+.dark .bg-red-900,
+.dark .bg-rose-600 {
+	border-left: 4px solid #f87171 !important;
 }
 
-.bg-green-100, .bg-emerald-100 {
-  border-left: 4px solid #10b981 !important;
+.bg-green-100,
+.bg-emerald-100 {
+	border-left: 4px solid #10b981 !important;
 }
 
-.dark .bg-green-900, .dark .bg-emerald-600 {
-  border-left: 4px solid #34d399 !important;
+.dark .bg-green-900,
+.dark .bg-emerald-600 {
+	border-left: 4px solid #34d399 !important;
 }
 
-.bg-amber-100, .bg-yellow-100 {
-  border-left: 4px solid #f59e0b !important;
+.bg-amber-100,
+.bg-yellow-100 {
+	border-left: 4px solid #f59e0b !important;
 }
 
-.dark .bg-amber-600, .dark .bg-amber-700 {
-  border-left: 4px solid #fbbf24 !important;
+.dark .bg-amber-600,
+.dark .bg-amber-700 {
+	border-left: 4px solid #fbbf24 !important;
+}
+
+/* Add margin-bottom to h2 elements */
+h2 {
+	margin-bottom: var(--slidev-spacing-2, 0.5rem);
 }
 
 /* Smooth v-click animations */
 .slidev-vclick-hidden {
-  opacity: 0 !important;
-  pointer-events: none !important;
-  transition: opacity 0.3s ease-in-out !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+	transition: opacity 0.3s ease-in-out !important;
 }
 
 .slidev-vclick-current {
-  animation: slideIn 0.4s ease-out;
+	animation: slideIn 0.4s ease-out;
 }
 
 @keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+	from {
+		opacity: 0;
+		transform: translateX(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 /* Enhanced hover state for interactive elements */
-button, a, .cursor-pointer {
-  transition: all 0.2s ease-in-out !important;
+button,
+a,
+.cursor-pointer {
+	transition: all 0.2s ease-in-out !important;
 }
 
-button:hover, a:hover, .cursor-pointer:hover {
-  filter: brightness(1.1);
+button:hover,
+a:hover,
+.cursor-pointer:hover {
+	filter: brightness(1.1);
 }
 
 /* Smooth transitions for act title slides */
 .bg-gradient-to-br {
-  animation: subtleGradient 3s ease-in-out infinite alternate;
+	animation: subtleGradient 3s ease-in-out infinite alternate;
 }
 
 @keyframes subtleGradient {
-  0% {
-    filter: brightness(1) saturate(1);
-  }
-  100% {
-    filter: brightness(1.05) saturate(1.1);
-  }
-}
-
-/* Professional spacing for grid layouts */
-.grid {
-  gap: 1.5rem !important;
+	0% {
+		filter: brightness(1) saturate(1);
+	}
+	100% {
+		filter: brightness(1.05) saturate(1.1);
+	}
 }
 
 /* Subtle border on images */
 img {
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+	border-radius: 0.5rem;
+	box-shadow:
+		0 4px 6px -1px rgb(0 0 0 / 0.1),
+		0 2px 4px -2px rgb(0 0 0 / 0.1);
 }

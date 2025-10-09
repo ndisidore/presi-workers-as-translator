@@ -153,65 +153,67 @@ Transition: "So naturally, smart people have tried to solve this..."
 -->
 
 ---
+layout: center
+class: text-center
+---
 
-# Solution #1: Standards (Protobuf, OpenAPI, JSON Schema)
+# Solution #1: Standards
+## (Protobuf, OpenAPI, JSON Schema)
 
-<div class="grid grid-cols-2 gap-8 mt-8">
+<div class="max-w-4xl mx-auto">
+<div class="grid grid-cols-2 gap-16 mt-16 text-left">
 
 <div>
 
-## The Promise
-
-<div class="text-4xl mb-4">📐</div>
+## 📐 The Promise
 
 **"One schema to rule them all"**
 
-<div class="mt-6 space-y-3 text-sm">
+<div class="mt-6 space-y-3">
 
-- Define your data structures once
-- Generate client/server code automatically
-- Strong typing across the stack
-- Language-agnostic serialization
-
+<div class="p-3 bg-blue-100 dark:bg-blue-800 rounded text-sm">
+Define once, generate everywhere
 </div>
 
-<div class="mt-6 p-4 bg-emerald-100 dark:bg-emerald-600 rounded-lg text-sm">
-✅ Works great WITHIN your organization
+<div class="p-3 bg-blue-100 dark:bg-blue-800 rounded text-sm">
+Strong typing, language-agnostic
 </div>
 
-</div>
-
-<div v-click>
-
-## Why It Fails
-
-<div class="text-4xl mb-4">💔</div>
-
-<div class="space-y-4 text-sm">
-
-<div class="p-3 bg-rose-100 dark:bg-rose-600 rounded">
-<div class="font-bold">Requires Universal Buy-In</div>
-<div class="text-xs mt-1">Good luck getting Salesforce, Stripe, and Slack to adopt YOUR schema standard</div>
-</div>
-
-<div class="p-3 bg-amber-100 dark:bg-amber-600 rounded">
-<div class="font-bold">Version Migration Nightmares</div>
-<div class="text-xs mt-1">Protobuf 2 → 3 broke the world. Now imagine that across 254 APIs</div>
-</div>
-
-<div class="p-3 bg-violet-100 dark:bg-violet-600 rounded">
-<div class="font-bold">Doesn't Solve Last-Mile Problem</div>
-<div class="text-xs mt-1">Still need adapters at every external API boundary</div>
+<div class="p-3 bg-emerald-100 dark:bg-emerald-600 rounded text-sm font-bold">
+✅ Great within your org
 </div>
 
 </div>
 
-<div class="mt-6 text-xs italic opacity-75">
-xkcd 927: "Standards are great! That's why we have 14 of them."
+</div>
+
+<div>
+
+## 💔 Why It Fails
+
+<div class="mt-6 space-y-3">
+
+<div class="p-3 bg-rose-100 dark:bg-rose-600 rounded text-sm">
+Requires universal buy-in
+</div>
+
+<div class="p-3 bg-amber-100 dark:bg-amber-600 rounded text-sm">
+Version migration nightmares
+</div>
+
+<div class="p-3 bg-violet-100 dark:bg-violet-600 rounded text-sm">
+Still need adapters at boundaries
+</div>
+
+<div class="p-3 bg-slate-100 dark:bg-slate-600 rounded text-sm italic">
+xkcd 927: Why we have 14 standards
 </div>
 
 </div>
 
+</div>
+
+</div>
 </div>
 
 <!-- speaker:
@@ -229,66 +231,66 @@ Transition: "Okay, what about query layers?"
 -->
 
 ---
+layout: center
+class: text-center
+---
 
 # Solution #2: GraphQL & API Gateways
 
-<div class="grid grid-cols-2 gap-8 mt-8">
+<div class="max-w-4xl mx-auto">
+<div class="grid grid-cols-2 gap-16 mt-16 text-left">
 
 <div>
 
-## The Promise
-
-<div class="text-4xl mb-4">🔀</div>
+## 🔀 The Promise
 
 **"Unified query layer over everything"**
 
-<div class="mt-6 space-y-3 text-sm">
+<div class="mt-6 space-y-3">
 
-- Query exactly what you need
-- Single endpoint for all data
-- Aggregation and batching
-- Strongly typed schema
-
+<div class="p-3 bg-blue-100 dark:bg-blue-800 rounded text-sm">
+Query exactly what you need
 </div>
 
-<div class="mt-6 p-4 bg-emerald-100 dark:bg-emerald-600 rounded-lg text-sm">
-✅ Excellent for YOUR APIs serving YOUR clients
+<div class="p-3 bg-blue-100 dark:bg-blue-800 rounded text-sm">
+Single endpoint, strongly typed
 </div>
 
-</div>
-
-<div v-click>
-
-## Why It Falls Short
-
-<div class="text-4xl mb-4">🤔</div>
-
-<div class="space-y-4 text-sm">
-
-<div class="p-3 bg-rose-100 dark:bg-rose-600 rounded">
-<div class="font-bold">You Just Moved The Adapter Code</div>
-<div class="text-xs mt-1">Every backend API still needs a resolver. That's... an adapter.</div>
-</div>
-
-<div class="p-3 bg-sky-100 dark:bg-sky-700 rounded">
-<div class="font-bold">Doesn't Handle Webhooks, Retries, Durability</div>
-<div class="text-xs mt-1">GraphQL is request/response. What about async events and long-running workflows?</div>
-</div>
-
-<div class="p-3 bg-slate-100 dark:bg-slate-600 rounded">
-<div class="font-bold">Performance Overhead</div>
-<div class="text-xs mt-1">Query parsing, resolution, N+1 problems. Great for flexibility, expensive at scale.</div>
-</div>
-
-<div class="p-3 bg-violet-100 dark:bg-violet-600 rounded">
-<div class="font-bold">Great For YOUR APIs, Useless For THEIR APIs</div>
-<div class="text-xs mt-1">Stripe isn't exposing a GraphQL endpoint just for you</div>
+<div class="p-3 bg-emerald-100 dark:bg-emerald-600 rounded text-sm font-bold">
+✅ Excellent for YOUR APIs
 </div>
 
 </div>
 
 </div>
 
+<div>
+
+## 🤔 Why It Falls Short
+
+<div class="mt-6 space-y-3">
+
+<div class="p-3 bg-rose-100 dark:bg-rose-600 rounded text-sm">
+Resolvers are just adapters renamed
+</div>
+
+<div class="p-3 bg-sky-100 dark:bg-sky-700 rounded text-sm">
+No webhooks, retries, or durability
+</div>
+
+<div class="p-3 bg-slate-100 dark:bg-slate-600 rounded text-sm">
+Performance overhead at scale
+</div>
+
+<div class="p-3 bg-violet-100 dark:bg-violet-600 rounded text-sm">
+Useless for THEIR APIs
+</div>
+
+</div>
+
+</div>
+
+</div>
 </div>
 
 <!-- speaker:
@@ -305,68 +307,67 @@ Transition: "Alright, what about no-code?"
 -->
 
 ---
+layout: center
+class: text-center
+---
 
-# Solution #3: iPaaS (Zapier, Workato, Tray.io)
+# Solution #3: iPaaS
+## (Zapier, Workato, Tray.io)
 
-<div class="grid grid-cols-2 gap-8 mt-8">
+<div class="max-w-4xl mx-auto">
+<div class="grid grid-cols-2 gap-16 mt-16 text-left">
 
 <div>
 
-## The Promise
-
-<div class="text-4xl mb-4">🎨</div>
+## 🎨 The Promise
 
 **"No-code integrations for everyone"**
 
-<div class="mt-6 space-y-3 text-sm">
+<div class="mt-6 space-y-3">
 
-- Visual workflow builder
-- Pre-built connectors
-- No engineering required
-- Fast time-to-value
-
+<div class="p-3 bg-blue-100 dark:bg-blue-800 rounded text-sm">
+Visual workflow builder
 </div>
 
-<div class="mt-6 p-4 bg-emerald-100 dark:bg-emerald-600 rounded-lg text-sm">
-✅ Perfect for simple automations (100 events/day)
+<div class="p-3 bg-blue-100 dark:bg-blue-800 rounded text-sm">
+Pre-built connectors
 </div>
 
-</div>
-
-<div v-click>
-
-## Why It's Limited
-
-<div class="text-4xl mb-4">🚧</div>
-
-<div class="space-y-4 text-sm">
-
-<div class="p-3 bg-rose-100 dark:bg-rose-600 rounded">
-<div class="font-bold">Black Box Execution</div>
-<div class="text-xs mt-1">When it breaks, you have zero visibility. "Contact support."</div>
-</div>
-
-<div class="p-3 bg-sky-100 dark:bg-sky-600 rounded">
-<div class="font-bold">Vendor Lock-In</div>
-<div class="text-xs mt-1">Your integrations live in THEIR infrastructure. Good luck migrating.</div>
-</div>
-
-<div class="p-3 bg-slate-100 dark:bg-slate-600 rounded">
-<div class="font-bold">Can't Handle Complex Logic</div>
-<div class="text-xs mt-1">If/then/else only goes so far. Need real code for real business logic.</div>
-</div>
-
-<div class="p-3 bg-violet-100 dark:bg-violet-500 rounded">
-<div class="font-bold">Cost Scales Linearly With Volume</div>
-<div class="text-xs mt-1">$19/month for 100 tasks. $599/month for 10K. $5K/month for 100K. Ouch.</div>
+<div class="p-3 bg-emerald-100 dark:bg-emerald-600 rounded text-sm font-bold">
+✅ Perfect for simple flows
 </div>
 
 </div>
 
-<div class="mt-4 text-xs font-bold">Works for simple flows. Breaks at enterprise scale.</div>
+</div>
+
+<div>
+
+## 🚧 Why It's Limited
+
+<div class="mt-6 space-y-3">
+
+<div class="p-3 bg-rose-100 dark:bg-rose-600 rounded text-sm">
+Black box execution
+</div>
+
+<div class="p-3 bg-amber-100 dark:bg-amber-600 rounded text-sm">
+Vendor lock-in
+</div>
+
+<div class="p-3 bg-slate-100 dark:bg-slate-600 rounded text-sm">
+Can't handle complex logic
+</div>
+
+<div class="p-3 bg-violet-100 dark:bg-violet-500 rounded text-sm">
+Cost scales linearly with volume
+</div>
 
 </div>
 
+</div>
+
+</div>
 </div>
 
 <!-- speaker:
@@ -384,67 +385,56 @@ Transition: "So if standards don't work, query layers don't work, and no-code do
 -->
 
 ---
-layout: two-cols-header
-layoutClass: gap-8
+layout: center
+class: text-center
 ---
 
-# Functional Requirements
+# What We're Actually Solving
 
-::left::
+<div class="max-w-4xl mx-auto">
+<div class="grid grid-cols-2 gap-16 mt-16 text-left">
 
-## In Scope ✅
+<div>
 
-<div class="space-y-2 text-sm mt-4">
+## ✅ In Scope
 
-- **Multi-protocol translation** (REST, SOAP, GraphQL, webhooks)
-- **Schema mapping and transformation** (field-level control)
-- **Durable, long-running workflows** (retries that survive failures)
-- **Multi-tenant customer adapters** (isolated, scalable)
-- **AI-assisted adapter generation** (from docs to code)
-
-</div>
-
-## Out of Scope ⛔
-
-<div class="space-y-2 text-sm mt-4">
-
-- Replacing your database
-- Auth/authz systems
-- Observability platforms
-- Forcing API providers to change
+- Multi-protocol translation
+- Schema transformation
+- Durability / Error Handling
+- Multi-tenancy / Platformization
+- AI-assisted generation
 
 </div>
 
-::right::
+<div>
 
-<div class="mt-6 mb-6 p-4 bg-sky-100 dark:bg-sky-700 rounded-lg text-sm">
-<div class="font-bold">Clear expectations:</div>
-This is about the GLUE between systems, not the systems themselves.
-</div>
+## ⛔ Out of Scope
 
-<div v-click="1">
-
-## You Have This Problem (Even If You Don't Know It)
-
-<div class="mt-6 space-y-6">
-
-
-<div class="p-4 bg-gradient-to-r from-emerald-100 to-teal-100 dark:from-emerald-700 dark:to-teal-900 rounded-lg">
-<div class="text-sm font-bold mb-2">You're Not Behind</div>
-<div class="text-xs">The problem is genuinely hard. Every company reinvents this wheel. And it's about to get way easier.</div>
-</div>
+- Database replacement
+- Auth systems
+- Observability
+- Forcing API changes
 
 </div>
 
 </div>
+</div>
+
+<v-click>
+
+<div class="mt-12 text-xl italic opacity-75 text-center">
+This is about the GLUE between systems
+</div>
+
+</v-click>
 
 <!-- speaker:
 "So what ARE we actually solving? Let me be crystal clear about scope."
-"In scope: Multi-protocol translation—REST, SOAP, GraphQL, webhooks, all of them. Schema mapping with field-level control. Durable workflows that can retry for hours or days without losing state. Multi-tenant customer adapters that are isolated and scalable. And AI-assisted generation—from API docs to working code."
-"Out of scope: We're not replacing your database. We're not building an auth system. We're not competing with Datadog. And we're definitely not going to force Salesforce to change their API."
-"Clear expectations: This is about the GLUE between systems. Not the systems themselves."
-Right side, click: "And here's why you have this problem, even if you don't realize it yet."
-"Interactive moment. Raise your hand if you have more than 5 external API integrations."
+"In scope: Multi-protocol translation—REST, SOAP, GraphQL, webhooks, all of them. Schema mapping with field-level control—you control exactly how fields are transformed. Durable workflows that can retry for hours or days without losing state—the workflow sleeps, not burns CPU. Multi-tenant customer adapters that are isolated and scalable—each customer gets their own sandbox. And AI-assisted generation—from API docs to working code in seconds."
+"Out of scope: We're not replacing your database. We're not building an auth system. We're not competing with Datadog for observability. And we're definitely not going to force Salesforce to change their API."
+Pause: "Clear expectations: This is about the GLUE between systems. Not the systems themselves."
+"We're solving the translation layer, the orchestration layer, the reliability layer. The part that connects everything else."
+"And here's why this matters to you: Interactive moment. Raise your hand if you have more than 5 external API integrations."
 Look around: "Most of you. Keep it up if you've spent more than a week debugging what should have been a 'simple' webhook integration."
 "Still a lot of hands. Keep it up if 'we'll build that integration next quarter' has been said for 3 or more quarters."
 Laugh with them: "Yeah. We've all been there."
