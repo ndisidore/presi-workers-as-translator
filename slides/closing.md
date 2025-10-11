@@ -38,17 +38,17 @@ class: text-center
 <div class="grid grid-cols-3 gap-4">
 
 <div v-click="4" class="p-4 bg-green-100 dark:bg-emerald-600 rounded-lg">
-<div class="text-lg font-bold mb-2">🤖 AI Mapping</div>
+<div class="text-lg font-bold mb-2"><tabler-sparkles class="inline-block" /> AI Mapping</div>
 <div class="text-sm">Detected schema drift and suggested mappings automatically</div>
 </div>
 
 <div v-click="5" class="p-4 bg-blue-100 dark:bg-blue-900 rounded-lg">
-<div class="text-lg font-bold mb-2">⚡ Edge Validation</div>
+<div class="text-lg font-bold mb-2"><tabler-bolt class="inline-block" /> Edge Validation</div>
 <div class="text-sm">Rejected malformed payloads at the edge before they touched core systems</div>
 </div>
 
 <div v-click="6" class="p-4 bg-purple-100 dark:bg-violet-500 rounded-lg">
-<div class="text-lg font-bold mb-2">🔄 Workflow Recovery</div>
+<div class="text-lg font-bold mb-2"><tabler-refresh class="inline-block" /> Workflow Recovery</div>
 <div class="text-sm">Retried and reconciled state safely — no all-hands at 3AM</div>
 </div>
 
@@ -90,17 +90,17 @@ class: text-center
 <div class="grid grid-cols-3 gap-4">
 
 <div v-click="4" class="p-4 bg-emerald-100 dark:bg-emerald-600 rounded-lg">
-<div class="text-lg font-bold mb-2">⚡ Workers as Buffers</div>
+<div class="text-lg font-bold mb-2"><tabler-bolt class="inline-block" /> Workers as Buffers</div>
 <div class="text-sm">Rate-limit and shape traffic at the edge so the core never floods</div>
 </div>
 
 <div v-click="5" class="p-4 bg-blue-100 dark:bg-blue-900 rounded-lg">
-<div class="text-lg font-bold mb-2">🔄 Workflows Queueing</div>
+<div class="text-lg font-bold mb-2"><tabler-refresh class="inline-block" /> Workflows Queueing</div>
 <div class="text-sm">Smooth backoff and durable queues for heavy spikes</div>
 </div>
 
 <div v-click="6" class="p-4 bg-purple-100 dark:bg-violet-500 rounded-lg">
-<div class="text-lg font-bold mb-2">🤖 AI Awareness</div>
+<div class="text-lg font-bold mb-2"><tabler-sparkles class="inline-block" /> AI Awareness</div>
 <div class="text-sm">Auto-generated fallback paths and user messaging to keep customers informed</div>
 </div>
 
@@ -122,7 +122,7 @@ layoutClass: gap-2
 ::left::
 
 <div class="p-6 bg-emerald-100 dark:bg-emerald-600 rounded-lg mb-8">
-<div class="text-lg font-bold mb-2">💡 The Insight</div>
+<div class="text-lg font-bold mb-2"><tabler-bulb class="inline-block" /> The Insight</div>
 It's not about a single validation or heroic developer fix.<br />
 It's about the <i>infrastructure taking on a more supportive role.</i>
 </div>
@@ -163,7 +163,7 @@ When APIs stop being obstacles and start being allies, everything changes:
 </div>
 
 <div v-click="5" class="p-6 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 rounded-xl shadow-lg">
-<div class="text-xl font-bold mb-4">🎯 Innovation Focus</div>
+<div class="text-xl font-bold mb-4"><tabler-target class="inline-block" /> Innovation Focus</div>
 
 <div class="space-y-2 text-sm">
   <div>✨ Turn legacy APIs into modern products</div>

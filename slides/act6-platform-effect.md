@@ -138,7 +138,7 @@ Transition: "But it gets even better when you add community effects..."
 
 <div>
 
-## **Community Catalog** 🏪
+## **Community Catalog** <carbon-store class="inline-block" />
 
 <div class="text-sm mt-8 p-4 bg-gray-100 dark:bg-gray-700 rounded-lg">
 
@@ -151,14 +151,14 @@ Transition: "But it gets even better when you add community effects..."
 </div>
 
 <div class="p-4 bg-gray-100 dark:bg-gray-700 rounded-lg mt-4 text-sm font-bold">
-💡 Browse → Fork → Customize → Deploy
+<tabler-bulb class="inline-block" /> Browse → Fork → Customize → Deploy
 </div>
 
 </div>
 
 <div>
 
-## **Extensible Patterns** 🧩
+## **Extensible Patterns** <tabler-puzzle class="inline-block" />
 
 <div class="mt-8">
 
@@ -222,7 +222,7 @@ const trending = [
 <v-click at="2">
 
 <div class="mt-8 text-center text-xl font-bold">
-Community code + custom business logic = ❤️
+Community code + custom business logic = <tabler-heart class="inline-block text-red-500" />
 </div>
 
 </v-click>
@@ -244,7 +244,7 @@ Transition: "Let me paint you the full vision..."
 
 ---
 
-# **The Vision** 🚀
+# **The Vision** <carbon-rocket class="inline-block" />
 
 <div class="p-6 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 rounded-lg m-8 mt-16">
 
@@ -312,14 +312,14 @@ WHERE customer_id = ?
 
 ::right::
 
-### **Cross-Workflow Intelligence** 🚀
+### **Cross-Workflow Intelligence** <carbon-rocket class="inline-block" />
 
 <div class="mt-4 p-4 bg-neutral-100 dark:bg-neutral-700 rounded text-sm">
 
-- 👤 User Context (built by all workflows)
-- 📋 Business Rules (learned patterns)
-- 🔖 Integration Checkpoints (resume anywhere)
-- 🔗 Cross-Workflow Events (trigger chains)
+- <tabler-user class="inline-block" /> User Context (built by all workflows)
+- <tabler-clipboard class="inline-block" /> Business Rules (learned patterns)
+- <tabler-bookmark class="inline-block" /> Integration Checkpoints (resume anywhere)
+- <tabler-link class="inline-block" /> Cross-Workflow Events (trigger chains)
 
 </div>
 
@@ -350,7 +350,7 @@ Transition: "But what about non-technical users? Can they benefit too?"
 
 <div>
 
-## **Visual Field Mapper** 🎨
+## **Visual Field Mapper** <tabler-palette class="inline-block" />
 
 <div class="p-4 mt-8 bg-gray-100 dark:bg-gray-800 rounded-lg">
 
@@ -375,7 +375,7 @@ Transition: "But what about non-technical users? Can they benefit too?"
 
 <div v-click>
 
-## **Progressive Complexity** 🚀
+## **Progressive Complexity** <carbon-rocket class="inline-block" />
 
 <div class="space-y-4 mt-4 mt-8 text-sm">
 

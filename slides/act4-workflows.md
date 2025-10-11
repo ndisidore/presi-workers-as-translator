@@ -60,17 +60,17 @@ timeline
 <div class="grid grid-cols-3 gap-4 mt-2">
 
 <div v-click="2" class="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg">
-<div class="font-bold">💾 Memory Loss</div>
+<div class="font-bold"><tabler-database class="inline-block" /> Memory Loss</div>
 <div class="text-sm">Process restarts lose state</div>
 </div>
 
 <div v-click="3" class="p-4 bg-amber-100 dark:bg-amber-600 rounded-lg">
-<div class="font-bold">💸 Resource Waste</div>
+<div class="font-bold"><tabler-coin class="inline-block" /> Resource Waste</div>
 <div class="text-sm">Idle processes cost money</div>
 </div>
 
 <div v-click="4" class="p-4 bg-indigo-100 dark:bg-indigo-600 rounded-lg">
-<div class="font-bold">🔥 Complexity</div>
+<div class="font-bold"><tabler-flame class="inline-block" /> Complexity</div>
 <div class="text-sm">Dead letter queues, monitoring, ...</div>
 </div>
 
@@ -172,7 +172,7 @@ Your integration can literally sleep for days and wake up exactly where it left 
 <v-click>
 
 <div class="mt-8 p-6 bg-blue-100 dark:bg-blue-800 rounded-lg">
-<div class="font-bold text-lg mb-2">🧠 The Magic</div>
+<div class="font-bold text-lg mb-2"><tabler-brain class="inline-block" /> The Magic</div>
 State is persisted automatically. Each step remembers exactly where it was, even after failures, deployments, or cosmic events.
 </div>
 
@@ -233,11 +233,11 @@ fail2: {
 }
 
 start -> step1
-step1 -> fail1: ⛔
+step1 -> fail1: ❌
 fail1 -> sleep1: Retry
 sleep1 -> step1
 step1 -> step2: ✅
-step2 -> fail2: ⛔
+step2 -> fail2: ❌
 fail2 -> sleep2: Retry
 sleep2 -> step2
 step2 -> success: ✅
@@ -415,7 +415,7 @@ But there's still one problem...
 </div>
 
 <div class="text-2xl mb-8">
-How do we write all these adapters in the first place? 🤔
+How do we write all these adapters in the first place? <tabler-help-circle class="inline-block" />
 </div>
 
 </div>
@@ -423,19 +423,19 @@ How do we write all these adapters in the first place? 🤔
 <div class="grid grid-cols-3 gap-6 mb-8">
 
 <div v-click="1" class="p-6 bg-violet-100 dark:bg-violet-500 rounded-lg text-center">
-<div class="text-2xl mb-2">📖</div>
+<tabler-book-2 class="text-2xl mb-2" />
 <div class="font-bold">Read the docs</div>
 <div class="text-sm">For 300 different APIs</div>
 </div>
 
 <div v-click="2" class="p-6 bg-emerald-100 dark:bg-emerald-500 rounded-lg text-center">
-<div class="text-2xl mb-2">🔍</div>
+<tabler-search class="text-2xl mb-2" />
 <div class="font-bold">Understand schemas</div>
 <div class="text-sm">Map fields manually</div>
 </div>
 
 <div v-click="3" class="p-6 bg-rose-100 dark:bg-rose-500 rounded-lg text-center">
-<div class="text-2xl mb-2">🐛</div>
+<tabler-bug class="text-2xl mb-2" />
 <div class="font-bold">Debug edge cases</div>
 <div class="text-sm">Handle undocumented quirks</div>
 </div>
@@ -445,7 +445,7 @@ How do we write all these adapters in the first place? 🤔
 <v-click at="4">
 
 <div class="text-center text-2xl">
-What if the computer could read the documentation and write the code for us? 🤖
+What if the computer could read the documentation and write the code for us? <tabler-robot class="inline-block" />
 </div>
 
 </v-click>

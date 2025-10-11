@@ -76,7 +76,7 @@ Transition: "Let me show you what happens when Slack, Teams, and SendGrid walk i
 
 <v-click at="4">
 
-**Three different APIs, three different schemas, one confused application** 😵‍💫
+**Three different APIs, three different schemas, one confused application** <tabler-mood-confuzed class="inline-block" />
 
 </v-click>
 
@@ -154,7 +154,7 @@ class: text-center
 
 ## 20 lines of Worker code normalizes 3 different APIs
 
-<div v-click class="mt-8 text-2xl">🤯</div>
+<div v-click class="mt-8 text-2xl"><tabler-mood-crazy-happy class="inline-block text-sky-500" /></div>
 
 <!-- speaker:
 "Wait, that's it?"
@@ -173,7 +173,7 @@ Transition: "Let me show you why this is so powerful..."
 <div class="space-y-6">
 
 <div v-click="1" class="flex items-start space-x-4">
-<div class="text-2xl">🎯</div>
+<tabler-target class="text-2xl" />
 <div>
 <div class="font-bold">Single Point of Truth</div>
 <div class="text-sm opacity-75">Your app only needs to understand one schema</div>
@@ -181,7 +181,7 @@ Transition: "Let me show you why this is so powerful..."
 </div>
 
 <div v-click="2" class="flex items-start space-x-4">
-<div class="text-2xl">🛡️</div>
+<tabler-shield-check class="text-2xl" />
 <div>
 <div class="font-bold">Consistent Error Handling</div>
 <div class="text-sm opacity-75">Retry logic, rate limiting, all in one place</div>
@@ -189,7 +189,7 @@ Transition: "Let me show you why this is so powerful..."
 </div>
 
 <div v-click="3" class="flex items-start space-x-4">
-<div class="text-2xl">⚡</div>
+<tabler-bolt class="text-2xl" />
 <div>
 <div class="font-bold">Low Overhead</div>
 <div class="text-sm opacity-75">No queues, no clusters, just code at the edge</div>
@@ -250,7 +250,7 @@ Transition: "But here's where the story gets interesting. This works great... un
 
 ---
 
-# But Plot Twist... 🎭
+# But Plot Twist... <tabler-masks-theater class="inline-block" />
 
 <v-click>
 

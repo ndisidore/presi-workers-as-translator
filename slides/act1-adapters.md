@@ -35,19 +35,19 @@ var _ NotificationDeliverer = (*PagerDuty)(nil)
 
 <v-click at="1">
 
-✅ **Clean abstraction** - One interface to rule them all
+<p><tabler-circle-check class="inline-block text-green-500" /> <span class="font-bold">Clean abstraction</span> - One interface to rule them all</p>
 
 </v-click>
 
 <v-click at="2">
 
-✅ **Type safety** - Compile-time guarantees
+<p><tabler-circle-check class="inline-block text-green-500" /> <span class="font-bold">Type safety</span> - Compile-time guarantees</p>
 
 </v-click>
 
 <v-click at="3">
 
-⛔ **But then reality hits...**
+<p><tabler-circle-x class="inline-block text-red-500" /> <span class="font-bold">But then reality hits...</span></p>
 
 </v-click>
 
@@ -154,7 +154,7 @@ Transition: "Let me show you the infrastructure tax..."
 
 <div class="p-6 bg-slate-100 dark:bg-slate-700 rounded-lg">
 
-## ✅ **Benefits**
+## <tabler-circle-check class="inline-block text-green-500" /> **Benefits**
 
 - **Durability**: Messages survive failures
 - **Scalability**: Independent consumer scaling
@@ -164,7 +164,7 @@ Transition: "Let me show you the infrastructure tax..."
 
 <div class="p-6 bg-neutral-100 dark:bg-neutral-700 rounded-lg">
 
-## ⛔ **Limitations**
+## <tabler-circle-x class="inline-block text-red-500" /> **Limitations**
 
 - **Heavy**: Kafka clusters, consumer groups, monitoring
 - **Complex**: Network partitions, rebalancing, offset management
@@ -177,7 +177,7 @@ Transition: "Let me show you the infrastructure tax..."
 <v-click>
 
 <div class="text-center mt-8">
-<div class="text-lg font-semibold mb-2">💡 The Realization</div>
+<div class="text-lg font-semibold mb-2"><tabler-bulb class="inline-block text-amber-500" /> The Realization</div>
 "We built a Ferrari to deliver pizza."
 </div>
 

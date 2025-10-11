@@ -25,19 +25,19 @@ Transition: "Let me show you the Shopify moment..."
 <div class="grid grid-cols-3 gap-6 mb-8">
 
 <div v-click="1" class="p-4 bg-emerald-100 dark:bg-emerald-600 rounded-lg text-center">
-<div class="text-2xl mb-2">🏪</div>
+<carbon-store class="text-2xl mb-2" />
 <div class="font-bold">Shopify</div>
 <div class="text-sm">Platform provides the infrastructure</div>
 </div>
 
 <div v-click="2" class="p-4 bg-sky-100 dark:bg-sky-600 rounded-lg text-center">
-<div class="text-2xl mb-2">🔌</div>
+<carbon-plug class="text-2xl mb-2" />
 <div class="font-bold">Developers</div>
 <div class="text-sm">Build apps for specific use cases</div>
 </div>
 
 <div v-click="3" class="p-4 bg-fuchsia-100 dark:bg-fuchsia-600 rounded-lg text-center">
-<div class="text-2xl mb-2">🛒</div>
+<carbon-shopping-cart class="text-2xl mb-2" />
 <div class="font-bold">Merchants</div>
 <div class="text-sm">Install apps that fit their business</div>
 </div>
@@ -96,7 +96,7 @@ Transition: "Let me show you why this is so hard with traditional approaches..."
 
 <div v-click>
 
-## **The Old Way** 😰
+## **The Old Way** <tabler-mood-sad class="inline-block" />
 
 ```typescript
 // One massive switch statement
@@ -219,30 +219,30 @@ Transition: "This is the holy grail of multi-tenant platforms..."
 
 <div class="text-center">
 
-<div v-click="1" class="text-3xl mb-8">Customer writes adapter once, it scales globally 🌍</div>
+<div v-click="1" class="text-3xl mb-8">Customer writes adapter once, it scales globally <tabler-globe class="inline-block" /></div>
 
 <div v-click="2" class="grid grid-cols-2 gap-6 mb-8">
 
 <div class="p-6 bg-emerald-100 dark:bg-emerald-600 rounded-lg">
-<div class="text-2xl mb-2">📝</div>
+<tabler-file-text class="text-2xl mb-2" />
 <div class="font-bold">Write Once</div>
 <div class="text-sm">Customer uploads their logic</div>
 </div>
 
 <div class="p-6 bg-blue-100 dark:bg-blue-800 rounded-lg">
-<div class="text-2xl mb-2">🚀</div>
+<carbon-rocket class="text-2xl mb-2" />
 <div class="font-bold">Deploy Globally</div>
 <div class="text-sm">Instant worldwide distribution</div>
 </div>
 
 <div class="p-6 bg-purple-100 dark:bg-violet-500 rounded-lg">
-<div class="text-2xl mb-2">⚡</div>
+<tabler-bolt class="text-2xl mb-2" />
 <div class="font-bold">Scale Infinitely</div>
 <div class="text-sm">Zero configuration needed</div>
 </div>
 
 <div class="p-6 bg-amber-100 dark:bg-amber-600 rounded-lg">
-<div class="text-2xl mb-2">🔒</div>
+<tabler-lock class="text-2xl mb-2" />
 <div class="font-bold">Run Isolated</div>
 <div class="text-sm">Each adapter in its own sandbox</div>
 </div>
@@ -250,7 +250,7 @@ Transition: "This is the holy grail of multi-tenant platforms..."
 </div>
 
 <div v-click="3" class="text-xl">
-We just gave customers superpowers! 🦸‍♀️🦸‍♂️
+We just gave customers superpowers! <tabler-sparkles class="inline-block" />
 </div>
 
 </div>
@@ -271,7 +271,7 @@ layout: two-cols-header
 layoutClass: gap-6
 ---
 
-# Real-World Magic ✨
+# Real-World Magic <tabler-sparkles class="inline-block" />
 
 ::left::
 
@@ -280,7 +280,7 @@ layoutClass: gap-6
 <div class="space-y-4 mt-4">
 
 <div v-click="1" class="flex items-center space-x-4">
-<div class="text-2xl">⏱️</div>
+<tabler-clock class="text-2xl" />
 <div>
 <div class="font-bold">Customer onboarding</div>
 <div class="text-sm opacity-75">Weeks → Minutes</div>
@@ -288,7 +288,7 @@ layoutClass: gap-6
 </div>
 
 <div v-click="2" class="flex items-center space-x-4">
-<div class="text-2xl">📞</div>
+<tabler-phone class="text-2xl" />
 <div>
 <div class="font-bold">Support load</div>
 <div class="text-sm opacity-75">Faster cycle/support time</div>
@@ -296,7 +296,7 @@ layoutClass: gap-6
 </div>
 
 <div v-click="3" class="flex items-center space-x-4">
-<div class="text-2xl">🔄</div>
+<tabler-refresh class="text-2xl" />
 <div>
 <div class="font-bold">Network effects</div>
 <div class="text-sm opacity-75">Shared adapters across customers</div>
@@ -377,17 +377,17 @@ But what about when things go wrong?
 <div class="grid grid-cols-3 gap-4 text-center">
 
 <div v-click="2" class="p-6 bg-purple-100 dark:bg-purple-400 rounded-lg">
-<div class="text-3xl mb-2">🔴</div>
+<tabler-circle-filled class="text-3xl mb-2 text-red-500" />
 <div class="font-bold">Salesforce is down</div>
 </div>
 
 <div v-click="3" class="p-6 bg-yellow-100 dark:bg-amber-400 rounded-lg">
-<div class="text-3xl mb-2">⚠️</div>
+<tabler-alert-triangle class="text-3xl mb-2" />
 <div class="font-bold">Slack is rate-limiting</div>
 </div>
 
 <div v-click="4" class="p-6 bg-rose-100 dark:bg-rose-500 rounded-lg">
-<div class="text-3xl mb-2">💥</div>
+<tabler-skull class="text-3xl mb-2" />
 <div class="font-bold">The internet has a bad day</div>
 </div>
 

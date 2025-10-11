@@ -25,19 +25,19 @@ Transition: "Remember carrying 47 adapters? What if one could reshape itself..."
 <div class="grid grid-cols-3 gap-6 mb-8">
 
 <div v-click="1" class="p-4 bg-red-100 dark:bg-rose-500 rounded-lg text-center">
-<div class="text-2xl mb-2">📚</div>
+<tabler-book-2 class="text-2xl mb-2" />
 <div class="font-bold">Challenge 1</div>
 <div class="text-sm">Every API has its own OpenAPI spec</div>
 </div>
 
 <div v-click="2" class="p-4 bg-indigo-100 dark:bg-indigo-500 rounded-lg text-center">
-<div class="text-2xl mb-2">🎭</div>
+<tabler-mood-smile class="text-2xl mb-2" />
 <div class="font-bold">Challenge 2</div>
 <div class="text-sm">APIs have quirks and behaviors</div>
 </div>
 
 <div v-click="3" class="p-4 bg-violet-100 dark:bg-violet-500 rounded-lg text-center">
-<div class="text-2xl mb-2">👻</div>
+<tabler-help-circle class="text-2xl mb-2" />
 <div class="font-bold">Challenge 3</div>
 <div class="text-sm">Undocumented edge cases</div>
 </div>
@@ -47,7 +47,7 @@ Transition: "Remember carrying 47 adapters? What if one could reshape itself..."
 <v-click at="4">
 
 <div class="text-center text-xl">
-Enter: <span class="font-bold text-2xl">Text Generation Models - The Schema Whisperers</span> 🧙‍♂️
+Enter: <span class="font-bold text-2xl">Text Generation Models - The Schema Whisperers</span> <tabler-sparkles class="inline-block" />
 </div>
 
 </v-click>

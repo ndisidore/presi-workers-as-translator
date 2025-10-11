@@ -5,7 +5,7 @@ class: text-center
 
 # The £330M API Meltdown
 
-<div class="text-6xl mb-8">💥</div>
+<carbon-warning-alt class="text-6xl mb-8" />
 
 **A single API contract change that broke an entire bank**
 
@@ -32,7 +32,7 @@ class: text-center
 
 # The $1.1T Rally Outage
 
-<div class="text-6xl mb-8">📉</div>
+<tabler-trending-down class="text-6xl mb-8" />
 
 **When Robinhood’s backend failed during a $1.1 trillion market surge**
 
@@ -86,7 +86,7 @@ layoutClass: gap-8
 <div class="space-y-6">
 
 <div v-click="1" class="flex items-start space-x-4">
-<div class="text-4xl">👨‍💻</div>
+<tabler-code class="text-4xl" />
 <div>
 <div class="font-bold text-lg">Developers</div>
 <div class="text-sm opacity-75 mb-2">"You've written this adapter code 47 times"</div>
@@ -96,7 +96,7 @@ layoutClass: gap-8
 </div>
 
 <div v-click="2" class="flex items-start space-x-4">
-<div class="text-4xl">💼</div>
+<tabler-briefcase class="text-4xl" />
 <div>
 <div class="font-bold text-lg">Business Owners</div>
 <div class="text-sm opacity-75 mb-2">"Each integration takes 3 weeks and costs $50K"</div>
@@ -106,7 +106,7 @@ layoutClass: gap-8
 </div>
 
 <div v-click="3" class="flex items-start space-x-4">
-<div class="text-4xl">👥</div>
+<tabler-users class="text-4xl" />
 <div>
 <div class="font-bold text-lg">Customers & Ops Teams</div>
 <div class="text-sm opacity-75 mb-2">"Why is my Slack notification 30 seconds behind the email?"</div>
@@ -183,7 +183,7 @@ class: text-center
 
 <div>
 
-## 📐 The Promise
+## <tabler-ruler class="inline-block" /> The Promise
 
 **"One schema to rule them all"**
 
@@ -198,7 +198,7 @@ Strong typing, language-agnostic
 </div>
 
 <div class="p-3 bg-emerald-100 dark:bg-emerald-600 rounded text-sm font-bold">
-✅ Great within your org
+<tabler-circle-check class="inline-block text-green-500" /> Great within your org
 </div>
 
 </div>
@@ -207,7 +207,7 @@ Strong typing, language-agnostic
 
 <div>
 
-## 💔 Why It Fails
+## <tabler-heart-broken class="inline-block" /> Why It Fails
 
 <div class="mt-6 space-y-3">
 
@@ -260,7 +260,7 @@ class: text-center
 
 <div>
 
-## 🔀 The Promise
+## <tabler-arrows-shuffle class="inline-block" /> The Promise
 
 **"Unified query layer over everything"**
 
@@ -275,7 +275,7 @@ Single endpoint, strongly typed
 </div>
 
 <div class="p-3 bg-emerald-100 dark:bg-emerald-600 rounded text-sm font-bold">
-✅ Excellent for YOUR APIs
+<tabler-circle-check class="inline-block text-green-500" /> Excellent for YOUR APIs
 </div>
 
 </div>
@@ -284,7 +284,7 @@ Single endpoint, strongly typed
 
 <div>
 
-## 🤔 Why It Falls Short
+## <tabler-help-circle class="inline-block" /> Why It Falls Short
 
 <div class="mt-6 space-y-3">
 
@@ -337,7 +337,7 @@ class: text-center
 
 <div>
 
-## 🎨 The Promise
+## <tabler-palette class="inline-block" /> The Promise
 
 **"No-code integrations for everyone"**
 
@@ -352,7 +352,7 @@ Pre-built connectors
 </div>
 
 <div class="p-3 bg-emerald-100 dark:bg-emerald-600 rounded text-sm font-bold">
-✅ Perfect for simple flows
+<tabler-circle-check class="inline-block text-green-500" /> Perfect for simple flows
 </div>
 
 </div>
@@ -361,7 +361,7 @@ Pre-built connectors
 
 <div>
 
-## 🚧 Why It's Limited
+## <tabler-barrier-block class="inline-block" /> Why It's Limited
 
 <div class="mt-6 space-y-3">
 
@@ -414,7 +414,7 @@ class: text-center
 
 <div>
 
-## ✅ In Scope
+## <tabler-circle-check class="inline-block text-green-500" /> In Scope
 
 - Multi-protocol translation
 - Schema transformation
@@ -426,7 +426,7 @@ class: text-center
 
 <div>
 
-## ⛔ Out of Scope
+## <tabler-circle-x class="inline-block text-red-500" /> Out of Scope
 
 - Database replacement
 - Auth systems
@@ -487,7 +487,7 @@ layoutClass: gap-16
 <div class="space-y-6">
 
 <div v-click="1" class="flex items-start space-x-4">
-<div class="text-2xl">🌍</div>
+<tabler-globe class="text-2xl" />
 <div>
 <div class="font-bold">Every partner speaks a different protocol</div>
 <div class="text-sm opacity-75">REST, SOAP, MQTT, GraphQL, XML-RPC...</div>
@@ -495,7 +495,7 @@ layoutClass: gap-16
 </div>
 
 <div v-click="2" class="flex items-start space-x-4">
-<div class="text-2xl">⚙️</div>
+<tabler-settings class="text-2xl" />
 <div>
 <div class="font-bold">Every schema tells a different story</div>
 <div class="text-sm opacity-75">What's `orderId` here might be `shipment_ref` there</div>
@@ -503,7 +503,7 @@ layoutClass: gap-16
 </div>
 
 <div v-click="3" class="flex items-start space-x-4">
-<div class="text-2xl">🔌</div>
+<carbon-plug class="text-2xl" />
 <div>
 <div class="font-bold">Every integration needs an adapter</div>
 <div class="text-sm opacity-75">Mapping, transformation, and retries</div>
@@ -511,7 +511,7 @@ layoutClass: gap-16
 </div>
 
 <div v-click="4" class="flex items-start space-x-4">
-<div class="text-2xl">🧩</div>
+<tabler-puzzle class="text-2xl" />
 <div>
 <div class="font-bold">That's where Cloudflare Workers come in</div>
 </div>
