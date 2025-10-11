@@ -156,7 +156,92 @@ export class EnrichAndSendWorkflow extends WorkflowEntrypoint<Env, Params> {
 "If Salesforce is down for 6 hours? The workflow sleeps. Doesn't cost you anything. Wakes up when it's time to retry."
 Pause: "You wrote 'await step.do()' and got Netflix-grade orchestration."
 Tone: This is almost too good to be true. But it is true.
-Transition: "Let me show you what this actually looks like in a timeline..."
+Transition: "Now I know what some of you are thinking..."
+-->
+
+---
+layout: center
+class: text-center
+---
+
+# Why Cloudflare Workflows?
+## (vs. Temporal, AWS Step Functions)
+
+<div class="max-w-4xl mx-auto">
+<div class="grid grid-cols-2 gap-16 mt-16 text-left">
+
+<div>
+
+## <tabler-circle-check class="inline-block text-green-500" /> You're Right!
+
+**"This sounds like Temporal/Step Functions..."**
+
+<div class="mt-6 space-y-3">
+
+<div class="p-3 bg-blue-100 dark:bg-blue-800 rounded text-sm">
+Similar durable execution model
+</div>
+
+<div class="p-3 bg-blue-100 dark:bg-blue-800 rounded text-sm">
+Battle-tested, production-grade
+</div>
+
+<div class="p-3 bg-emerald-100 dark:bg-emerald-600 rounded text-sm font-bold">
+<tabler-circle-check class="inline-block text-green-500" /> Excellent for backend orchestration
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+## <tabler-sparkles class="inline-block text-yellow-400" /> When Cloudflare Shines
+
+<div class="mt-6 space-y-3">
+
+<div class="p-3 bg-purple-100 dark:bg-violet-500 rounded text-sm">
+<tabler-world class="inline-block" /> Edge-native (300+ cities)
+</div>
+
+<div class="p-3 bg-purple-100 dark:bg-violet-500 rounded text-sm">
+<tabler-bolt class="inline-block" /> Sub-millisecond cold starts
+</div>
+
+<div class="p-3 bg-purple-100 dark:bg-violet-500 rounded text-sm">
+<tabler-plug class="inline-block" /> One platform (Workers + Workflows + DO)
+</div>
+
+<div class="p-3 bg-purple-100 dark:bg-violet-500 rounded text-sm">
+<tabler-settings class="inline-block" /> Zero ops overhead
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="mt-8 text-sm opacity-75 italic">
+This isn't "vs."—it's "when." Use the right tool for the job.
+</div>
+
+</div>
+
+<!-- speaker:
+"Why Cloudflare Workflows? I know what some of you are thinking: 'This sounds like Temporal or AWS Step Functions.'"
+"And you're absolutely right. They share a similar durable execution model. And that's a compliment! Temporal and Step Functions are battle-tested, production-grade tools."
+"This isn't a 'versus' conversation. It's a 'when' conversation."
+"Temporal is excellent for orchestrating long-running backend processes—multi-day workflows coordinating dozens of microservices. Step Functions shine for serverless workflows in AWS ecosystems."
+"Cloudflare Workflows excel at a specific use case: edge-native API integrations."
+Point to the right column: "Edge-native means your workflow runs in the same 300+ cities where your Workers already run. No separate orchestration layer in a different region."
+"Sub-millisecond cold starts because you're already at the edge. No container spin-up time."
+"Tight integration—one platform. You're not stitching together Workers + a separate orchestration service. It's all Cloudflare."
+"Cost model optimized for what we're doing: high-volume, short-lived integration tasks. Temporal's pricing makes sense for long-running workflows. This is purpose-built for API glue."
+"And zero ops. You're not managing Temporal clusters or configuring Step Functions state machines across regions."
+Pause: "Use the right tool for the job. If you're orchestrating complex backend processes, Temporal is phenomenal. If you're building edge-native API integrations? This is your tool."
+Tone: Respectful of alternatives, confident in the use case fit.
+Transition: "Alright, let me show you what this actually looks like in a timeline..."
 -->
 
 ---
@@ -402,7 +487,8 @@ Each step can fail and recover independently, with different retry strategies
 "They don't care about each other. They're composed, but isolated."
 "And here's the kicker: this works for workflows that run for DAYS. Weeks even."
 "I've seen workflows that orchestrate month-long business processes. They just... sleep. And wake up when they need to."
-Tone: This is the power of true durable execution.
+"And for the ops team that gets paged at 3am when integrations break? This is your peace of mind. Workflows don't need you to babysit them. They don't need you to manually restart failed jobs or clear stuck queues. They self-heal. You sleep."
+Tone: This is the power of true durable execution, with real operational benefits.
 Transition: "But there's still one problem. We solved HOW to run integrations reliably. But we haven't solved the question of WHO writes all these adapters..."
 -->
 

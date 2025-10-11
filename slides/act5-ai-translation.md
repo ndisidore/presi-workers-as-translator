@@ -160,32 +160,32 @@ Transition: "Let's talk about what this actually means in practice..."
 
 <div class="p-6 bg-rose-100 dark:bg-rose-600 rounded-lg">
 
-### **Manual Mapping** 😤
+### **Manual Mapping** <tabler-mood-sad class="inline-block" />
 
 <div class="space-y-3 mt-4 text-sm">
-<div>📖 Read 10-page API documentation</div>
-<div>🔍 Understand nested object structures</div>
-<div>✍️ Write transformation code</div>
-<div>🐛 Debug edge cases</div>
-<div>🧪 Test with sample data</div>
-<div>🔄 Handle API version changes</div>
-<div>⏱️ <span class="font-bold">Total time:</span> 3 day</div>
+<div><tabler-book-2 class="inline-block" /> Read 10-page API documentation</div>
+<div><tabler-search class="inline-block" /> Understand nested object structures</div>
+<div><tabler-pencil class="inline-block" /> Write transformation code</div>
+<div><tabler-bug class="inline-block" /> Debug edge cases</div>
+<div><tabler-flask class="inline-block" /> Test with sample data</div>
+<div><tabler-refresh class="inline-block" /> Handle API version changes</div>
+<div><tabler-clock class="inline-block" /> <span class="font-bold">Total time:</span> 3 days</div>
 </div>
 
 </div>
 
 <div class="p-6 bg-green-100 dark:bg-emerald-600 rounded-lg">
 
-### **AI Generation** ✨
+### **AI Generation** <tabler-sparkles class="inline-block" />
 
 <div class="space-y-3 mt-4 text-sm">
-<div>🤖 Paste/Link OpenAPI spec</div>
-<div>📋 Paste/Link your schema</div>
-<div>⚡ AI reads and understands</div>
-<div>🎯 Generates working code</div>
-<div>🛡️ Includes error handling</div>
-<div>🔮 Handles common edge cases</div>
-<div>⏱️ <span class="font-bold">Total time:</span> 30 seconds</div>
+<div><tabler-robot class="inline-block" /> Paste/Link OpenAPI spec</div>
+<div><tabler-clipboard class="inline-block" /> Paste/Link your schema</div>
+<div><tabler-bolt class="inline-block" /> AI reads and understands</div>
+<div><tabler-target class="inline-block" /> Generates working code</div>
+<div><tabler-shield class="inline-block" /> Includes error handling</div>
+<div><tabler-crystal-ball class="inline-block" /> Handles common edge cases</div>
+<div><tabler-clock class="inline-block" /> <span class="font-bold">Total time:</span> 30 seconds</div>
 </div>
 
 </div>
@@ -195,7 +195,7 @@ Transition: "Let's talk about what this actually means in practice..."
 <v-click>
 
 <div class="text-center mt-8 text-2xl">
-<span class="font-bold">"Any sufficiently advanced technology is indistinguishable from magic"</span> 🪄
+<span class="font-bold">"Any sufficiently advanced technology is indistinguishable from magic"</span> <tabler-wand class="inline-block" />
 </div>
 
 </v-click>
@@ -208,8 +208,8 @@ AI: "30 seconds. Paste the OpenAPI spec. Paste your schema. Hit generate. Workin
 "And here's the kicker: the AI doesn't copy-paste the typo. It understands what the code is trying to do and generates the correct version."
 Read Clarke's Third Law slowly: "Any sufficiently advanced technology is indistinguishable from magic."
 "I want to be clear — I'm not saying AI is perfect. But for this specific task? Reading documentation and generating adapter code? It's transformative."
-"The time savings are real. 3 days → 30 seconds is a 600x productivity gain. That's not incremental improvement. That's a fundamental shift."
-Tone: Genuine awe, but grounded in practical experience.
+"The time savings are real. 3 days to 30 seconds—that's hundreds of times faster for straightforward field mapping and basic transforms. Now, complex business logic with edge cases? That still needs human review and testing. But for the 80% of adapters that are just 'map field A to field B, handle nulls, format dates'? This is a fundamental shift in how we work."
+Tone: Genuine awe, but grounded in practical experience and honest about limitations.
 Transition: "And speaking of real tools that make this possible..."
 -->
 
@@ -264,7 +264,8 @@ github.com/cloudflare/vibesdk
 "Here's what makes it powerful: You describe what you want in natural language. 'Build me an integration that transforms Stripe webhooks into Slack notifications.' It generates the code. Shows you a live preview. One-click deploy."
 "And under the hood? It's using Durable Objects to run stateful AI agents. It goes through iterative phases: planning, foundation, components, integration, optimization."
 "Notice that integration is a first-class phase. They're not treating adapters as an afterthought. They're baking them into the development workflow."
-"This is the future. Not 'write an integration by hand over 3 days.' But 'describe what you need, AI generates it, deploy in minutes.'"
-Tone: This is validation that the approach we're discussing is being adopted by major infrastructure providers.
+"And this isn't just our idea—Cloudflare is betting on this approach. When major infrastructure providers ship tools specifically designed for AI-generated integrations, that's validation. This approach isn't experimentation anymore. It's becoming infrastructure."
+"VibeSDK is open-source. You can use it today. The patterns we've discussed? They're being productized and made accessible to everyone."
+Tone: This is validation that the approach is industry-standard, not fringe.
 Transition: "But the real magic isn't just speed. It's the network effects that happen when everyone can generate adapters..."
 -->

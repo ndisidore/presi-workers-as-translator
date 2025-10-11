@@ -358,8 +358,14 @@ export default {
 Point to the code: "Look at what customers can write. Real business logic. 'If critical alert, call PagerDuty. Otherwise enrich with CRM data.'"
 "This isn't config. This is code. And it runs at the edge, globally, automatically."
 "Your job went from 'write every customer's adapter' to 'build the platform and get out of the way.'"
-Tone: This is the business impact. Real numbers, real change.
-Transition: "But what about when things go wrong? Because things always go wrong..."
+Pause: "Different audiences, different wins:"
+"For CTOs and Engineering Managers—this isn't just faster development. This is strategic leverage. Your team builds your core product, not 300 adapters. That's where your competitive advantage lives."
+"For Solutions Architects—multi-tenant isolation without operational complexity. No shared state bugs between customers. No 'Customer A's traffic spike brought down Customer B' incidents."
+"For Product Managers—customer onboarding drops from weeks to minutes. That's not just an efficiency gain. That's a competitive advantage. You can say 'yes' to enterprise deals that require custom integrations without blowing your roadmap."
+Tone: This is the business impact. Real numbers, real change for different roles.
+Transition: "So we've solved the multi-tenant problem. Workers for Platforms gives us dynamic dispatch—each customer gets their own isolated adapter, deployed globally, instantly. Beautiful. But..." Pause: "There's one enemy we haven't addressed yet: the internet itself."
+"The internet is unreliable. APIs go down for hours. Rate limits hit at the worst possible time. Networks partition. And when Salesforce decides to have a 6-hour outage right in the middle of your customer's critical workflow, your platform needs to survive."
+"Traditional retry logic? Fails. Queues? Expensive and fragile. This is where Workflows come in—and they're going to completely change how you think about reliability..."
 -->
 
 ---
