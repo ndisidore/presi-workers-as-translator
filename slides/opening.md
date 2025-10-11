@@ -79,7 +79,7 @@ layout: two-cols-header
 layoutClass: gap-8
 ---
 
-# This Isn't Just Their Problem — It's Everyone's Problem
+# This Isn't Just Their Problem
 
 ::left::
 
@@ -150,6 +150,24 @@ Pause: "The integration tax is real."
 "The hidden cost? Every hour spent writing adapters is an hour NOT building your actual product. The thing that differentiates you. The thing customers pay you for."
 Tone: Make this visceral and personal. This should hurt a little.
 Transition: "So naturally, smart people have tried to solve this..."
+-->
+
+---
+layout: image
+image: ./assets/terminal-data-pulse.webp
+---
+
+<div class="flex items-center justify-center h-full">
+  <img src="../assets/logo-dark.svg" class="max-w-md" />
+</div>
+
+<!-- speaker:
+"Before we dive into the solution, let me quickly introduce my current company—Terminal Industries."
+"We're setting off to build Terminal YOS™, a modern Yard Operating System designed from the ground up with AI, computer vision, and cloud infrastructure."
+"This isn't your traditional yard management system. We've reimagined what logistics coordination can be when you have real-time visibility, automated workflows, and intelligent orchestration."
+"Why does this matter for this talk? Because Terminal deals with the exact API integration challenges we're discussing. We integrate with TMS systems, WMS platforms, gate systems, IoT sensors, and more."
+"And the patterns we've developed using Cloudflare Workers to handle these integrations at scale are what I'm sharing with you today."
+Transition: "Alright, now let's get into the technical story..."
 -->
 
 ---

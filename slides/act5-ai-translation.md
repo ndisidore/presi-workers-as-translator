@@ -210,5 +210,61 @@ Read Clarke's Third Law slowly: "Any sufficiently advanced technology is indisti
 "I want to be clear — I'm not saying AI is perfect. But for this specific task? Reading documentation and generating adapter code? It's transformative."
 "The time savings are real. 3 days → 30 seconds is a 600x productivity gain. That's not incremental improvement. That's a fundamental shift."
 Tone: Genuine awe, but grounded in practical experience.
-Transition: "But the real magic isn't speed. It's the network effects that happen when everyone can generate adapters..."
+Transition: "And speaking of real tools that make this possible..."
+-->
+
+---
+layout: two-cols-header
+layoutClass: gap-8
+---
+
+# Cloudflare VibeSDK: AI-Powered Integration Builder
+### Open-source AI webapp generator built entirely on Cloudflare's stack
+
+::left::
+
+<div class="space-y-4">
+
+<v-click at="1">
+
+### Perfect for Integration Building
+
+- Describe integrations in natural language
+- Generates React + TypeScript Workers
+- Live preview in sandboxed containers
+- One-click deploy to Cloudflare Workers
+
+</v-click>
+
+<v-click at="2">
+
+### Yoinked Strait from the README
+
+
+> Let your customers extend your product's functionality without learning your API or writing code. They can describe custom integrations, build specialized workflows...
+
+</v-click>
+
+</div>
+
+::right::
+
+<div class="flex flex-col items-center justify-center h-full">
+<img src="https://opengraph.githubassets.com/1/cloudflare/vibesdk" alt="VibeSDK" class="rounded-lg shadow-lg max-w-full" />
+<div class="mt-4 text-center">
+<a href="https://github.com/cloudflare/vibesdk" target="_blank" class="font-mono text-sm opacity-75 hover:opacity-100">
+github.com/cloudflare/vibesdk
+</a>
+</div>
+</div>
+
+<!-- speaker:
+"And speaking of real tools that make this possible... Cloudflare just released VibeSDK."
+"It's an open-source AI webapp generator built entirely on the Cloudflare stack. And they specifically call out integration building as a core use case."
+"Here's what makes it powerful: You describe what you want in natural language. 'Build me an integration that transforms Stripe webhooks into Slack notifications.' It generates the code. Shows you a live preview. One-click deploy."
+"And under the hood? It's using Durable Objects to run stateful AI agents. It goes through iterative phases: planning, foundation, components, integration, optimization."
+"Notice that integration is a first-class phase. They're not treating adapters as an afterthought. They're baking them into the development workflow."
+"This is the future. Not 'write an integration by hand over 3 days.' But 'describe what you need, AI generates it, deploy in minutes.'"
+Tone: This is validation that the approach we're discussing is being adopted by major infrastructure providers.
+Transition: "But the real magic isn't just speed. It's the network effects that happen when everyone can generate adapters..."
 -->
