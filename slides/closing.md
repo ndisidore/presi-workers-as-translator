@@ -215,43 +215,48 @@ Tone: Empowering
 -->
 
 ---
-layout: center
-class: text-center
+layout: two-cols-header
+layoutClass: gap-8
 ---
 
 # Thank You
 
-<div class="text-lg opacity-75 mb-8">
-From chaos to clarity: Translating the Internet’s APIs with edge glue and AI
-</div>
+::left::
 
-<div class="grid grid-cols-2 gap-8 text-left max-w-2xl mx-auto">
-
-<div>
+<div class="text-left">
 
 ### **References**
 
 - [Postman: State of APIs 2024](https://www.postman.com/state-of-api/2024/)
 - [BBC: TSB IT meltdown cost £330m](https://www.bbc.com/news/business-47425233)
-- [Forbes: Robinhood’s $1.1 Trillion Outage](https://www.forbes.com/sites/billybambrough/2020/03/06/robinhoods-1-trillion-tech-outage/)
+- [Forbes: Robinhood's $1.1 Trillion Outage](https://www.forbes.com/sites/billybambrough/2020/03/06/robinhoods-1-trillion-tech-outage/)
 - [Learning from Integration Failures](https://www.1985.co.in/blog/learning-from-integration-failures/)
 
-</div>
-
-<div>
-
-### **Get Started**
+### Get Started {class="mt-2 font-bold"}
 
 - [Cloudflare Workers](https://workers.cloudflare.com)
 - [Cloudflare Workflows](https://developers.cloudflare.com/workflows)
 - [Workers AI](https://developers.cloudflare.com/workers-ai)
 
-</div>
-
-</div>
-
 <div class="mt-8 text-sm opacity-50">
 Slides built with Slidev, deployed on Cloudflare Workers (naturally)
+</div>
+
+</div>
+
+::right::
+
+<div class="flex flex-col items-center justify-center h-full">
+
+<img src="../assets/presi-qr.svg" alt="QR Code" class="max-w-[80%] w-64" />
+
+<div class="text-center">
+<div class="font-bold mb-2 text-primary">Presentation</div>
+<a href="https://github.com/ndisidore/presi-workers-as-translator" target="_blank" class="text-sm opacity-75 hover:opacity-100 font-mono">
+<logos-github-icon class="inline-block bg-neutral-100" /> ndisidore/presi-workers-as-translator
+</a>
+</div>
+
 </div>
 
 <!-- speaker:

@@ -31,7 +31,7 @@ Transition: "Let me show you what happens when Slack, Teams, and SendGrid walk i
 <div class="grid grid-cols-3 gap-4 mb-8 rosetta-code">
 
 <div v-click="1" class="p-4 bg-purple-100 dark:bg-violet-500 rounded-lg">
-<div class="font-bold">Slack Webhook</div>
+<div class="font-bold"><logos-slack-icon class="inline-block" /> Slack Webhook</div>
 <div class="mt-2 font-mono">
 ```json
 {
@@ -44,7 +44,7 @@ Transition: "Let me show you what happens when Slack, Teams, and SendGrid walk i
 </div>
 
 <div v-click="2" class="p-4 bg-sky-100 dark:bg-sky-600 rounded-lg">
-<div class="font-bold">Teams Webhook</div>
+<div class="font-bold"><logos-microsoft class="inline-block" /> Teams Webhook</div>
 <div class="mt-2 font-mono">
 ```json
 {
@@ -60,7 +60,7 @@ Transition: "Let me show you what happens when Slack, Teams, and SendGrid walk i
 </div>
 
 <div v-click="3" class="p-4 bg-emerald-100 dark:bg-emerald-600 rounded-lg">
-<div class="font-bold">SendGrid Webhook</div>
+<div class="font-bold"><logos-sendgrid-icon class="inline-block" /> SendGrid Webhook</div>
 <div class="mt-2 font-mono">
 ```json
 {

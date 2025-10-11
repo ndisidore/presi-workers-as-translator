@@ -80,14 +80,14 @@ Transition: "Let me show you why this is so hard with traditional approaches..."
 
 ## **Customer A**
 
-- Slack + Stripe + Notion
+- <logos-slack-icon class="inline-block" /> Slack + <logos-stripe class="inline-block" /> Stripe + <logos-notion-icon class="inline-block" /> Notion
 - Custom field mappings
 - EU data residency
 - Custom retry policies
 
 ## **Customer B**
 
-- Teams + PayPal + Airtable
+- <logos-microsoft class="inline-block" /> Teams + <logos-paypal class="inline-block" /> PayPal + <logos-airtable class="inline-block" /> Airtable
 - Different schema requirements
 - US data residency
 - Different rate limits

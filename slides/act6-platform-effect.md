@@ -206,7 +206,7 @@ Transition: "And platforms with network effects lead to ecosystems..."
 
 <div class="text-sm mt-8 p-4 bg-gray-100 dark:bg-gray-700 rounded-lg">
 
-- **Filterable**: by source/target API (Stripe, Slack, GitHub...)
+- **Filterable**: by source/target API (<logos-stripe class="inline-block" /> Stripe, <logos-slack-icon class="inline-block" /> Slack, <logos-github-icon class="inline-block" /> GitHub...)
 - **Sortable**: by popularity, reliability, last updated
 - **Ratings & Reviews**: Community-vetted quality
 - **Template Tags**: `#webhook`, `#base-class`, `#complete`
@@ -265,11 +265,11 @@ export default compose(
 const trending = [
   // Write to Database
   '@acme-app/webhook-to-database',
-  // Slack/Teams → Jira
+  // 💬 Slack/Teams → Jira
   '@acme-app/chat-to-ticketing',
-  // Stripe → everywhere
+  // 💳 Stripe → everywhere
   '@acme-app/payment-notifications',
-  // GitHub → Slack/Teams
+  // 🐙 GitHub → Slack/Teams
   '@acme-app/ci-cd-alerts'
 ];
 
