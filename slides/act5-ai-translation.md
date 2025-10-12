@@ -47,7 +47,7 @@ Transition: "Remember carrying 47 adapters? What if one could reshape itself..."
 <v-click at="4">
 
 <div class="text-center text-xl">
-Enter: <span class="font-bold text-2xl">Text Generation Models - The Schema Whisperers</span> <tabler-sparkles class="inline-block" />
+<span class="font-mono">Enter:</span> <span class="font-bold text-2xl">Text Generation Models - The Schema Whisperers</span> <tabler-sparkles class="inline-block" />
 </div>
 
 </v-click>

@@ -63,9 +63,7 @@ Transition: "So naturally, you add infrastructure to scale it out..."
 
 ---
 
-# Phase 2: Kafka and Queues, Oh My!
-
-<div class="mb-8 font-bold">Fan out and improve durability via discrete consumers</div>
+# You get a queue, and you get a queue, and you...
 
 <script setup>
 const queueDiagram = `
@@ -128,14 +126,108 @@ slack_queue -> slack_consumer
 sendgrid_queue -> sendgrid_consumer
 pagerduty_queue -> pagerduty_consumer
 deliverer_x_queues -> deliverer_x_consumers
+
+scenarios: {
+  one_consumer: {
+    slack_consumer.style.multiple: false
+    sendgrid_consumer.style.multiple: false
+    pagerduty_consumer.style.multiple: false
+    deliverer_x_consumers.style.multiple: false
+    (slack_queue -> slack_consumer)[0].style.stroke-width: 1
+    (sendgrid_queue -> sendgrid_consumer)[0].style.stroke-width: 1
+    (pagerduty_queue -> pagerduty_consumer)[0].style.stroke-width: 1
+    (deliverer_x_queues -> deliverer_x_consumers)[0].style.stroke-width: 1
+  }
+
+  more_consumers: {
+    slack_consumer.style: {
+      multiple: true
+      stroke-width: 2
+    }
+    sendgrid_consumer.style: {
+      multiple: true
+      stroke-width: 2
+    }
+    pagerduty_consumer.style: {
+      multiple: true
+      stroke-width: 2
+    }
+    deliverer_x_consumers.style: {
+      multiple: true
+      stroke-width: 2
+    }
+    (slack_queue -> slack_consumer)[0].style.stroke-width: 2
+    (sendgrid_queue -> sendgrid_consumer)[0].style.stroke-width: 2
+    (pagerduty_queue -> pagerduty_consumer)[0].style.stroke-width: 2
+    (deliverer_x_queues -> deliverer_x_consumers)[0].style.stroke-width: 2
+  }
+
+  even_more: {
+    slack_consumer.style: {
+      multiple: true
+      stroke-width: 3
+    }
+    sendgrid_consumer.style: {
+      multiple: true
+      stroke-width: 3
+    }
+    pagerduty_consumer.style: {
+      multiple: true
+      stroke-width: 3
+    }
+    deliverer_x_consumers.style: {
+      multiple: true
+      stroke-width: 3
+    }
+    (slack_queue -> slack_consumer)[0].style.stroke-width: 3
+    (sendgrid_queue -> sendgrid_consumer)[0].style.stroke-width: 3
+    (pagerduty_queue -> pagerduty_consumer)[0].style.stroke-width: 3
+    (deliverer_x_queues -> deliverer_x_consumers)[0].style.stroke-width: 3
+  }
+
+  maximum_scale: {
+    slack_consumer.style: {
+      multiple: true
+      stroke-width: 4
+    }
+    sendgrid_consumer.style: {
+      multiple: true
+      stroke-width: 4
+    }
+    pagerduty_consumer.style: {
+      multiple: true
+      stroke-width: 4
+    }
+    deliverer_x_consumers.style: {
+      multiple: true
+      stroke-width: 4
+    }
+    (slack_queue -> slack_consumer)[0].style.stroke-width: 4
+    (sendgrid_queue -> sendgrid_consumer)[0].style.stroke-width: 4
+    (pagerduty_queue -> pagerduty_consumer)[0].style.stroke-width: 4
+    (deliverer_x_queues -> deliverer_x_consumers)[0].style.stroke-width: 4
+    router.style: {
+      fill: '#F59E0B'
+      stroke: '#D97706'
+      stroke-width: 3
+    }
+  }
+}
 `
 </script>
+
+<div class="mt-6 space-y-3">
 
 <D2Diagram
   :code="queueDiagram"
   class="mx-auto"
   :scale="0.6"
+  :target="'*'"
+  :animateInterval="2500"
 />
+<div class="mt-2 font-mono text-center text-xs"><span class="text-amber-200">Distributed system:</span> fan out and improve durability via discrete consumers</div>
+
+</div>
 
 <!-- speaker:
 "Phase 2 is the distributed systems phase. You add Kafka because someone read a blog post about how Netflix does it."

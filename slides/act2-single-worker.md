@@ -18,7 +18,7 @@ Transition: "Let me show you what happens when Slack, Teams, and SendGrid walk i
 
 ---
 
-# The "Rosetta Stone" Approach
+# Exhibit A: The hall of schemas
 
 <style scoped>
 .rosetta-code code {
@@ -154,7 +154,7 @@ class: text-center
 
 ## 20 lines of Worker code normalizes 3 different APIs
 
-<div v-click class="mt-8 text-2xl"><tabler-mood-crazy-happy class="inline-block text-sky-500" /></div>
+<div v-click class="mt-8 text-8xl"><tabler-mood-crazy-happy class="inline-block text-sky-500" /></div>
 
 <!-- speaker:
 "Wait, that's it?"

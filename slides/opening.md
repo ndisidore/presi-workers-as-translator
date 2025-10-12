@@ -5,7 +5,7 @@ class: text-center
 
 # The £330M API Meltdown
 
-<carbon-warning-alt class="text-6xl mb-8" />
+<tabler-alert-triangle class="text-6xl mb-8" />
 
 **A single API contract change that broke an entire bank**
 
@@ -125,10 +125,10 @@ layoutClass: gap-8
 
 <div class="mt-6 space-y-4 text-sm">
 
-- **30%** of engineering time spent on "glue code"
-- **$200K/year** per engineer on adapter maintenance
-- **23%** customer churn cites "missing integrations"
-- **6 months** average time to add a new major integration
+- <span class="font-bold text-red-300">30%</span> of engineering time spent on "glue code"
+- <span class="font-bold text-red-300">$200K/year</span> per engineer on adapter maintenance
+- <span class="font-bold text-red-300">23%</span> customer churn cites "missing integrations"
+- <span class="font-bold text-red-300">6 months</span> average time to add a new major integration
 
 </div>
 
@@ -510,7 +510,7 @@ layoutClass: gap-16
 </div>
 </div>
 
-<div v-click="4" class="flex items-start space-x-4">
+<div v-click="4" class="flex items-start space-x-4 text-orange-500">
 <tabler-puzzle class="text-2xl" />
 <div>
 <div class="font-bold">That's where Cloudflare Workers come in</div>
@@ -553,7 +553,7 @@ layout: center
 class: text-center
 ---
 
-# What if every API spoke the same language?
+# What if every API was plug and play?
 
 <v-click>
 

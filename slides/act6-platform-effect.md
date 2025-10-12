@@ -370,7 +370,7 @@ WHERE customer_id = ?
   AND resource_id = 'user_12345'
   AND expires_at > datetime('now');
 ```
-<div class="text-center text-xs">
+<div class="text-center text-xs font-mono">
   Code 1.1: Sample SQL to cache integration responses.
 </div>
 

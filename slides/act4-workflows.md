@@ -501,7 +501,7 @@ But there's still one problem...
 </div>
 
 <div class="text-2xl mb-8">
-How do we write all these adapters in the first place? <tabler-help-circle class="inline-block" />
+How do we write all these adapters in the first place?
 </div>
 
 </div>
@@ -531,7 +531,10 @@ How do we write all these adapters in the first place? <tabler-help-circle class
 <v-click at="4">
 
 <div class="text-center text-2xl">
-What if the computer could read the documentation and write the code for us? <tabler-robot class="inline-block" />
+What if the computer could read the documentation and write the code for us?
+</div>
+<div class="text-center text-8xl">
+<tabler-robot class="inline-block" />
 </div>
 
 </v-click>
