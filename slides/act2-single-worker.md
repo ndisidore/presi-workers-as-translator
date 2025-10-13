@@ -252,13 +252,9 @@ Transition: "But here's where the story gets interesting. This works great... un
 
 # But Plot Twist... <tabler-masks-theater class="inline-block" />
 
-<v-click>
-
 <div class="text-center text-2xl mb-8">
 This works great... until your startup becomes a scale-up
 </div>
-
-</v-click>
 
 <v-click>
 
@@ -278,10 +274,6 @@ This works great... until your startup becomes a scale-up
 <div class="text-sm">APIs at scale</div>
 </div>
 </div>
-
-</v-click>
-
-<v-click>
 
 <div class="mt-12 text-center text-xl">
 <span class="font-bold">What happens when you need to handle not 3, but 300 integrations?</span>

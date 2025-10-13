@@ -27,13 +27,31 @@ addons:
 
 **A Cloudflare Connect 2025 Talk**
 
-_by Nathan Disidore_<br />
-_Principle Engineer @ Terminal Industries_
+_by Nathan Disidore_
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer bg-white bg-opacity-10" hover="bg-white bg-opacity-20">
     Press Space for next page <carbon:arrow-right class="inline"/>
   </span>
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# About the Speaker
+
+<div class="flex items-center justify-center gap-12 mt-8">
+  <img src="https://assets.swoogo.com/uploads/full/5947320-68e83661ee16a.jpeg" class="rounded-full w-48 h-48 object-cover shadow-2xl" />
+
+  <div class="text-left">
+    <h2 class="text-3xl font-bold mb-4">Nathan Disidore</h2>
+    <p class="text-xl mb-2">Principal Engineer @ Terminal Industries</p>
+    <p class="text-lg mt-6 max-w-md text-orange-500 font-bold">
+      Cloudflare Expat <tabler-heart-filled class="inline-block" />
+    </p>
+  </div>
 </div>
 
 ---

@@ -13,124 +13,6 @@ _Building the Ecosystem_
 "Act Six: The Platform Effect."
 Now we're going to see how all of this comes together to build an ecosystem.
 Tone: Vision and synthesis — bringing it all together.
-Transition: "Let me show you the complete pipeline..."
--->
-
----
-
-# The Grand Unification
-
-<div class="text-center mb-8">
-
-<div class="text-2xl mb-6 font-bold">Putting it all together: The complete integration pipeline</div>
-
-</div>
-
-<script setup>
-const pipelineDiagram = `
-vars: {
-  d2-config: {
-    layout-engine: elk
-  }
-}
-direction: right
-
-dispatch_event: {
-  label: "Event Dispatch"
-  style: { fill: '#cf84a4' }
-}
-
-# AI Generation Container
-ai_generation: {
-  label: "AI Generation"
-  style: {
-    fill: '#E9D5FF'
-    stroke: '#8B5CF6'
-    stroke-width: 2
-  }
-
-  api_docs: {
-    label: "API Docs +\\nOpenAPI Spec"
-    shape: document
-    style: { fill: '#3B82F6' }
-  }
-  ai: {
-    label: "AI Model"
-    shape: hexagon
-    style: { fill: '#8B5CF6' }
-  }
-  adapter: {
-    label: "Generated\\nAdapter Code"
-    shape: rectangle
-    style: { fill: '#10B981' }
-  }
-
-  api_docs -> ai
-  ai -> adapter
-}
-
-# BYO Path
-byo_adapter: {
-  label: "BYO\\nAdapter"
-  shape: rectangle
-  style: { fill: '#EC4899' }
-}
-
-# Worker Translator
-worker: {
-  label: "Worker\\nTranslator"
-  shape: rectangle
-  style: { fill: '#F59E0B' }
-}
-
-# Orchestration
-workflow: {
-  label: "Workflow\\nOrchestrator"
-  shape: rectangle
-  style: { fill: '#EF4444' }
-}
-notification: {
-  label: "Real-time\\nUpdates"
-  shape: cloud
-  style: { fill: '#84CC16' }
-}
-
-# Customer
-customer: {
-  label: "Customer App\\nHappy & Unified"
-  shape: oval
-  style: { fill: '#06B6D4' }
-}
-
-# Flow
-dispatch_event -> ai_generation.adapter
-dispatch_event -> byo_adapter
-ai_generation.adapter -> worker
-byo_adapter -> worker
-worker -> workflow
-workflow -> notification
-notification -> customer`
-</script>
-
-<D2Diagram
-  :code="pipelineDiagram"
-  :scale="0.5"
-  class="mx-auto"
-/>
-
-<!-- speaker:
-"The Grand Unification — putting it all together. This is where all six acts converge into one coherent system."
-Walk through the pipeline slowly: "Top path: API docs and OpenAPI specs go into the AI model, which generates adapter code. Bottom path: Bring-your-own adapter if you already have custom logic."
-"Both paths converge at the Worker Translator. Doesn't matter if the adapter came from AI or from your engineering team — it gets the same treatment."
-"Worker feeds the Workflow Orchestrator — remember, the one that can sleep for days and wake up exactly where it left off."
-"Workflow sends real-time updates to your customer app, which sees one beautiful, unified schema."
-Pause: "Two paths converge. AI-generated or bring-your-own. Both get edge deployment, both get workflows, both get platform benefits."
-"This is the power of platform thinking. You're not building features — you're building an ecosystem where the pieces compose."
-"And different roles see different value here:"
-"Business leaders—this is how you turn technical debt into technical leverage. Every adapter you build makes the next one easier. The platform compounds value over time."
-"Architects—this is composable infrastructure that scales horizontally without operational overhead. Add a new customer? No new infrastructure. Add a new API? No architectural changes."
-"Developers—you're writing business logic, not plumbing. The interesting problems. The stuff that makes your product unique."
-Tone: This is the synthesis moment. Everything comes together for everyone.
 Transition: "Let's take a step back and realize what you've actually built..."
 -->
 
@@ -209,7 +91,7 @@ Transition: "And platforms with network effects lead to ecosystems..."
 - **Filterable**: by source/target API (<logos-stripe class="inline-block" /> Stripe, <logos-slack-icon class="inline-block" /> Slack, <logos-github-icon class="inline-block" /> GitHub...)
 - **Sortable**: by popularity, reliability, last updated
 - **Ratings & Reviews**: Community-vetted quality
-- **Template Tags**: `#webhook`, `#base-class`, `#complete`
+- **Tags**: `#webhook`, `#base-class`, `#complete`
 - **Compatibility**: Works with Workflows, AI-enhanced
 
 </div>
@@ -294,7 +176,7 @@ Community code + custom business logic = <tabler-heart class="inline-block text-
 <!-- speaker:
 "The Integration Marketplace. This is where platforms become ecosystems."
 Left side: "Imagine npm, but for API integrations. Filterable by source and target — 'show me all Stripe to Slack adapters.' Sortable by popularity and reliability. Ratings and reviews from the community."
-"Template tags: is this a complete integration or just a base class you extend? Does it work with Workflows? Is it AI-enhanced?"
+"Tags: is this a complete integration or just a base class you extend? Does it work with Workflows? Is it AI-enhanced?"
 "The workflow: Browse. Fork. Customize. Deploy. Same as any other open source package."
 Right side: "Extensible patterns — this is where it gets interesting."
 Point to the first code block: "Extend a popular base class. Someone already wrote a solid Slack adapter. You inherit it, add your company-specific logic — priority calculation, CRM enrichment — done."

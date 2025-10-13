@@ -1,4 +1,9 @@
 ---
+layout: image
+image: ./assets/sad-trombone.png
+---
+
+---
 layout: center
 class: text-center
 ---
