@@ -14,7 +14,7 @@
   "dependencies": {
     "@iconify-json/carbon": "^1.2.14",
     "@iconify-json/logos": "^1.2.9",
-    "@iconify-json/tabler": "^1.2.25",
+    "@iconify-json/tabler": "^1.2.28",
     "@slidev/cli": "^52.11.1",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
